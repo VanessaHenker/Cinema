@@ -5,7 +5,7 @@
 
 int main(){
     using namespace std;
-
+        // testandooooo 
     bool cadeiras[10];
     int escolha, i;
     char n;
