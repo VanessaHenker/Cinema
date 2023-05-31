@@ -29,7 +29,7 @@ struct Bebida{
   float preco;
 };
 int main(){
-  int opcao, escolha, sessao;
+  int opcao, escolha, sessao, fin_compra;
   int i, qtd_pipoca[3], qtd_bebida[4], qtd_ingresso;
   int  compra_pipoca, compra_bebida, compra_ingresso; 
   int  ingresso_poltrona, guarda_ingresso, guarda_pipoca, guarda_bebida;
@@ -133,7 +133,7 @@ int main(){
         }
         cout << "\nCompra mais ingressos[S/N]: ";
         cin >> opcao_ingresso;
-      } while (compra_ingresso == 's' || compra_ingresso == 'S');
+      } while (opcao_ingresso == 's' || opcao_ingresso == 'S');
       total_ingresso = total_ingresso + guarda_ingresso;
       cout << "\nDigite 0 para voltar a tela inical: ";
       cin >> opcao;
@@ -141,19 +141,29 @@ int main(){
     
     if (escolha == 3){
       bool cadeiras[10][5];
-      int escolha1, escolha2, i, j;
+      int escolha1, escolha2, i, j, reserva_polt;
       char n;
       escolha1 = 0;
       escolha2 = 0;
+      reserva_polt = 0;
       i = 0;
-      for (i = 0; i < 10; i++){
+      for (i = 0; i < 10; i++){                         
         for (j = 0; j < 5; j++){
           cadeiras[i][j] = false;
         }
       }
-      do{
+      
+      if(ingresso_poltrona == 0){
+        cout << "\nNao teve nenhuma compra de ingresso!";
+        cout << "\nSe deseja reservar poltronas volte ao menu incial!";
+        cout << endl;
+        cout << "\nDigite 0 para voltar ao menu inicial: ";
+        cin >> opcao;
+      }
+      else{
+      while(reserva_polt <= ingresso_poltrona){
         for (i = 0; i < 10; i++){
-          for (j = 0; j < 5; j++){
+          for (j = 0; j < 5; j++){              
             if (cadeiras[i][j] == true){
               cout << "[--] ";
             }
@@ -163,33 +173,33 @@ int main(){
           }
           cout << endl;
         }
+        
         do{
-          cout << "\nReservar a cadeira: ";
+          cout <<"\nReservar a cadeira: ";
           cin >> escolha1 >> escolha2;
           if (escolha1 > 9 || escolha2 > 4){
             cout << "\nCadeira nao existe, Tente novamente!";
             cout << endl;
           }
-        } while (escolha1 > 9 || escolha2 > 4);
+        }while (escolha1 > 9 || escolha2 > 4);
         if (cadeiras[escolha1][escolha2] == true){
           cout << "\nCADEIRA OCUPADA\n";
         }
         else{
-          cadeiras[escolha1][escolha2] = true;
-          cout << "\nA cadeira " << escolha1 << escolha2 << " foi RESERVADA\n";
-        }
-        if (n == 'n'){
-          cout << "\nObrigado, boa sessao!\n";
-        }
-        cout << "\nQuer reservar outro?[S/N]: ";
-        cin >> n;
-         if(ingresso_poltrona > cadeiras[escolha1][escolha2]){
-            cout << "\nVoce antingiu o limite de poltronas na sua compra!";
+           cadeiras[escolha1][escolha2] = true;
+            cout << "\nA cadeira " << escolha1 << escolha2 << " foi RESERVADA\n";
+            reserva_polt++;
           }
-        //system("cls");
-      } while (n == 's' || n == 'S');
-    
-    }
+        if(reserva_polt > ingresso_poltrona){
+            cout << "\nSe deseja reservar mais poltronas volte ao menu incial!";
+            cout << endl;
+            cout << "\nDigite 0 para voltar ao menu inicial: ";
+            cin >> opcao;
+          }
+        }
+      }
+    }    
+     
     
     if (escolha == 4){
       Comida comida1 = {"[1]Pipoca pequena R$ ", 10};
