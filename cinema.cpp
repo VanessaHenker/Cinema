@@ -13,10 +13,10 @@ void escolha_horario(int escolha_hora, int opcao);
 
 int escolher_tam_bebida();
 
-int soma_coca(int escolha_coca);
-int soma_fanta_uva(int escolha_uva);
-int soma_fanta_laran(int escolha_laran);
-int soma_fanta_guara(int escolha_guara);
+float soma_coca(int escolha_coca);
+float soma_fanta_uva(int escolha_uva);
+float soma_fanta_laran(int escolha_laran);
+float soma_fanta_guara(int escolha_guara);
 
 struct Filme{
   string titulo;
@@ -32,7 +32,7 @@ struct Sessao{
 };
 
 struct Comida{
-  string pipoca;
+  string aperit;
   float preco;
 };
 
@@ -60,7 +60,7 @@ Bebida bebida6 = {"[2]Fanta uva       350ml R$ ", 6};
 Bebida bebida7 = {"[3]Fanta uva ZERO  350ml R$ ", 6.50};
 Bebida bebida8 = {"[4]Fanta uva       600ml R$ ", 8};
 
-Bebida bebida9 = {"[1]Fanta laranja        237ml R$ ", 4};
+Bebida bebida9 = {" [1]Fanta laranja        237ml R$ ", 4};
 Bebida bebida10 = {"[2]Fanta laranja        350ml R$ ", 6};
 Bebida bebida11 = {"[3]Fanta laranja ZERO   350ml R$ ", 6.50};
 Bebida bebida12 = {"[4]Fanta laranja        600ml R$", 8};
@@ -69,6 +69,30 @@ Bebida bebida13 = {"[1]Fanta guaraná        237ml R$ ", 4};
 Bebida bebida14 = {"[2]Fanta guaraná        350ml R$ ", 6};
 Bebida bebida15 = {"[3]Fanta guaraná ZERO   350ml R$ ", 6.50};
 Bebida bebida16 = {"[4]Fanta guaraná        600ml R$ ", 8};
+
+Comida comida1 = {"[1]Pipoca pequena R$ ", 10};
+Comida comida2 = {"[2]Pipoca média R$ ", 12.50};
+Comida comida3 = {"[3]Pipoca grande R$ ",15.50};
+
+Comida comida4 = {"[1]Fandangos 37g R$ ", 4};
+Comida comida5 = {"[2]Fandangos 45g R$ ", 6};
+Comida comida6 = {"[3]Fandangos 90g R$ ", 9};
+Comida comida7 = {"[4]Fangangos 140g R$ ",12};
+
+Comida comida8 = {"[1]Doritos 37g R$ ", 4};
+Comida comida9 = {"[2]Doritos 45g R$ ", 6};
+Comida comida10 = {"[3]Doritos 90g R$ ", 9};
+Comida comida11 = {"[4]Doritos 140g R$ ",12};
+
+Comida comida12 = {"[1]RufFles 37g R$ ", 4.50};
+Comida comida13 = {"[2]RufFles 45g R$ ", 6};
+Comida comida14 = {"[3]RufFles 90g R$ ", 9};
+Comida comida15 = {"[4]RufFles 140g R$ ",15};
+
+Comida comida16 = {"[1]Cheetos 37g R$ ", 5};
+Comida comida17 = {"[2]Cheetos 45g R$ ", 6};
+Comida comida18 = {"[3]Cheetos 90g R$ ", 9};
+Comida comida19 = {"[4]Cheetos 140g R$ ",15};
 
 int escolha, sessao, fin_compra;
 int i, qtd_ingresso;
@@ -82,9 +106,9 @@ char sele_sessao;
 int opcao = 0, escolha_hora = 0;
 
 // variáveis de escolha comidas e bebidas;
-int escolha_bebida, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
+int escolha_bebida = 0, escolha_comida = 0, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
 int loop_bebida = 1, guarda_coca, guarda_uva, guarda_laran, guarda_guara;
-char sele_bebida, sele_coca, sele_uva, sele_laran, sele_guara;
+char sele_bebida, sele_comida, sele_coca, sele_uva, sele_laran, sele_guara;
 
 int main(){
   int qtd_guara[4];
@@ -242,12 +266,51 @@ int main(){
 
       cout << "Opçoes comidas: " << endl;
       cout << "[1]-> Pipocas" << endl;
-      cout << "[2]-> Chocolates" << endl;
-      cout << "[3]-> Fandangos" << endl;
-      cout << "[4]-> Doritos" << endl;
-      cout << "[5]-> Ruffles" << endl;
-      cout << "[6]-> Cheetos" << endl;
+      cout << "[2]-> Fandangos" << endl;
+      cout << "[3]-> Doritos" << endl;
+      cout << "[4]-> Ruffles" << endl;
+      cout << "[5]-> Cheetos" << endl;
 
+      cout << "Deseja entrar na opções de comidas";
+      cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
+      cin >> sele_comida;
+      if(sele_comida == 'S' || sele_comida == 's'){
+        cout << "\nDigite o numero: ";
+        cin >> escolha_comida;
+        switch (escolha_comida){
+        case 1:
+          cout << comida1.aperit << comida1.preco << endl;
+          cout << comida2.aperit << comida2. preco << endl;
+          cout << comida3.aperit << comida3.preco << endl;
+          break;
+        case 2: 
+          cout << comida4.aperit << comida4.preco << endl;
+          cout << comida5.aperit << comida5.preco << endl;
+          cout << comida6.aperit << comida6.preco << endl;
+          cout << comida7.aperit << comida7.preco << endl;
+          break;
+        case 3:
+          cout << comida8.aperit << comida8.preco << endl;
+          cout << comida9.aperit << comida9.preco << endl;
+          cout << comida10.aperit << comida10.preco << endl;
+          cout << comida11.aperit << comida11.preco << endl;
+          break;
+        case 4:
+          cout << comida12.aperit << comida12.preco << endl;
+          cout << comida13.aperit << comida13.preco << endl;
+          cout << comida14.aperit << comida14.preco << endl;
+          cout << comida15.aperit << comida15.preco << endl;
+          break;
+        case 5:
+          cout << comida16.aperit << comida16.preco << endl;
+          cout << comida17.aperit << comida17.preco << endl;
+          cout << comida18.aperit << comida18.preco << endl;
+          cout << comida19.aperit << comida19.preco << endl;
+        default:
+          cout << "\nNumero inválido, Tente novamente";
+          break;
+        }
+      }
       do{
         cout << "\nOpções bebidas:" << endl;
         cout << "[1]-> Coca-cola" << endl;
@@ -255,8 +318,7 @@ int main(){
         cout << "[3]-> Fanta laranja" << endl;
         cout << "[4]-> Fanta guarana" << endl;
         cout << endl;
-
-        cout << "Deseja entrar na opções de bebidas";
+        cout << "Se deseja entrar na opções de bebidas";
         cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
         cin >> sele_bebida;
         if (sele_bebida == 's' || sele_bebida == 'S'){
@@ -494,7 +556,7 @@ int escolher_tam_bebida(){
   return 0;
 }
 
-int soma_coca(int escolha_coca){
+float soma_coca(int escolha_coca){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i, qtd_coca[4];
   float total;
@@ -561,7 +623,7 @@ int soma_coca(int escolha_coca){
   }
   return total;
 }
-int soma_fanta_uva(int escolha_uva){
+float soma_fanta_uva(int escolha_uva){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i, qtd_uva[4];
   float total;
@@ -576,8 +638,7 @@ int soma_fanta_uva(int escolha_uva){
     do{
       cout << "\nQuantidade: ";
       cin >> guarda_uva;
-      if (guarda_uva < 0)
-      {
+      if (guarda_uva < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     } while (guarda_uva < 0);
@@ -627,7 +688,7 @@ int soma_fanta_uva(int escolha_uva){
   }
   return total;
 }
-int soma_fanta_laran(int escolha_laran){
+float soma_fanta_laran(int escolha_laran){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i, qtd_laran[4];
   float total;
@@ -703,7 +764,7 @@ int soma_fanta_laran(int escolha_laran){
   }
   return total;
 }
-int soma_fanta_guara(int escolha_guara){
+float soma_fanta_guara(int escolha_guara){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i, qtd_guara[4];
   float total;
