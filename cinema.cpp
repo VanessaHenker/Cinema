@@ -11,6 +11,8 @@ void sessao_escolha();
 void sessao_filme();
 void escolha_horario(int escolha_hora, int opcao);
 
+int escolher_tam_bebida();
+
 int soma_coca(int escolha_coca);
 int soma_fanta_uva(int escolha_uva);
 int soma_fanta_laran(int escolha_laran);
@@ -48,25 +50,25 @@ Sessao sessao2 = {"16:00 - 18:30 - 21:00", "Sala 2", filme3};
 Sessao sessao3 = {"15:30 - 20:00", "Sala 3", filme2};
 Sessao sessao4 = {"20:15", "Sala 4", filme1};
 
-Bebida bebida1 = {"[1]Coca-cola  237ml R$", 4};
-Bebida bebida2 = {"[2]Coca-cola  350ml R$", 6};
-Bebida bebida3 = {"[3]Coca-cola  350ml ZERO R$", 6.50};
-Bebida bebida4 = {"[4]Coca-cola  600ml R$", 8};
+Bebida bebida1 = {"[1]Coca-cola       237ml R$", 4};
+Bebida bebida2 = {"[2]Coca-cola       350ml R$", 6};
+Bebida bebida3 = {"[3]Coca-cola ZERO  350ml R$", 6.50};
+Bebida bebida4 = {"[4]Coca-cola       600ml R$ ", 8};
 
-Bebida bebida5 = {"[1]Fanta uva  237ml R$ ", 4};
-Bebida bebida6 = {"[2]Fanta uva  350ml R$ ", 6};
-Bebida bebida7 = {"[3]Fanta uva  350ml ZERO R$ ", 6.50};
-Bebida bebida8 = {"[4]Fanta uva  600ml", 8};
+Bebida bebida5 = {"[1]Fanta uva       237ml R$ ", 4};
+Bebida bebida6 = {"[2]Fanta uva       350ml R$ ", 6};
+Bebida bebida7 = {"[3]Fanta uva ZERO  350ml R$ ", 6.50};
+Bebida bebida8 = {"[4]Fanta uva       600ml R$ ", 8};
 
-Bebida bebida9 = {"[1]Fanta laranja  237ml R$ ", 4};
-Bebida bebida10 = {"[2]Fanta laranja  350ml R$ ", 6};
-Bebida bebida11 = {"[3]Fanta laranja  350ml ZERO R$ ", 6.50};
-Bebida bebida12 = {"[4]Fanta laranja  600ml", 8};
+Bebida bebida9 = { "[1]Fanta laranja        237ml R$ ", 4};
+Bebida bebida10 = {"[2]Fanta laranja        350ml R$ ", 6};
+Bebida bebida11 = {"[3]Fanta laranja ZERO   350ml R$ ", 6.50};
+Bebida bebida12 = {"[4]Fanta laranja        600ml R$", 8};
 
-Bebida bebida13 = {"[1]Fanta guaraná  237ml R$ ", 4};
-Bebida bebida14 = {"[2]Fanta guaraná  350ml R$ ", 6};
-Bebida bebida15 = {"[3]Fanta guaraná  350ml ZERO R$ ", 6.50};
-Bebida bebida16 = {"[4]Fanta guaraná  600ml R$ ", 8};
+Bebida bebida13 = {"[1]Fanta guaraná        237ml R$ ", 4};
+Bebida bebida14 = {"[2]Fanta guaraná        350ml R$ ", 6};
+Bebida bebida15 = {"[3]Fanta guaraná ZERO   350ml R$ ", 6.50};
+Bebida bebida16 = {"[4]Fanta guaraná        600ml R$ ", 8};
 
 int escolha, sessao, fin_compra;
 int i, qtd_ingresso;
@@ -82,7 +84,7 @@ int opcao = 0, escolha_hora = 0;
 // variáveis de escolha comidas e bebidas;
 int escolha_bebida, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
 int guarda_coca, guarda_uva, guarda_laran, guarda_guara;
-char sele_bebida;
+char sele_bebida,sele_coca, sele_uva, sele_laran, sele_guara;
 
 int main(){
   int qtd_guara[4];
@@ -101,7 +103,7 @@ int main(){
   cout << "\nBem vindo ao nosso cinema!";
   cout << "\n--------------------------------";
   cout << endl;
-  do{
+  while(opcao == 0){
     setlocale(LC_ALL, "Portuguese_Brazil");
     cout << "\n[1]-> Opções de filme e sessões";
     cout << "\n[2]-> Comprar ingressos";
@@ -120,10 +122,8 @@ int main(){
         if (sele_sessao == 'S' || sele_sessao == 's'){
           sessao_escolha();
         }
-      } while (sele_sessao != 'S' && sele_sessao != 's' && sele_sessao != 'N' && sele_sessao != 'n');
+      } while (sele_sessao != 'N' && sele_sessao != 'n');
       cout << endl;
-      cout << "\nDigite 0 para voltar a tela inical: ";
-      cin >> opcao;
       // system("cls");
     }
 
@@ -133,7 +133,7 @@ int main(){
       cout << "\n[2]Ingresso meio R$" << ing_meia;
       cout << endl;
       do {
-        cout << "\nSelecione a opcao de ingressos! ";
+        cout << "\nSelecione a opção de ingressos: ";
         cin >> compra_ingresso;
 
         if (compra_ingresso == 1){
@@ -154,8 +154,6 @@ int main(){
         cin >> opcao_ingresso;
       } while (opcao_ingresso == 's' || opcao_ingresso == 'S');
       total_ingresso = total_ingresso + guarda_ingresso;
-      cout << "\nDigite 0 para voltar a tela inical: ";
-      cin >> opcao;
     }
 
     if (escolha == 3){
@@ -247,7 +245,7 @@ int main(){
       cout << "Deseja entrar na opções de bebidas";
       cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
       cin >> sele_bebida;
-      if (sele_bebida == 's' || sele_bebida == 'S'){
+      while (sele_bebida == 's' || sele_bebida == 'S'){
         cout << "\nDigite o numero: ";
         cin >> escolha_bebida;
         switch (escolha_bebida){
@@ -256,7 +254,7 @@ int main(){
           cout << bebida2.refri << bebida2.preco << endl;
           cout << bebida3.refri << bebida3.preco << endl;
           cout << bebida4.refri << bebida4.preco << endl;
-          cin >> escolha_coca;
+          escolha_coca = escolher_tam_bebida();
           total_coca = soma_coca(escolha_coca);
           break;
         case 2:
@@ -264,7 +262,7 @@ int main(){
           cout << bebida6.refri << bebida6.preco << endl;
           cout << bebida7.refri << bebida7.preco << endl;
           cout << bebida8.refri << bebida8.preco << endl;
-          cin >> escolha_uva;
+          escolha_uva = escolher_tam_bebida();
           total_uva = soma_fanta_uva(escolha_uva);
           break;
         case 3:
@@ -272,7 +270,7 @@ int main(){
           cout << bebida10.refri << bebida10.preco << endl;
           cout << bebida11.refri << bebida11.preco << endl;
           cout << bebida12.refri << bebida12.preco << endl;
-          cin >> escolha_laran;
+          escolha_laran = escolher_tam_bebida();
           total_laran = soma_fanta_laran(escolha_laran);
           break;
         case 4:
@@ -280,16 +278,20 @@ int main(){
           cout << bebida14.refri << bebida14.preco << endl;
           cout << bebida15.refri << bebida15.preco << endl;
           cout << bebida16.refri << bebida16.preco << endl;
-          cin >> escolha_guara;
+          escolha_guara = escolher_tam_bebida();
           total_guara = soma_fanta_guara(escolha_guara);
           break;
         default:
           cout << "\nNumero não existe, Tente novamente!";
           break;
         }
+      cout << "\nSe deseja comprar mais bebidas";
+      cout << "\nDigite 's' SIM ou 'N' para 'NÂO': ";
+      cin >> sele_bebida;
       }
     }
-  } while (opcao == 0);
+  opcao = 0;
+  }
   return 0;
 }
 
@@ -467,6 +469,46 @@ void escolha_horario(int escolha_hora, int opcao){
   }
 }
 
+int escolher_tam_bebida(){
+    cout << "\nSe deseja selecionar um numero";
+    cout << "\nDigite 's' para SIM ou 'n' para NÂO: ";
+    cin >> sele_coca;
+    if(sele_coca == 's' || sele_coca == 'S'){
+    cout << endl;
+    cout << "\nSelecione um numero: ";
+    cin >> escolha_coca;
+    return escolha_coca;
+  }
+    cout << "\nSe deseja selecionar um numero";
+    cout << "\nDigite 's' para SIM ou 'n' para NÂO: ";
+    cin >> sele_uva;
+    if(sele_uva == 's' || sele_uva == 'S'){
+    cout << endl;
+    cout << "\nSelecione um numero: ";
+    cin >> escolha_uva;
+    return escolha_uva;
+  }
+    cout << "\nSe deseja selecionar um numero";
+    cout << "\nDigite 's' para SIM ou 'n' para NÂO: ";
+    cin >> sele_laran;
+    if(sele_laran == 's' || sele_laran == 'S'){
+    cout << endl;
+    cout << "\nSelecione um numero: ";
+    cin >> escolha_laran;
+    return escolha_laran;
+  }
+    cout << "\nSe deseja selecionar um numero";
+    cout << "\nDigite 's' para SIM ou 'n' para NÂO: ";
+    cin >> sele_guara;
+    if(sele_guara == 's' || sele_guara == 'S'){
+    cout << endl;
+    cout << "\nSelecione um numero: ";
+    cin >> escolha_guara;
+    return escolha_guara;
+    }
+  return 0;
+}
+
 int soma_coca(int escolha_coca){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i, qtd_coca[4];
@@ -547,8 +589,7 @@ int soma_fanta_uva(int escolha_uva){
     do{
       cout << "\nQuantidade: ";
       cin >> guarda_uva;
-      if (guarda_uva < 0)
-      {
+      if (guarda_uva < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     } while (guarda_uva < 0);
