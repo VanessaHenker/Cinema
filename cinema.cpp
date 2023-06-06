@@ -11,8 +11,10 @@ void sessao_escolha();
 void sessao_filme();
 void escolha_horario(int escolha_hora, int opcao);
 
-int escolha_tipo_comida(int escolha_comida);
 int escolher_tam_bc();
+
+float escolha_tipo_comida(int escolha_comida);
+float escolha_tipo_bebida(int escolha_bebida);
 
 float soma_pipoca(int escolha_pipoca);
 float soma_fandangos(int escolha_fand);
@@ -122,22 +124,25 @@ int opcao = 0, escolha_hora = 0;
 int escolha_bebida = 0, escolha_comida = 0, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
 int escolha_pipoca = 0, escolha_fand = 0, escolha_dori = 0, escolha_ruffles = 0, escolha_cheetos = 0, escolha_choc = 0;
 int guarda_pipoca = 0, guarda_fand = 0, guarda_dori = 0, guarda_ruffles= 0, guarda_cheetos = 0, guarda_choc = 0;
-int loop_bebida = 1, guarda_coca, guarda_uva, guarda_laran, guarda_guara;
+int loop_tela, guarda_coca, guarda_uva, guarda_laran, guarda_guara;
 char sele_bebida, sele_comida;
 
 int main(){
   int qtd_guara[4];
   int escolha_sessao;
+  float total_bc, soma_comida, guarda_comida, soma_bebida, guarda_bebida;
   ing_int = 30;
   ing_meia = 15;
   i = 0;
   opcao = 0;
+  total_bc = 0;
+  total_bc = 0;
   ingresso_poltrona = 0;
   guarda_ingresso = 0;
   total_ingresso = 0;
   qtd_ingresso = 0;
   escolha_sessao = 0;
-
+  
   cout << "--------------------------------";
   cout << "\nBem vindo ao nosso cinema!";
   cout << "\n--------------------------------";
@@ -155,7 +160,8 @@ int main(){
       sessao_filme();
       cout << endl;
       do{
-        cout << "Se deseja selecionar alguma sessão";
+        cout << endl;
+        cout << "\nnSe deseja selecionar alguma sessão";
         cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
         cin >> sele_sessao;
         if (sele_sessao == 'S' || sele_sessao == 's'){
@@ -164,6 +170,7 @@ int main(){
       } while (sele_sessao != 'N' && sele_sessao != 'n');
       cout << endl;
       // system("cls");
+    opcao = 0;
     }
 
     if (escolha == 2){
@@ -258,23 +265,19 @@ int main(){
 
     if (escolha == 4){
       setlocale(LC_ALL, "Portuguese_Brazil");
-      float total_bebidas, total_coca, total_uva, total_laran, total_guara;
-      float soma_comida, guarda_comida;
-      guarda_comida = 0;
       soma_comida = 0;
-      total_coca = 0;
-      total_uva = 0;
-      total_laran = 0;
-      total_guara = 0;
-
-      cout << "Opçoes comidas: " << endl;
+      guarda_comida = 0;
+      soma_bebida = 0;
+      guarda_bebida = 0;
+      
+      cout << "\nOpçoes comidas: " << endl;
       cout << "[1]-> Pipocas" << endl;
       cout << "[2]-> Fandangos" << endl;
       cout << "[3]-> Doritos" << endl;
       cout << "[4]-> Ruffles" << endl;
       cout << "[5]-> Cheetos" << endl;
       cout << "[6]-> Barras de chocolate" << endl; 
-      cout << endl;
+
       cout << "\nOpções bebidas:" << endl;
       cout << "[1]-> Coca-cola" << endl;
       cout << "[2]-> Fanta uva" << endl;
@@ -283,74 +286,48 @@ int main(){
       cout << endl;
       
       do{
-      cout << "Opçoes comidas: " << endl;
-      cout << "[1]-> Pipocas" << endl;
-      cout << "[2]-> Fandangos" << endl;
-      cout << "[3]-> Doritos" << endl;
-      cout << "[4]-> Ruffles" << endl;
-      cout << "[5]-> Cheetos" << endl;
-      cout << "[6]-> Barras de chocolate" << endl; 
-      cout << endl;
-      cout << "Deseja entrar na opções de comidas";
+      cout << "\nDeseja entrar na opções de comidas";
       cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
       cin >> sele_comida;
       if(sele_comida == 'S' || sele_comida == 's'){
+        cout << "\nOpçoes comidas: " << endl;
+        cout << "[1]-> Pipocas" << endl;
+        cout << "[2]-> Fandangos" << endl;
+        cout << "[3]-> Doritos" << endl;
+        cout << "[4]-> Ruffles" << endl;
+        cout << "[5]-> Cheetos" << endl;
+        cout << "[6]-> Barras de chocolate" << endl; 
         cout << "\nDigite o numero: ";
         cin >> escolha_comida;
        soma_comida = escolha_tipo_comida(escolha_comida);
        guarda_comida = guarda_comida + soma_comida;
       }
-      }while(sele_comida == 's' || sele_comida == 'S');
+    }while(sele_comida != 'n' && sele_comida != 'N');
       
       do{
         cout << "\nDeseja entrar na opções de bebidas";
         cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
         cin >> sele_bebida;
         if (sele_bebida == 's' || sele_bebida == 'S'){
+          cout << "\nOpções bebidas:" << endl;
+          cout << "[1]-> Coca-cola" << endl;
+          cout << "[2]-> Fanta uva" << endl;
+          cout << "[3]-> Fanta laranja" << endl;
+          cout << "[4]-> Fanta guarana" << endl;
+        cout << endl;
           cout << "\nDigite o numero: ";
           cin >> escolha_bebida;
-          switch (escolha_bebida){
-          case 1:
-            cout << bebida1.refri << bebida1.preco << endl;
-            cout << bebida2.refri << bebida2.preco << endl;
-            cout << bebida3.refri << bebida3.preco << endl;
-            cout << bebida4.refri << bebida4.preco << endl;
-            escolha_coca = escolher_tam_bc();
-            total_coca = soma_coca(escolha_coca);
-            break;
-          case 2:
-            cout << bebida5.refri << bebida5.preco << endl;
-            cout << bebida6.refri << bebida6.preco << endl;
-            cout << bebida7.refri << bebida7.preco << endl;
-            cout << bebida8.refri << bebida8.preco << endl;
-            escolha_uva = escolher_tam_bc();
-            total_uva = soma_fanta_uva(escolha_uva);
-            break;
-          case 3:
-            cout << bebida9.refri << bebida9.preco << endl;
-            cout << bebida10.refri << bebida10.preco << endl;
-            cout << bebida11.refri << bebida11.preco << endl;
-            cout << bebida12.refri << bebida12.preco << endl;
-            escolha_laran = escolher_tam_bc();
-            total_laran = soma_fanta_laran(escolha_laran);
-            break;
-          case 4:
-            cout << bebida13.refri << bebida13.preco << endl;
-            cout << bebida14.refri << bebida14.preco << endl;
-            cout << bebida15.refri << bebida15.preco << endl;
-            cout << bebida16.refri << bebida16.preco << endl;
-            escolha_guara = escolher_tam_bc();
-            total_guara = soma_fanta_guara(escolha_guara);
-            break;
-          default:
-            cout << endl;
-            cout << "\nNumero não existe, Tente novamente!";
-            break;
-          }
+          soma_bebida = escolha_tipo_bebida(escolha_bebida);
+          guarda_bebida = guarda_bebida + soma_bebida;
         }
-        opcao = 0;
-      } while (sele_bebida == 's' || sele_bebida == 'S');
+        
+      } while (sele_bebida != 'n' && sele_bebida != 'N');
+    
+    total_bc = total_bc + (guarda_comida + guarda_bebida);
+    
+    opcao = 0;
     }
+    
   }
   return 0;
 }
@@ -526,7 +503,7 @@ void escolha_horario(int escolha_hora, int opcao){
   }
 }
 
-int escolha_tipo_comida(int escolha_comida){
+float escolha_tipo_comida(int escolha_comida){
   setlocale(LC_ALL, "Portuguese_Brazil");
   float total_comida, total[6];
   int i;
@@ -592,6 +569,55 @@ int escolha_tipo_comida(int escolha_comida){
     total_comida = total_comida + total[i];
   }
   return total_comida;
+}
+float escolha_tipo_bebida(int escolha_bebida){
+float total[4], total_bebida;
+int i;
+  for(i = 0; i < 4; i++){
+    total[i] = 0;
+  }
+  switch (escolha_bebida){
+    case 1:
+      cout << bebida1.refri << bebida1.preco << endl;
+      cout << bebida2.refri << bebida2.preco << endl;
+      cout << bebida3.refri << bebida3.preco << endl;
+      cout << bebida4.refri << bebida4.preco << endl;
+      escolha_coca = escolher_tam_bc();
+      total[0] = soma_coca(escolha_coca);
+      break;
+    case 2:
+      cout << bebida5.refri << bebida5.preco << endl;
+      cout << bebida6.refri << bebida6.preco << endl;
+      cout << bebida7.refri << bebida7.preco << endl;
+      cout << bebida8.refri << bebida8.preco << endl;
+      escolha_uva = escolher_tam_bc();
+      total[1] = soma_fanta_uva(escolha_uva);
+      break;
+    case 3:
+      cout << bebida9.refri << bebida9.preco << endl;
+      cout << bebida10.refri << bebida10.preco << endl;
+      cout << bebida11.refri << bebida11.preco << endl;
+      cout << bebida12.refri << bebida12.preco << endl;
+      escolha_laran = escolher_tam_bc();
+      total[2] = soma_fanta_laran(escolha_laran);
+      break;
+    case 4:
+      cout << bebida13.refri << bebida13.preco << endl;
+      cout << bebida14.refri << bebida14.preco << endl;
+      cout << bebida15.refri << bebida15.preco << endl;
+      cout << bebida16.refri << bebida16.preco << endl;
+      escolha_guara = escolher_tam_bc();
+      total[3] = soma_fanta_guara(escolha_guara);
+      break;
+    default:
+      cout << endl;
+      cout << "\nNumero não existe, Tente novamente!";
+      break;
+    }
+  for(i = 0; i < 4; i++){
+    total_bebida = total_bebida + total[i];
+  }
+  return total_bebida;
 }
 
 int escolher_tam_bc(){
