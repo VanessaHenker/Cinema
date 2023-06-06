@@ -270,7 +270,13 @@ int main(){
       cout << "[3]-> Doritos" << endl;
       cout << "[4]-> Ruffles" << endl;
       cout << "[5]-> Cheetos" << endl;
-
+      cout << endl;
+      cout << "\nOpções bebidas:" << endl;
+      cout << "[1]-> Coca-cola" << endl;
+      cout << "[2]-> Fanta uva" << endl;
+      cout << "[3]-> Fanta laranja" << endl;
+      cout << "[4]-> Fanta guarana" << endl;
+      cout << endl;
       cout << "Deseja entrar na opções de comidas";
       cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
       cin >> sele_comida;
@@ -312,13 +318,7 @@ int main(){
         }
       }
       do{
-        cout << "\nOpções bebidas:" << endl;
-        cout << "[1]-> Coca-cola" << endl;
-        cout << "[2]-> Fanta uva" << endl;
-        cout << "[3]-> Fanta laranja" << endl;
-        cout << "[4]-> Fanta guarana" << endl;
-        cout << endl;
-        cout << "Se deseja entrar na opções de bebidas";
+        cout << "Deseja entrar na opções de bebidas";
         cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
         cin >> sele_bebida;
         if (sele_bebida == 's' || sele_bebida == 'S'){
