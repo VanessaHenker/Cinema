@@ -114,6 +114,8 @@ int opcao = 0, escolha_hora = 0;
 
 // variáveis de escolha comidas e bebidas;
 int escolha_bebida = 0, escolha_comida = 0, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
+int escolha_pipoca = 0;
+int guarda_pipoca;
 int loop_bebida = 1, guarda_coca, guarda_uva, guarda_laran, guarda_guara;
 char sele_bebida, sele_comida, sele_coca, sele_uva, sele_laran, sele_guara;
 
@@ -506,12 +508,13 @@ void escolha_horario(int escolha_hora, int opcao){
   }
 }
 int escolha_tipo_comida(int escolha_comida){
+  setlocale(LC_ALL, "Portuguese_Brazil");
   switch (escolha_comida){
     case 1:
        cout << comida1.aperit << comida1.preco << endl;
        cout << comida2.aperit << comida2. preco << endl;
        cout << comida3.aperit << comida3.preco << endl;
-      escolha_comida = escolher_tam_bc();
+      escolha_pipoca = escolher_tam_bc();
        break;
      case 2: 
        cout << comida4.aperit << comida4.preco << endl;
@@ -577,10 +580,63 @@ int escolher_tam_bc(){
   return 0;
 }
 
-float soma_pipoca(){
+float soma_pipoca(int escolha_pipoca){
+setlocale(LC_ALL, "Portuguese_Brazil");
 
+int i, qtd_pipoca[4];
+float total;
+i = 0;
+total = 0;
+
+for (i < 0; i < 4; i++){
+    qtd_pipoca[i] = 0;
+  }
+  switch (escolha_pipoca){
+  case 1:
+    do{
+      cout << "\nQuantidade: ";
+      cin >> guarda_pipoca;
+      if (guarda_pipoca < 0){
+        cout << "\nQuantidade inválida, tente novamente! ";
+      }
+    } while (guarda_pipoca < 0);
+    guarda_pipoca = guarda_pipoca * comida1.preco;
+    qtd_pipoca[0] = qtd_pipoca[0] + guarda_pipoca;
+    break;
+  case 2:
+    do{
+      cout << "\nQuantidade: ";
+      cin >> guarda_pipoca;
+      if (guarda_pipoca < 0){
+        cout << "\nQuantidade inválida, tente novamente! ";
+      }
+    } while (guarda_pipoca < 0);
+    guarda_pipoca = guarda_pipoca * comida2.preco;
+    qtd_pipoca[1] = qtd_pipoca[1] + guarda_pipoca;
+    break;
+  case 3:
+    do{
+      cout << "\nQuantidade: ";
+      cin >> guarda_pipoca;
+      if (guarda_pipoca < 0){
+        cout << "\nQuantidade inválida, tente novamente! ";
+      }
+    } while (guarda_pipoca < 0);
+    guarda_pipoca = guarda_pipoca * comida3.preco;
+    qtd_pipoca[2] = qtd_pipoca[2] + guarda_pipoca;
+    break;
+  default:
+    if (escolha_coca != 0){
+      cout << "\nValor inválido, tente novamente!";
+    }
+    break;
+  }
+
+  for (i = 0; i < 4; i++){
+    total = total + qtd_pipoca[i];
+  }
+  return total;
 }
-
 
 float soma_coca(int escolha_coca){
   setlocale(LC_ALL, "Portuguese_Brazil");
