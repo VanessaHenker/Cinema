@@ -77,7 +77,7 @@ Bebida bebida6 = {"[2]Fanta uva       350ml R$ ", 6};
 Bebida bebida7 = {"[3]Fanta uva ZERO  350ml R$ ", 6.50};
 Bebida bebida8 = {"[4]Fanta uva       600ml R$ ", 8};
 
-Bebida bebida9 = {"[1]Fanta laranja        237ml R$ ", 4};
+Bebida bebida9 = {" [1]Fanta laranja        237ml R$ ", 4};
 Bebida bebida10 = {"[2]Fanta laranja        350ml R$ ", 6};
 Bebida bebida11 = {"[3]Fanta laranja ZERO   350ml R$ ", 6.50};
 Bebida bebida12 = {"[4]Fanta laranja        600ml R$", 8};
@@ -96,8 +96,8 @@ Comida comida5 = {"[2]Fandangos 45g  R$ ", 6};
 Comida comida6 = {"[3]Fandangos 90g  R$ ", 9};
 Comida comida7 = {"[4]Fangangos 140g R$ ", 12};
 
-Comida comida8 = {"[1]Doritos 37g   R$ ", 4};
-Comida comida9 = {"[2]Doritos 45g   R$ ", 6};
+Comida comida8 = { "[1]Doritos 37g   R$ ", 4};
+Comida comida9 = { "[2]Doritos 45g   R$ ", 6};
 Comida comida10 = {"[3]Doritos 90g  R$ ", 9};
 Comida comida11 = {"[4]Doritos 140g R$ ", 12};
 
@@ -135,19 +135,14 @@ int guarda_pipoca = 0, guarda_fand = 0, guarda_dori = 0, guarda_ruffles = 0, gua
 int loop_tela = 0, guarda_coca = 0, guarda_uva = 0, guarda_laran = 0, guarda_guara = 0;
 char sele_bebida, sele_comida;
 float total_final = 0, total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_bebida = 0;
- 
+
 // variaveis pra sessao filme
 int loop_sessao = 0;
+
 int main(){
   int escolha_sessao;
-  total_final = 0;
-  total_bc = 0; 
-  soma_comida = 0; 
-  guarda_comida = 0, 
-  soma_bebida = 0;
-  guarda_bebida = 0;
- 
- while (loop_menu == 0){
+  
+  while (loop_menu == 0){
     total_bc = 0;
     total_final = 0;
     total_ingresso = 0;
@@ -164,16 +159,16 @@ int main(){
       cin >> sele_sessao;
     } while (sele_sessao != 'N' && sele_sessao != 'n' && sele_sessao != 's' && sele_sessao != 'S');
     if (sele_sessao == 'S' || sele_sessao == 's'){
-       sessao_escolha();
-       mostrar_sala();
+      sessao_escolha();
+      mostrar_sala();
     }
     cout << endl;
     // system("cls");
-      escolher_tipo_bc();
-    
-    cout << "\nTOTAL: " << "R$ "<< total_final << endl;
+    escolher_tipo_bc();
+
+    cout << "\nTOTAL: " << "R$ " << total_final << endl;
+    loop_menu = 0;
   }
-  
   return 0;
 }
 
@@ -223,7 +218,7 @@ void sessao_escolha(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   escolha_hora = 0;
   opcao = 0;
-  
+
   do{
     cout << "\nSelecione a sessão: ";
     cin >> opcao;
@@ -240,7 +235,6 @@ void sessao_escolha(){
         }
       } while (escolha_hora > 2 || escolha_hora <= 0);
       escolha_horario(escolha_hora, opcao);
-      
       break;
     case 2:
       do{
@@ -252,7 +246,6 @@ void sessao_escolha(){
         cin >> escolha_hora;
       } while (escolha_hora > 3 || escolha_hora <= 0);
       escolha_horario(escolha_hora, opcao);
-     
       break;
     case 3:
       do{
@@ -263,8 +256,7 @@ void sessao_escolha(){
         cin >> escolha_hora;
       } while (escolha_hora > 2 || escolha_hora <= 0);
       escolha_horario(escolha_hora, opcao);
-      
-      break;
+        break;
     case 4:
       do{
         // system("cls");
@@ -276,7 +268,6 @@ void sessao_escolha(){
         }
       } while (escolha_hora > 2 || escolha_hora <= 0);
       escolha_horario(escolha_hora, opcao);
-     
       break;
     default:
       cout << "\nSessão não existe, Tente novamente!";
@@ -309,12 +300,10 @@ void escolha_horario(int escolha_hora, int opcao){
       cout << "Horário: " << "16:00" << endl;
     }
     if (escolha_hora == 2 && opcao == 2){
-      cout << "Horário: "
-           << "18:30" << endl;
+      cout << "Horário: " << "18:30" << endl;
     }
     if (escolha_hora == 3 && opcao == 2){
-      cout << "Horário: "
-           << "21:00" << endl;
+      cout << "Horário: " << "21:00" << endl;
     }
     cout << "Sala: " << sessao2.sala << endl;
     cout << "Gênero: " << sessao2.filme.genero << endl;
@@ -325,10 +314,10 @@ void escolha_horario(int escolha_hora, int opcao){
     cout << "\nSessão " << opcao << ":" << " SELECIONADA" << "!" << endl;
     cout << "Filme: " << sessao3.filme.titulo << endl;
     if (escolha_hora == 1 && opcao == 3){
-      cout << "Horário: "<< "15:30" << endl;
+      cout << "Horário: " << "15:30" << endl;
     }
     if (escolha_hora == 2 && opcao == 3){
-      cout << "Horário: "<< "20:30" << endl;
+      cout << "Horário: " << "20:30" << endl;
     }
     cout << "Sala: " << sessao3.sala << endl;
     cout << "Gênero: " << sessao3.filme.genero << endl;
@@ -385,7 +374,7 @@ void sessao_1(){
   int escolha1, escolha2;
   char n, reserva_polt, guarda_polt;
   int i, j;
-  
+
   guarda_polt = 0;
   escolha1 = 0;
   escolha2 = 0;
@@ -393,7 +382,7 @@ void sessao_1(){
   j = 0;
   loop_sessao = 0;
   reserva_polt = 's', 'S';
-  
+
   for (i = 0; i < 3; i++){
     for (j = 0; j < 3; j++){
       cadeiras[i][j] = false;
@@ -469,16 +458,16 @@ void sessao_1(){
         if (cadeiras[i][j] == true){
           cout << i << j << ", ";
           guarda_polt++;
+        }
       }
     }
-  }
     compra_ing(guarda_polt);
   }
 }
 void sessao_2(){
   setlocale(LC_ALL, "Portuguese_Brazil");
 
- setlocale(LC_ALL, "Portuguese_Brazil");
+  setlocale(LC_ALL, "Portuguese_Brazil");
   bool cadeiras[4][4];
   int escolha1, escolha2;
   char n, reserva_polt, guarda_polt;
@@ -495,7 +484,7 @@ void sessao_2(){
       cadeiras[i][j] = false;
     }
   }
-  
+
   for (i = 0; i < 4; i++){
     for (j = 0; j < 4; j++){
       if (cadeiras[i][j] == true){
@@ -557,9 +546,9 @@ void sessao_2(){
     }
   } while (reserva_polt == 's' || reserva_polt == 'S');
   cout << endl;
-  
+
   if (reserva_polt == 'n' || reserva_polt == 'N'){
-    
+
     cout << "\nPoltronas selecionadas: ";
     for (i = 0; i < 4; i++){
       for (j = 0; j < 4; j++){
@@ -737,7 +726,7 @@ void loop_hora(){
     escolher_tipo_bc();
     main();
   }
-} 
+}
 
 float compra_ing(int guarda_polt){
   setlocale(LC_ALL, "Portuguese_Brazil");
@@ -748,7 +737,7 @@ float compra_ing(int guarda_polt){
   guarda_ingresso = 0;
   qtd_ingresso = 0;
   total_ingresso = 0;
-do{
+  do{
     cout << endl;
     cout << "\n[1]Ingresso inteiro R$" << ing_int;
     cout << "\n[2]Ingresso meio R$" << ing_meia;
@@ -757,7 +746,7 @@ do{
     cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
     cin >> sele_ingresso;
   } while (sele_ingresso != 's' && sele_ingresso != 'S' && sele_ingresso != 'n' && sele_ingresso != 'N');
-if (sele_ingresso == 's' || sele_ingresso == 'S'){
+  if (sele_ingresso == 's' || sele_ingresso == 'S'){
     do{
       do{
         do{
@@ -806,29 +795,28 @@ if (sele_ingresso == 's' || sele_ingresso == 'S'){
           qtd_ingresso = qtd_ingresso * ing_meia;
           guarda_ingresso = guarda_ingresso + qtd_ingresso;
         }
-        if(mostra_ing == guarda_polt){
-        cout << "\nAtenção! É necessário comprovar este ingresso para entrar na sessão.";
-      }
-    } while (mostra_ing < guarda_polt || mostra_ing > guarda_polt || mostra_ing == 0);
-      if (mostra_ing < guarda_polt || mostra_ing == 0){
-          cout << "\nErro, foram " << guarda_polt << " poltronas selecionadas!";
-      } 
-      do{
-          cout << endl;
-          cout << "\n     TROCAR INGRESSOS                COMIDAS E BEBIDAS";
-          cout << "\n <-Digite 0 para voltar <-      -> Digite 1 para prosseguir->  ";
-          cin >> loop_tela;
-        } while (loop_tela != 0 && loop_tela != 1);
-        if(loop_tela == 0){
-          mostra_ing = 0;
-          qtd_ingresso = 0;
-          guarda_ingresso = 0;
+        if (mostra_ing == guarda_polt){
+          cout << "\nAtenção! É necessário comprovar este ingresso para entrar na sessão.";
         }
-      } while (loop_tela == 0);
-    
-  } 
+      } while (mostra_ing < guarda_polt || mostra_ing > guarda_polt || mostra_ing == 0);
+      if (mostra_ing < guarda_polt || mostra_ing == 0){
+        cout << "\nErro, foram " << guarda_polt << " poltronas selecionadas!";
+      }
+      do{
+        cout << endl;
+        cout << "\n     TROCAR INGRESSOS                COMIDAS E BEBIDAS";
+        cout << "\n <-Digite 0 para voltar <-      -> Digite 1 para prosseguir->  ";
+        cin >> loop_tela;
+      } while (loop_tela != 0 && loop_tela != 1);
+      if (loop_tela == 0){
+        mostra_ing = 0;
+        qtd_ingresso = 0;
+        guarda_ingresso = 0;
+      }
+    } while (loop_tela == 0);
+  }
   total_ingresso = total_ingresso + guarda_ingresso;
-  cout << "\nTOTAL: " << total_ingresso;
+  cout << "\nTOTAL: " << total_ingresso << endl;
   return 0;
 }
 
@@ -890,6 +878,7 @@ float escolha_tipo_comida(int escolha_comida){
     total[5] = soma_chocolate(escolha_choc);
     break;
   default:
+    cout << endl;
     cout << "\nNumero inválido, Tente novamente";
     break;
   }
@@ -951,32 +940,32 @@ float escolha_tipo_bebida(int escolha_bebida){
 }
 
 void escolher_tipo_bc(){
-    total_final = 0;
-    soma_comida = 0; 
-    guarda_comida = 0, 
-    soma_bebida = 0;
-    guarda_bebida = 0;
-    cout << "\nOpções comidas: " << endl;
-    cout << "[1]-> Pipocas" << endl;
-    cout << "[2]-> Fandangos" << endl;
-    cout << "[3]-> Doritos" << endl;
-    cout << "[4]-> Ruffles" << endl;
-    cout << "[5]-> Cheetos" << endl;
-    cout << "[6]-> Barras de chocolate" << endl;
+  total_final = 0;
+  soma_comida = 0;
+  guarda_comida = 0,
+  soma_bebida = 0;
+  guarda_bebida = 0;
+  cout << "\nOpções comidas: " << endl;
+  cout << "[1]-> Pipocas" << endl;
+  cout << "[2]-> Fandangos" << endl;
+  cout << "[3]-> Doritos" << endl;
+  cout << "[4]-> Ruffles" << endl;
+  cout << "[5]-> Cheetos" << endl;
+  cout << "[6]-> Barras de chocolate" << endl;
 
-    cout << "\nOpções bebidas:" << endl;
-    cout << "[1]-> Coca-cola" << endl;
-    cout << "[2]-> Fanta uva" << endl;
-    cout << "[3]-> Fanta laranja" << endl;
-    cout << "[4]-> Fanta guarana" << endl;
-    cout << endl;
+  cout << "\nOpções bebidas:" << endl;
+  cout << "[1]-> Coca-cola" << endl;
+  cout << "[2]-> Fanta uva" << endl;
+  cout << "[3]-> Fanta laranja" << endl;
+  cout << "[4]-> Fanta guarana" << endl;
+  cout << endl;
 
-    do{
-      cout << "\nDeseja entrar na opções de comidas";
-      cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
-      cin >> sele_comida;
-   } while (sele_comida != 'n' && sele_comida != 'N' && sele_comida != 's' && sele_comida != 'S');
-    // system("cls");
+  do{
+    cout << "\nDeseja entrar na opções de comidas";
+    cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
+    cin >> sele_comida;
+  } while (sele_comida != 'n' && sele_comida != 'N' && sele_comida != 's' && sele_comida != 'S');
+  // system("cls");
   if (sele_comida == 'S' || sele_comida == 's'){
     do{
       cout << "\nOpçoes comidas: " << endl;
@@ -989,52 +978,54 @@ void escolher_tipo_bc(){
       do{
         cout << "\nDigite o numero: ";
         cin >> escolha_comida;
-        if (escolha_comida > 6 || escolha_comida < 0){
-          cout << "\nValor inválido, Tente novamente!";
+        if (escolha_comida > 6 || escolha_comida <= 0){
+          cout << "\nValor inválido, Tente novamente!" << endl;
         }
       } while (escolha_comida > 6 || escolha_comida < 0);
       // system("cls");
       soma_comida = escolha_tipo_comida(escolha_comida);
       guarda_comida = guarda_comida + soma_comida;
-      cout << endl;
       do{
+        cout << endl;
         cout << "    OPÇÕES COMIDAS                   OPÇÕES BEBIDAS";
         cout << "\n<- Digite 0 para voltar <-   -> Digite 1 para proseguir ->  ";
-        cout << endl << "                           ";
+        cout << endl
+             << "                           ";
         cin >> loop_tela;
       } while (loop_tela != 1 && loop_tela != 0);
     } while (loop_tela == 0);
   }
   do{
-      cout << "\nDeseja entrar na opções de bebidas";
-      cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
-      cin >> sele_bebida;
-    } while (sele_bebida != 'n' && sele_bebida != 'N' && sele_bebida != 's' && sele_bebida != 'S');
-    if (sele_bebida == 's' || sele_bebida == 'S'){
+    cout << "\nDeseja entrar na opções de bebidas";
+    cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
+    cin >> sele_bebida;
+  } while (sele_bebida != 'n' && sele_bebida != 'N' && sele_bebida != 's' && sele_bebida != 'S');
+  if (sele_bebida == 's' || sele_bebida == 'S'){
+    do{
       do{
-        do{
-          cout << "\nOpções bebidas:" << endl;
-          cout << "[1]-> Coca-cola" << endl;
-          cout << "[2]-> Fanta uva" << endl;
-          cout << "[3]-> Fanta laranja" << endl;
-          cout << "[4]-> Fanta guarana" << endl;
-          cout << "\nDigite o numero: ";
-          cin >> escolha_bebida;
-          if (escolha_bebida > 4 || escolha_bebida < 0){
-            cout << "\nValor inválido, Tente novamente!";
-          }
-        } while (escolha_bebida > 4 || escolha_bebida < 0);
-        soma_bebida = escolha_tipo_bebida(escolha_bebida);
-        guarda_bebida = guarda_bebida + soma_bebida;
-        
-        do{
-          cout << endl;
-          cout << "       OPÇÕES BEBIDAS                  TELA INICIAL";
-          cout << "\n <- Digite 0 para voltar <-   -> Digite 1 para proseguir ->  ";
-          cout << endl << "                            ";
-          cin >> loop_tela;
-        } while (loop_tela != 1 && loop_tela != 0);
-      } while (loop_tela == 0);
+        cout << "\nOpções bebidas:" << endl;
+        cout << "[1]-> Coca-cola" << endl;
+        cout << "[2]-> Fanta uva" << endl;
+        cout << "[3]-> Fanta laranja" << endl;
+        cout << "[4]-> Fanta guarana" << endl;
+        cout << "\nDigite o numero: ";
+        cin >> escolha_bebida;
+        if (escolha_bebida > 4 || escolha_bebida < 0){
+          cout << "\nValor inválido, Tente novamente!";
+        }
+      } while (escolha_bebida > 4 || escolha_bebida < 0);
+      soma_bebida = escolha_tipo_bebida(escolha_bebida);
+      guarda_bebida = guarda_bebida + soma_bebida;
+
+      do{
+        cout << endl;
+        cout << "       OPÇÕES BEBIDAS                  TELA INICIAL";
+        cout << "\n <- Digite 0 para voltar <-   -> Digite 1 para proseguir ->  ";
+        cout << endl
+             << "                            ";
+        cin >> loop_tela;
+      } while (loop_tela != 1 && loop_tela != 0);
+    } while (loop_tela == 0);
   }
   total_bc = total_bc + (guarda_comida + guarda_bebida);
   total_final = total_final + total_bc + total_ingresso;
@@ -1104,10 +1095,11 @@ float soma_pipoca(int escolha_pipoca){
     qtd_pipoca[2] = qtd_pipoca[2] + guarda_pipoca;
     break;
   default:
-    if (escolha_coca != 0){
-      cout << "\nValor inválido, tente novamente!";
-    }
+    cout << endl;
+    if(escolha_pipoca < 0 || escolha_pipoca > 3){
+    cout << "\nValor inválido, tente novamente! " << endl;
     break;
+    }
   }
 
   for (i = 0; i < 3; i++){
@@ -1171,10 +1163,11 @@ float soma_fandangos(int escolha_fand){
     qtd_fand[3] = qtd_fand[3] + guarda_fand;
     break;
   default:
-    if (escolha_fand != 0){
-      cout << "\nValor inválido, tente novamente!";
-    }
+     cout << endl;
+    if(escolha_fand < 0 || escolha_fand > 4){
+    cout << "\nValor inválido, tente novamente!" << endl;
     break;
+    }
   }
 
   for (i = 0; i < 4; i++){
@@ -1192,7 +1185,7 @@ float soma_doritos(int escolha_doritos){
   for (i < 0; i < 4; i++){
     qtd_dori[i] = 0;
   }
-  switch (escolha_fand){
+  switch (escolha_dori){
   case 1:
     do{
       cout << "\nQuantidade: ";
@@ -1218,7 +1211,7 @@ float soma_doritos(int escolha_doritos){
   case 3:
     do{
       cout << "\nQuantidade: ";
-      cin >> guarda_fand;
+      cin >> guarda_dori;
       if (guarda_fand < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
@@ -1238,10 +1231,11 @@ float soma_doritos(int escolha_doritos){
     qtd_dori[3] = qtd_dori[3] + guarda_dori;
     break;
   default:
-    if (escolha_dori != 0){
-      cout << "\nValor inválido, tente novamente!";
-    }
+    cout << endl;
+    if(escolha_doritos < 0 || escolha_doritos > 4){
+    cout << "\nValor inválido, tente novamente!" << endl;
     break;
+    }
   }
 
   for (i = 0; i < 4; i++){
@@ -1305,10 +1299,11 @@ float soma_ruffles(int escolha_ruffles){
     qtd_ruffles[3] = qtd_ruffles[3] + guarda_ruffles;
     break;
   default:
-    if (escolha_ruffles != 0){
-      cout << "\nValor inválido, tente novamente!";
-    }
+    cout << endl;
+    if(escolha_ruffles < 0 || escolha_ruffles > 4){
+    cout << "\nValor inválido, tente novamente!" << endl;
     break;
+    }
   }
 
   for (i = 0; i < 4; i++){
@@ -1326,7 +1321,7 @@ float soma_cheetos(int escolha_cheetos){
   for (i < 0; i < 4; i++){
     qtd_cheetos[i] = 0;
   }
-  switch (escolha_ruffles){
+  switch (escolha_cheetos){
   case 1:
     do{
       cout << "\nQuantidade: ";
@@ -1372,10 +1367,11 @@ float soma_cheetos(int escolha_cheetos){
     qtd_cheetos[3] = qtd_cheetos[3] + guarda_cheetos;
     break;
   default:
-    if (escolha_cheetos != 0){
-      cout << "\nValor inválido, tente novamente!";
-    }
+    cout << endl;
+    if(escolha_cheetos < 0 || escolha_cheetos > 4){
+    cout << "\nValor inválido, tente novamente!" << endl;
     break;
+    }
   }
 
   for (i = 0; i < 4; i++){
@@ -1439,10 +1435,11 @@ float soma_chocolate(int escolha_choc){
     qtd_choc[3] = qtd_choc[3] + guarda_choc;
     break;
   default:
-    if (escolha_choc != 0){
-      cout << "\nValor inválido, tente novamente!";
-    }
+    cout << endl;
+    if(escolha_choc < 0 || escolha_choc > 4){
+    cout << "\nValor inválido, tente novamente!" << endl;
     break;
+    }
   }
 
   for (i = 0; i < 4; i++){
@@ -1507,12 +1504,12 @@ float soma_coca(int escolha_coca){
     qtd_coca[3] = qtd_coca[3] + guarda_coca;
     break;
   default:
-    if (escolha_coca != 0){
-      cout << "\nValor inválido, tente novamente!";
-    }
+    cout << endl;
+    if(escolha_coca < 0 || escolha_coca > 4){
+    cout << "\nValor inválido, tente novamente!" << endl;
     break;
+    }
   }
-
   for (i = 0; i < 4; i++){
     total = total + qtd_coca[i];
   }
@@ -1574,12 +1571,12 @@ float soma_fanta_uva(int escolha_uva){
     qtd_uva[3] = qtd_uva[3] + guarda_uva;
     break;
   default:
-    if (escolha_coca != 0){
-      cout << "\nValor inválido, tente novamente!";
-    }
+    cout << endl;
+    if(escolha_uva < 0 || escolha_uva > 4){
+    cout << "\nValor inválido, tente novamente!" << endl;
     break;
+    }
   }
-
   for (i = 0; i < 4; i++){
     total = total + qtd_uva[i];
   }
@@ -1641,12 +1638,12 @@ float soma_fanta_laran(int escolha_laran){
     qtd_laran[3] = qtd_laran[3] + guarda_laran;
     break;
   default:
-    if (escolha_coca != 0){
-      cout << "\nValor inválido, tente novamente!";
-    }
+    cout << endl;
+    if(escolha_laran < 0 || escolha_laran > 4){
+    cout << "\nValor inválido, tente novamente!" << endl;
     break;
   }
-
+}
   for (i = 0; i < 4; i++){
     total = total + qtd_laran[i];
   }
@@ -1708,12 +1705,12 @@ float soma_fanta_guara(int escolha_guara){
     qtd_guara[3] = qtd_guara[3] + guarda_guara;
     break;
   default:
-    if (escolha_coca != 0){
-      cout << "\nValor inválido, tente novamente!";
-    }
+    cout << endl;
+    if(escolha_guara < 0 || escolha_guara > 4){
+    cout << "\nValor inválido, tente novamente!" << endl;
     break;
+    }
   }
-
   for (i = 0; i < 4; i++){
     total = total + qtd_guara[i];
   }
