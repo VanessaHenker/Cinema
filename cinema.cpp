@@ -119,7 +119,7 @@ Comida comida23 = {"[4]Chocalate Garoto ao Leite 90g         R$ ", 7.50};
 // váriaveis de ingressos
 int escolha, sessao, fin_compra;
 int i, qtd_ingresso, loop_menu;
-int ingresso_poltrona = 0, guarda_ingresso = 0, compra_ingresso = 0;
+int ingresso_poltrona = 0, guarda_ingresso = 0, compra_ingresso = 0, mostra_ing = 0;
 char sele_ingresso;
 float ing_int, ing_meia, total_ingresso = 0;
 
@@ -372,7 +372,7 @@ void sessao_1(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   string cadeiras[10][5];
   int escolha1, escolha2;
-  char n, reserva_polt, guarda_polt;
+  char reserva_polt, guarda_polt;
   int i, j;
 
   guarda_polt = 0;
@@ -380,11 +380,10 @@ void sessao_1(){
   escolha2 = 0;
   i = 0;
   j = 0;
-  cout << endl;
- 
+      
   for (i = 0; i < 10; i++){
     for (j = 0; j < 5; j++){
-      if (cadeiras[i][j] == "[//]"){
+      if (cadeiras[i][j] == "[--]"){
         cout << "[--] ";
       }
       else{
@@ -406,17 +405,25 @@ void sessao_1(){
   if (loop_sessao == 0){
     loop_hora();
   }
-  cout << endl;
   do{
     if (loop_sessao == 1){
       do{
-        cout << "\nSelecionar assentos: ";
+      do{
+      cout << "\nSelecionar assentos: ";
       cin >> escolha1 >> escolha2;
+      if(cadeiras[escolha1][escolha2] == "[--]"){
+      cout << "\nEstá ocupado!" << endl;
+      }
       for (i = 0; i < 10; i++){
         for (j = 0; j < 5; j++){
-          if (cadeiras[i][j] == "[//]"){
-          cout << "[//] ";
+          if (cadeiras[i][j] == "[//]" || cadeiras[i][j] == "[--]"){
+            if (cadeiras[i][j] == "[//]"){
+            cout << "[//] ";
           }
+          if(cadeiras[i][j] == "[--]"){
+            cout << "[--] ";
+          }
+        } 
           else{
             cout << "[" << i << j << "] ";
           }
@@ -428,10 +435,11 @@ void sessao_1(){
         cout << endl;
       }
     } while (escolha1 > 9 || escolha2 > 4);
+    }while(cadeiras[escolha1][escolha2] == "[--]");
     if (cadeiras[escolha1][escolha2] == "[//]"){
-        cadeiras[escolha1][escolha2] = cadeiras[i][j];
-    }
-    else{
+        cadeiras[escolha1][escolha2] = "[ ]";
+      }
+    if(cadeiras[escolha1][escolha2] != "[--]" && cadeiras[escolha1][escolha2] != "[ ]"){
       cadeiras[escolha1][escolha2] = "[//]";
       cout << "\nO assento " << escolha1 << escolha2 << " foi SELECIONADA\n";
     }
@@ -440,7 +448,7 @@ void sessao_1(){
       cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
       cin >> reserva_polt;
       } while (reserva_polt != 'S' && reserva_polt != 's' && reserva_polt != 'n' && reserva_polt != 'N');
-    }
+    } 
   } while (reserva_polt == 's' || reserva_polt == 'S');
   cout << endl;
 
@@ -454,7 +462,31 @@ void sessao_1(){
         }
       }
     }
+    if(guarda_polt > 0){
     compra_ing(guarda_polt);
+    }
+    else{
+    cout << "\nNenhuma poltrona foi selecionada!" << endl;
+    }
+    cout << endl;
+    if(mostra_ing > 0){
+     for (i = 0; i < 10; i++){
+       for (j = 0; j < 5; j++){
+        if (cadeiras[i][j] == "[//]"){
+          cadeiras[i][j] = "[--]";
+          cout << "[--] ";
+      }
+      else{
+      cout << "[" << i << j << "] ";
+      }
+    }
+    cout << endl;
+  }
+    cout << endl;
+    cout << "\n            TELA";
+    cout << "\n--------------------------";
+    cout << endl;
+    }
   }
 }
 void sessao_2(){
@@ -723,7 +755,6 @@ void loop_hora(){
 
 float compra_ing(int guarda_polt){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  int mostra_ing;
   ing_int = 30;
   ing_meia = 15;
   mostra_ing = 0;
@@ -809,7 +840,7 @@ float compra_ing(int guarda_polt){
     } while (loop_tela == 0);
   }
   total_ingresso = total_ingresso + guarda_ingresso;
-  cout << "\nTOTAL: " << total_ingresso << endl;
+  cout << "\nTOTAL: " << total_ingresso;
   return 0;
 }
 
