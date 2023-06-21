@@ -842,6 +842,7 @@ void sessao_4(){
       do{
       cout << "\nSelecionar assentos: ";
       cin >> escolha1 >> escolha2;
+      system("cls");
       if(cadeiras[escolha1][escolha2] == "[--]"){
       cout << "\nEstá ocupado!" << endl;
       }
@@ -867,12 +868,16 @@ void sessao_4(){
       }
     } while (escolha1 > 9 || escolha2 > 4);
     }while(cadeiras[escolha1][escolha2] == "[--]");
-    if (cadeiras[escolha1][escolha2] == "[//]"){
+    if(cadeiras[escolha1][escolha2] == "[//]"){
         cadeiras[escolha1][escolha2] = "[ ]";
+        cout << "\nO assento " << escolha1 << escolha2 << " foi DESOCUPADO!";
+      }
+    else{
+        cadeiras[escolha1][escolha2] = "[//]";
       }
     if(cadeiras[escolha1][escolha2] != "[--]" && cadeiras[escolha1][escolha2] != "[ ]"){
       cadeiras[escolha1][escolha2] = "[//]";
-      cout << "\nO assento " << escolha1 << escolha2 << " foi SELECIONADA\n";
+      cout << "\nO assento " << escolha1 << escolha2 << " foi SELECIONADO\n";
     }
     do{
       cout << "\nSe deseja selecionar mais";
@@ -881,8 +886,8 @@ void sessao_4(){
       } while (reserva_polt != 'S' && reserva_polt != 's' && reserva_polt != 'n' && reserva_polt != 'N');
     } 
   } while (reserva_polt == 's' || reserva_polt == 'S');
-  cout << endl;
-
+    cout << endl;
+    system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     cout << "\nPoltronas selecionadas: ";
     for (i = 0; i < 12; i++){
