@@ -811,7 +811,7 @@ void sessao_4(){
   escolha2 = 0;
   i = 0;
   j = 0;
-      
+  cout << endl;   
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras[i][j] == "[--]"){
@@ -824,8 +824,8 @@ void sessao_4(){
     cout << endl;
   }
   cout << endl;
-  cout << "\n            TELA";
-  cout << "\n--------------------------";
+  cout << "\n             TELA";
+  cout << "\n---------------------------------";
   cout << "\n[ ] Disponivel";
   cout << "\n[/] Selecionado";
   cout << "\n[-] Ocupados";
@@ -862,6 +862,16 @@ void sessao_4(){
         }
         cout << endl;
       }
+      cout << endl;
+      cout << "\n             TELA";
+      cout << "\n---------------------------------";
+      cout << "\n[ ] Disponivel";
+      cout << "\n[/] Selecionado";
+      cout << "\n[-] Ocupados";
+      cout << "\n[B] Bloqueado";
+      cout << "\n[C] Cadeirante";
+      cout << endl;
+
       if (escolha1 > 9 || escolha2 > 4){
         cout << "\nNão existe, Tente novamente!";
         cout << endl;
@@ -870,16 +880,24 @@ void sessao_4(){
     }while(cadeiras[escolha1][escolha2] == "[--]");
     if(cadeiras[escolha1][escolha2] == "[//]"){
         cadeiras[escolha1][escolha2] = "[ ]";
-        cout << "\nO assento " << escolha1 << escolha2 << " foi DESOCUPADO!";
       }
     else{
         cadeiras[escolha1][escolha2] = "[//]";
       }
     if(cadeiras[escolha1][escolha2] != "[--]" && cadeiras[escolha1][escolha2] != "[ ]"){
       cadeiras[escolha1][escolha2] = "[//]";
-      cout << "\nO assento " << escolha1 << escolha2 << " foi SELECIONADO\n";
+      }
+      cout << endl;
+      cout << "\nAssentos selecionados: ";
+      for (i = 0; i < 10; i++){
+      for (j = 0; j < 5; j++){
+        if (cadeiras[i][j] == "[//]"){
+          cout << i << j << ", ";
+        }
+      } 
     }
     do{
+      cout << endl;
       cout << "\nSe deseja selecionar mais";
       cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
       cin >> reserva_polt;
@@ -919,8 +937,8 @@ void sessao_4(){
     cout << endl;
   }
     cout << endl;
-    cout << "\n            TELA";
-    cout << "\n--------------------------";
+    cout << "\n             TELA";
+    cout << "\n---------------------------------";
     cout << endl;
     }
   }
