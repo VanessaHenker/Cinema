@@ -541,8 +541,8 @@ void sessao_2(){
     cout << endl;
   }
   cout << endl;
-  cout << "\n            TELA";
-  cout << "\n--------------------------";
+  cout << "\n                     TELA";
+  cout << "\n------------------------------------------------";
   cout << "\n[ ] Disponivel";
   cout << "\n[/] Selecionado";
   cout << "\n[-] Ocupados";
@@ -580,8 +580,8 @@ void sessao_2(){
         cout << endl;
       }
       cout << endl;
-      cout << "\n            TELA";
-      cout << "\n--------------------------";
+      cout << "\n                     TELA";
+      cout << "\n------------------------------------------------";
       cout << "\n[ ] Disponivel";
       cout << "\n[/] Selecionado";
       cout << "\n[-] Ocupados";
@@ -605,7 +605,17 @@ void sessao_2(){
       cadeiras[escolha1][escolha2] = "[//]";
       cout << "\nO assento " << escolha1 << escolha2 << " foi SELECIONADO\n";
     }
+      cout << endl;
+      cout << "\nAssentos selecionados: ";
+      for (i = 0; i < 10; i++){
+      for (j = 0; j < 5; j++){
+        if (cadeiras[i][j] == "[//]"){
+          cout << i << j << ", ";
+        }
+      } 
+    }
     do{
+      cout << endl;
       cout << "\nSe deseja selecionar mais";
       cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
       cin >> reserva_polt;
