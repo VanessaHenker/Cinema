@@ -416,6 +416,7 @@ void sessao_1(){
      if(cadeiras[escolha1][escolha2] == "[--]"){
       cout << "\nEstá ocupado!" << endl;
       }
+      cout << endl;
       for (i = 0; i < 10; i++){
         for (j = 0; j < 5; j++){
           if (cadeiras[i][j] == "[//]" || cadeiras[i][j] == "[--]"){
@@ -432,6 +433,14 @@ void sessao_1(){
         }
         cout << endl;
       }
+      cout << "\n            TELA";
+      cout << "\n--------------------------";
+      cout << "\n[ ] Disponivel";
+      cout << "\n[/] Selecionado";
+      cout << "\n[-] Ocupados";
+      cout << "\n[B] Bloqueado";
+      cout << "\n[C] Cadeirante";
+      cout << endl;
       if (escolha1 > 9 || escolha2 > 4){
         cout << "\nNão existe, Tente novamente!";
         cout << endl;
@@ -449,6 +458,16 @@ void sessao_1(){
       cadeiras[escolha1][escolha2] = "[//]";
       cout << "\nO assento " << escolha1 << escolha2 << " foi SELECIONADO\n";
     }
+     cout << endl;
+     cout << "\nAssentos selecionados: ";
+      for (i = 0; i < 10; i++){
+      for (j = 0; j < 5; j++){
+        if (cadeiras[i][j] == "[//]"){
+          cout << i << j << ", ";
+        }
+      }
+    }
+    cout << endl;
     do{
       cout << endl;
       cout << "\nSe deseja selecionar mais";
@@ -460,7 +479,7 @@ void sessao_1(){
   cout << endl;
   system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
-    cout << "\nPoltronas selecionadas: ";
+    cout << "\nAssentos selecionados: ";
     for (i = 0; i < 10; i++){
       for (j = 0; j < 5; j++){
         if (cadeiras[i][j] == "[//]"){
@@ -473,7 +492,7 @@ void sessao_1(){
     compra_ing(guarda_polt);
     }
     else{
-    cout << "\nNenhuma poltrona foi selecionada!" << endl;
+    cout << "\nNenhum assento foi selecionado!" << endl;
     }
     cout << endl;
     system("cls");
