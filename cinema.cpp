@@ -559,6 +559,7 @@ void sessao_2(){
       do{
       cout << "\nSelecionar assentos: ";
       cin >> escolha1 >> escolha2;
+      system("cls");
       if(cadeiras[escolha1][escolha2] == "[--]"){
       cout << "\nEstá ocupado!" << endl;
       }
@@ -578,6 +579,15 @@ void sessao_2(){
         }
         cout << endl;
       }
+      cout << endl;
+      cout << "\n            TELA";
+      cout << "\n--------------------------";
+      cout << "\n[ ] Disponivel";
+      cout << "\n[/] Selecionado";
+      cout << "\n[-] Ocupados";
+      cout << "\n[B] Bloqueado";
+      cout << "\n[C] Cadeirante";
+      cout << endl;
       if (escolha1 > 9 || escolha2 > 4){
         cout << "\nNão existe, Tente novamente!";
         cout << endl;
@@ -586,10 +596,14 @@ void sessao_2(){
     }while(cadeiras[escolha1][escolha2] == "[--]");
     if (cadeiras[escolha1][escolha2] == "[//]"){
         cadeiras[escolha1][escolha2] = "[ ]";
+        cout << "\nO assento " << escolha1 << escolha2 << " foi DESOCUPADO!";
+      }
+    else{
+        cadeiras[escolha1][escolha2] = "[//]";
       }
     if(cadeiras[escolha1][escolha2] != "[--]" && cadeiras[escolha1][escolha2] != "[ ]"){
       cadeiras[escolha1][escolha2] = "[//]";
-      cout << "\nO assento " << escolha1 << escolha2 << " foi SELECIONADA\n";
+      cout << "\nO assento " << escolha1 << escolha2 << " foi SELECIONADO\n";
     }
     do{
       cout << "\nSe deseja selecionar mais";
