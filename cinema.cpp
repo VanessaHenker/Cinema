@@ -867,6 +867,7 @@ void sessao_4(){
   char reserva_polt, guarda_polt;
   int i, j;
 
+  reserva_polt = 's', 'S';
   guarda_polt = 0;
   escolha1 = 0;
   escolha2 = 0;
@@ -897,9 +898,9 @@ void sessao_4(){
   if (loop_sessao == 0){
     loop_hora();
   }
-  do{
-    if (loop_sessao == 1){
-      do{
+  if (loop_sessao == 1){
+  while (reserva_polt == 's' || reserva_polt == 'S'){
+    do{
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
@@ -933,11 +934,11 @@ void sessao_4(){
           cout << "\n[C] Cadeirante";
           cout << endl;
 
-          if (escolha1 > 9 || escolha2 > 4){
+          if (escolha1 > 11 || escolha2 > 5){
             cout << "\nNão existe, Tente novamente!";
             cout << endl;
           }
-        } while (escolha1 > 9 || escolha2 > 4);
+        } while (escolha1 > 11 || escolha2 > 5);
       } while (cadeiras[escolha1][escolha2] == "[--]");
       if (cadeiras[escolha1][escolha2] == "[//]"){
         cadeiras[escolha1][escolha2] = "[ ]";
@@ -948,23 +949,40 @@ void sessao_4(){
       if (cadeiras[escolha1][escolha2] != "[--]" && cadeiras[escolha1][escolha2] != "[ ]"){
         cadeiras[escolha1][escolha2] = "[//]";
       }
+     for (i = 0; i < 12; i++){
+      for (j = 0; j < 6; j++){
+        if (cadeiras[i][j] == "[//]" || cadeiras[i][j] == "[--]"){
+          if (cadeiras[i][j] == "[//]"){
+          cout << "[//] ";
+      }
+        if (cadeiras[i][j] == "[--]"){
+            cout << "[--] ";
+            }
+              }
+              else{
+                cout << "[" << i << j << "] ";
+              }
+            }
+            cout << endl;
+          }
       cout << endl;
       cout << "\nAssentos selecionados: ";
-      for (i = 0; i < 10; i++){
-        for (j = 0; j < 5; j++){
+      for (i = 0; i < 12; i++){
+        for (j = 0; j < 6; j++){
           if (cadeiras[i][j] == "[//]"){
             cout << i << j << ", ";
           }
         }
       }
-      do{
+      reserva_polt = 't';
+      while (reserva_polt != 'S' && reserva_polt != 's' && reserva_polt != 'n' && reserva_polt != 'N'){
         cout << endl;
         cout << "\nSe deseja selecionar mais";
         cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
         cin >> reserva_polt;
-      } while (reserva_polt != 'S' && reserva_polt != 's' && reserva_polt != 'n' && reserva_polt != 'N');
+      } 
     }
-  } while (reserva_polt == 's' || reserva_polt == 'S');
+  } 
   cout << endl;
   // system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
