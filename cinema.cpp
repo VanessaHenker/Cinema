@@ -127,6 +127,7 @@ float ing_int, ing_meia, total_ingresso = 0;
 int qtd_filme = 4;
 char sele_sessao;
 int opcao = 0, escolha_hora = 0;
+string cadeiras[10][5];
 
 // variáveis de escolha comidas e bebidas;
 int escolha_bebida = 0, escolha_comida = 0, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
@@ -372,7 +373,6 @@ void mostrar_sala(){
 }
 void sessao_1(){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  string cadeiras[10][5];
   int escolha1, escolha2;
   char reserva_polt, guarda_polt;
   int i, j;
