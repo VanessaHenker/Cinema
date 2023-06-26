@@ -967,14 +967,14 @@ void sessao_4(){
 }
 
 void loop_hora(){
-  do{
+  loop_sessao = 2;
+  while (loop_sessao != 1 && loop_sessao != 0){
     cout << endl;
     cout << "\n      SESSÂO FILME                SELECIONAR POLTRONAS";
     cout << "\n <- Digite 0 para voltar <-   ->Digite 1 para prosseguir->  ";
-    cout << endl
-         << "                            ";
+    cout << endl << "                            ";
     cin >> loop_sessao;
-  } while (loop_sessao != 1 && loop_sessao != 0);
+  } 
   if (loop_sessao == 0){
     sessao_filme();
     sessao_escolha();
