@@ -127,7 +127,7 @@ float ing_int, ing_meia, total_ingresso = 0;
 int qtd_filme = 4;
 char sele_sessao;
 int opcao = 0, escolha_hora = 0;
-string cadeiras1[10][5], cadeiras2[12][6];
+string cadeiras1[10][5], cadeiras2[12][6], cadeiras3[10][6];
 
 // variáveis de escolha comidas e bebidas;
 int escolha_bebida = 0, escolha_comida = 0, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
@@ -378,17 +378,12 @@ void sessao_1(){
   int i, j;
   reserva_polt = 's', 'S';
   guarda_polt = 0;
-  escolha1 = 10;
-  escolha2 = 5;
+  escolha1 = 0;
+  escolha2 = 0;
   i = 0;
   j = 0;
   cout << endl;
 
-  for (i = 0; i < 1; i++){
-    for (j = 0; j < 1; j++){
-      cadeiras1[0][0] = "[--]";
-    }
-  }
   for (i = 0; i < 10; i++){
     for (j = 0; j < 5; j++){
       if (cadeiras1[i][j] == "[--]"){
@@ -703,11 +698,10 @@ void sessao_2(){
 }
 void sessao_3(){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  string cadeiras[10][6];
   int escolha1, escolha2;
   char reserva_polt, guarda_polt;
   int i, j;
-
+  
   reserva_polt = 's', 'S';
   guarda_polt = 0;
   escolha1 = 0;
@@ -717,7 +711,7 @@ void sessao_3(){
   cout << endl;
   for (i = 0; i < 10; i++){
     for (j = 0; j < 6; j++){
-      if (cadeiras[i][j] == "[--]"){
+      if (cadeiras3[i][j] == "[--]"){
         cout << "[--] ";
       }
       else{
@@ -742,20 +736,18 @@ void sessao_3(){
   if (loop_sessao == 1){
   while (reserva_polt == 's' || reserva_polt == 'S'){
     do{
-        do{
+      do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
           // system("cls");
-          if (cadeiras[escolha1][escolha2] == "[--]"){
-            cout << "\nEstá ocupado!" << endl;
-          }
+          cout << endl;
           for (i = 0; i < 10; i++){
             for (j = 0; j < 6; j++){
-              if (cadeiras[i][j] == "[//]" || cadeiras[i][j] == "[--]"){
-                if (cadeiras[i][j] == "[//]"){
+              if (cadeiras3[i][j] == "[//]" || cadeiras3[i][j] == "[--]"){
+                if (cadeiras3[i][j] == "[//]"){
                   cout << "[//] ";
                 }
-                if (cadeiras[i][j] == "[--]"){
+                if (cadeiras3[i][j] == "[--]"){
                   cout << "[--] ";
                 }
               }
@@ -765,46 +757,60 @@ void sessao_3(){
             }
             cout << endl;
           }
-          if (escolha1 > 9 || escolha2 > 4){
+          cout << "\n            TELA";
+          cout << "\n--------------------------";
+          cout << "\n[ ] Disponivel";
+          cout << "\n[/] Selecionado";
+          cout << "\n[-] Ocupados";
+          cout << "\n[B] Bloqueado";
+          cout << "\n[C] Cadeirante";
+          cout << endl;
+          if (escolha1 > 9 || escolha2 > 5){
             cout << "\nNão existe, Tente novamente!";
             cout << endl;
           }
-        } while (escolha1 > 9 || escolha2 > 4);
-      } while (cadeiras[escolha1][escolha2] == "[--]");
-      if (cadeiras[escolha1][escolha2] == "[//]"){
-        cadeiras[escolha1][escolha2] = "[ ]";
+        } while(escolha1 > 9 || escolha2 > 5);
+        if (cadeiras3[escolha1][escolha2] == "[--]"){
+          cout << "\nEstá ocupado!";
+          cout << endl;
+        }
+      } while (cadeiras3[escolha1][escolha2] == "[--]");
+      if (cadeiras3[escolha1][escolha2] == "[//]"){
+        cadeiras3[escolha1][escolha2] = "[ ]";
       }
       else{
-        cadeiras[escolha1][escolha2] = "[//]";
+        cadeiras3[escolha1][escolha2] = "[//]";
       }
-      if (cadeiras[escolha1][escolha2] != "[--]" && cadeiras[escolha1][escolha2] != "[ ]"){
-        cadeiras[escolha1][escolha2] = "[//]";
+      if (cadeiras3[escolha1][escolha2] != "[--]" && cadeiras3[escolha1][escolha2] != "[ ]"){
+        cadeiras3[escolha1][escolha2] = "[//]";
       }
+      
       for (i = 0; i < 10; i++){
-        for (j = 0; j < 6; j++){
-          if (cadeiras[i][j] == "[//]" || cadeiras[i][j] == "[--]"){
-            if (cadeiras[i][j] == "[//]"){
-              cout << "[//] ";
-            }
-            if (cadeiras[i][j] == "[--]"){
-              cout << "[--] ";
+       for (j = 0; j < 6; j++){
+        if (cadeiras3[i][j] == "[//]" || cadeiras3[i][j] == "[--]"){
+          if (cadeiras3[i][j] == "[//]"){
+            cout << "[//] ";
+          }
+          if (cadeiras3[i][j] == "[--]"){
+            cout << "[--] ";
+          }
+        }
+          else{
+            cout << "[" << i << j << "] ";
             }
           }
-            else{
-              cout << "[" << i << j << "] ";
-            }
-          }
-            cout << endl;
+          cout << endl;
         }
       cout << endl;
       cout << "\nAssentos selecionados: ";
       for (i = 0; i < 10; i++){
-        for (j = 0; j < 5; j++){
-          if (cadeiras[i][j] == "[//]"){
+        for (j = 0; j < 6; j++){
+          if (cadeiras3[i][j] == "[//]"){
             cout << i << j << ", ";
           }
         }
       }
+      cout << endl;
       reserva_polt = 't';
       while (reserva_polt != 'S' && reserva_polt != 's' && reserva_polt != 'n' && reserva_polt != 'N'){
         cout << endl;
@@ -813,14 +819,14 @@ void sessao_3(){
         cin >> reserva_polt;
       } 
     }
-  } 
+  }
   cout << endl;
   // system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     cout << "\nPoltronas selecionadas: ";
     for (i = 0; i < 10; i++){
       for (j = 0; j < 6; j++){
-        if (cadeiras[i][j] == "[//]"){
+        if (cadeiras3[i][j] == "[//]"){
           cout << i << j << ", ";
           guarda_polt++;
         }
@@ -836,8 +842,8 @@ void sessao_3(){
     if (mostra_ing > 0){
       for (i = 0; i < 10; i++){
         for (j = 0; j < 6; j++){
-          if (cadeiras[i][j] == "[//]"){
-            cadeiras[i][j] = "[--]";
+          if (cadeiras3[i][j] == "[//]"){
+            cadeiras3[i][j] = "[--]";
             cout << "[--] ";
           }
           else{
