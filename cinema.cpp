@@ -1737,7 +1737,7 @@ float soma_chocolate(int escolha_choc){
       cout << "\nQuantidade: ";
       cin >> guarda_choc;
       if (guarda_choc < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     } 
     guarda_choc = guarda_choc * comida20.preco;
@@ -1749,7 +1749,7 @@ float soma_chocolate(int escolha_choc){
       cin >> guarda_choc;
       if (guarda_choc < 0)
       {
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     } 
     guarda_choc = guarda_choc * comida21.preco;
@@ -1760,7 +1760,7 @@ float soma_chocolate(int escolha_choc){
       cout << "\nQuantidade: ";
       cin >> guarda_choc;
       if (guarda_choc < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     } 
     guarda_choc = guarda_choc * comida22.preco;
@@ -1771,7 +1771,7 @@ float soma_chocolate(int escolha_choc){
       cout << "\nQuantidade: ";
       cin >> guarda_choc;
       if (guarda_choc < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     } 
     guarda_choc = guarda_choc * comida23.preco;
@@ -1797,7 +1797,7 @@ float soma_coca(int escolha_coca){
   float total;
   i = 0;
   total = 0;
-
+  guarda_coca = -1;
   for (i < 0; i < 4; i++){
     qtd_coca[i] = 0;
   }
@@ -1825,24 +1825,24 @@ float soma_coca(int escolha_coca){
     qtd_coca[1] = qtd_coca[1] + guarda_coca;
     break;
   case 3:
-    do{
+    while (guarda_coca < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_coca;
       if (guarda_coca < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_coca < 0);
+    } 
     guarda_coca = guarda_coca * bebida3.preco;
     qtd_coca[2] = qtd_coca[2] + guarda_coca;
     break;
   case 4:
-    do{
+    while (guarda_coca < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_coca;
       if (guarda_coca < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_coca < 0);
+    } 
     guarda_coca = guarda_coca * bebida4.preco;
     qtd_coca[3] = qtd_coca[3] + guarda_coca;
     break;
@@ -1864,24 +1864,24 @@ float soma_fanta_uva(int escolha_uva){
   float total;
   i = 0;
   total = 0;
-
+  guarda_uva = -1;
   for (i < 0; i < 4; i++){
     qtd_uva[i] = 0;
   }
   switch (escolha_uva){
   case 1:
-    do{
+    while (guarda_uva < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_uva;
       if (guarda_uva < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_uva < 0);
+    } 
     guarda_uva = guarda_uva * bebida5.preco;
     qtd_uva[0] = qtd_uva[0] + guarda_uva;
     break;
   case 2:
-    do{
+    while (guarda_uva < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_uva;
       if (guarda_uva < 0){
@@ -1892,24 +1892,24 @@ float soma_fanta_uva(int escolha_uva){
     qtd_uva[1] = qtd_uva[1] + guarda_uva;
     break;
   case 3:
-    do{
+    while (guarda_uva < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_uva;
       if (guarda_uva < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_uva < 0);
+    } 
     guarda_uva = guarda_uva * bebida7.preco;
     qtd_uva[2] = qtd_uva[2] + guarda_uva;
     break;
   case 4:
-    do{
+    while (guarda_uva < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_uva;
       if (guarda_uva < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_uva < 0);
+    } 
     guarda_uva = guarda_uva * bebida8.preco;
     qtd_uva[3] = qtd_uva[3] + guarda_uva;
     break;
@@ -1931,52 +1931,52 @@ float soma_fanta_laran(int escolha_laran){
   float total;
   i = 0;
   total = 0;
-
+  guarda_laran = -1;
   for (i < 0; i < 4; i++){
     qtd_laran[i] = 0;
   }
   switch (escolha_laran){
   case 1:
-    do{
+    while (guarda_laran < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_laran;
-      if (guarda_uva < 0){
+      if (guarda_laran < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_laran < 0);
+    } 
     guarda_laran = guarda_laran * bebida9.preco;
     qtd_laran[0] = qtd_laran[0] + guarda_laran;
     break;
   case 2:
-    do{
+    while (guarda_laran < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_laran;
       if (guarda_laran < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_laran < 0);
+    } 
     guarda_laran = guarda_laran * bebida10.preco;
     qtd_laran[1] = qtd_laran[1] + guarda_laran;
     break;
   case 3:
-    do{
+    while (guarda_laran < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_laran;
       if (guarda_laran < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_laran < 0);
+    } 
     guarda_laran = guarda_laran * bebida11.preco;
     qtd_laran[2] = qtd_laran[2] + guarda_laran;
     break;
   case 4:
-    do{
+    while (guarda_laran < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_laran;
       if (guarda_laran < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_laran < 0);
+    } 
     guarda_laran = guarda_laran * bebida12.preco;
     qtd_laran[3] = qtd_laran[3] + guarda_laran;
     break;
@@ -1998,52 +1998,52 @@ float soma_fanta_guara(int escolha_guara){
   float total;
   i = 0;
   total = 0;
-
+  guarda_guara = -1;
   for (i < 0; i < 4; i++){
     qtd_guara[i] = 0;
   }
   switch (escolha_guara){
   case 1:
-    do{
+    while (guarda_guara < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_guara;
       if (guarda_guara < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_guara < 0);
+    } 
     guarda_guara = guarda_guara * bebida5.preco;
     qtd_guara[0] = qtd_guara[0] + guarda_guara;
     break;
   case 2:
-    do{
+    while (guarda_guara < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_guara;
       if (guarda_guara < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_guara < 0);
+    } 
     guarda_guara = guarda_guara * bebida6.preco;
     qtd_guara[1] = qtd_guara[1] + guarda_guara;
     break;
   case 3:
-    do{
+    while (guarda_guara < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_guara;
       if (guarda_guara < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_guara < 0);
+    } 
     guarda_guara = guarda_guara * bebida7.preco;
     qtd_guara[2] = qtd_guara[2] + guarda_guara;
     break;
   case 4:
-    do{
+    while (guarda_guara < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_guara;
       if (guarda_guara < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_guara < 0);
+    } 
     guarda_guara = guarda_guara * bebida8.preco;
     qtd_guara[3] = qtd_guara[3] + guarda_guara;
     break;
