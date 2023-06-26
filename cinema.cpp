@@ -376,10 +376,10 @@ void sessao_1(){
   int escolha1, escolha2;
   char reserva_polt, guarda_polt;
   int i, j;
-
+  reserva_polt = 's', 'S';
   guarda_polt = 0;
-  escolha1 = 0;
-  escolha2 = 0;
+  escolha1 = 10;
+  escolha2 = 5;
   i = 0;
   j = 0;
   cout << endl;
@@ -413,10 +413,10 @@ void sessao_1(){
   if (loop_sessao == 0){
     loop_hora();
   }
-  do{
-    if (loop_sessao == 1){
+  if (loop_sessao == 1){
+  while (reserva_polt == 's' || reserva_polt == 'S'){
+    do{
       do{
-        do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
           // system("cls");
@@ -464,6 +464,23 @@ void sessao_1(){
       if (cadeiras[escolha1][escolha2] != "[--]" && cadeiras[escolha1][escolha2] != "[ ]"){
         cadeiras[escolha1][escolha2] = "[//]";
       }
+      
+      for (i = 0; i < 10; i++){
+       for (j = 0; j < 5; j++){
+        if (cadeiras[i][j] == "[//]" || cadeiras[i][j] == "[--]"){
+          if (cadeiras[i][j] == "[//]"){
+            cout << "[//] ";
+          }
+          if (cadeiras[i][j] == "[--]"){
+            cout << "[--] ";
+          }
+        }
+          else{
+            cout << "[" << i << j << "] ";
+            }
+          }
+          cout << endl;
+        }
       cout << endl;
       cout << "\nAssentos selecionados: ";
       for (i = 0; i < 10; i++){
@@ -474,14 +491,15 @@ void sessao_1(){
         }
       }
       cout << endl;
-      do{
+      reserva_polt = 't';
+      while (reserva_polt != 'S' && reserva_polt != 's' && reserva_polt != 'n' && reserva_polt != 'N'){
         cout << endl;
         cout << "\nSe deseja selecionar mais";
         cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
         cin >> reserva_polt;
-      } while (reserva_polt != 'S' && reserva_polt != 's' && reserva_polt != 'n' && reserva_polt != 'N');
+      } 
     }
-  } while (reserva_polt == 's' || reserva_polt == 'S');
+  }
   cout << endl;
   // system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
@@ -501,7 +519,7 @@ void sessao_1(){
       cout << "\nNenhum assento foi selecionado!" << endl;
     }
     cout << endl;
-    system("cls");
+    //system("cls");
     if (mostra_ing > 0){
       for (i = 0; i < 10; i++){
         for (j = 0; j < 5; j++){
