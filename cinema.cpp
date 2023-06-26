@@ -218,9 +218,9 @@ void sessao_filme(){
 void sessao_escolha(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   escolha_hora = 0;
-  opcao = 0;
-
-  do{
+  opcao = 5;
+  
+  while (opcao > qtd_filme || opcao < 0){
     cout << "\nSelecione o filme: ";
     cin >> opcao;
     switch (opcao){
@@ -231,42 +231,42 @@ void sessao_escolha(){
         cout << "[2]-> 17:20" << endl;
         cin >> escolha_hora;
         if (escolha_hora > 2 || escolha_hora <= 0){
-          cout << "\nNão existe esse horário, tente novamente";
+          cout << "\nNão existe esse horário, tente novamente" << endl;
         }
       } 
       escolha_horario(escolha_hora, opcao);
       // system("cls");
       break;
     case 2:
-      do{
+      while (escolha_hora > 3 || escolha_hora <= 0){
         cout << "\nEscolha a sessão:" << endl;
         cout << "[1]-> 16:00" << endl;
         cout << "[2]-> 18:30" << endl;
         cout << "[3]-> 21:00" << endl;
         cin >> escolha_hora;
-      } while (escolha_hora > 3 || escolha_hora <= 0);
+      }
       escolha_horario(escolha_hora, opcao);
       // system("cls");
       break;
     case 3:
-      do{
+      while (escolha_hora > 2 || escolha_hora <= 0){
         cout << "\nEscolha a sessão:" << endl;
         cout << "[1]-> 15:30" << endl;
         cout << "[2]-> 20:30" << endl;
         cin >> escolha_hora;
-      } while (escolha_hora > 2 || escolha_hora <= 0);
+      }
       escolha_horario(escolha_hora, opcao);
       // system("cls");
       break;
     case 4:
-      do{
+      while (escolha_hora > 2 || escolha_hora <= 0){
         cout << "\nEscolha a sessão:" << endl;
         cout << "[1]-> 20:15" << endl;
         cin >> escolha_hora;
         if (escolha_hora > 1 || escolha_hora <= 0){
           cout << "\nNão existe esse horário, tente novamente";
         }
-      } while (escolha_hora > 2 || escolha_hora <= 0);
+      }
       escolha_horario(escolha_hora, opcao);
       // system("cls");
       break;
@@ -275,7 +275,7 @@ void sessao_escolha(){
       break;
     }
     loop_sessao = 0;
-  } while (opcao > qtd_filme || opcao < 0);
+  }
 }
 void escolha_horario(int escolha_hora, int opcao){
   setlocale(LC_ALL, "Portuguese_Brazil");
