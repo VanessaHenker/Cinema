@@ -152,23 +152,22 @@ int main(){
     cout << "\n----------------------------------------------";
     cout << endl;
     sessao_filme();
-    do{
+    sele_sessao = 't';
+    while (sele_sessao != 'N' && sele_sessao != 'n' && sele_sessao != 's' && sele_sessao != 'S'){
       cout << "                                                SELECIONAR SESSÂO ->";
       cout << "\nSe deseja selecionar algum filme";
       cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
       cin >> sele_sessao;
-    } while (sele_sessao != 'N' && sele_sessao != 'n' && sele_sessao != 's' && sele_sessao != 'S');
     if (sele_sessao == 'S' || sele_sessao == 's'){
       sessao_escolha();
       // system("cls");
       mostrar_sala();
     }
+  }
     cout << endl;
     // system("cls");
     escolher_tipo_bc();
-
-    cout << "\nTOTAL: "
-         << "R$ " << total_final << endl;
+    cout << "\nTOTAL: " << "R$ " << total_final << endl;
     loop_menu = 0;
   }
   return 0;
@@ -226,16 +225,15 @@ void sessao_escolha(){
     cin >> opcao;
     switch (opcao){
     case 1:
-      do{
+      while (escolha_hora > 2 || escolha_hora <= 0){
         cout << "\nEscolha a sessão:" << endl;
         cout << "[1]-> 15:00" << endl;
         cout << "[2]-> 17:20" << endl;
         cin >> escolha_hora;
-        if (escolha_hora > 2 || escolha_hora <= 0)
-        {
+        if (escolha_hora > 2 || escolha_hora <= 0){
           cout << "\nNão existe esse horário, tente novamente";
         }
-      } while (escolha_hora > 2 || escolha_hora <= 0);
+      } 
       escolha_horario(escolha_hora, opcao);
       // system("cls");
       break;
