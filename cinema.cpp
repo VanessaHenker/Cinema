@@ -1048,7 +1048,9 @@ float compra_ing(int guarda_polt){
   guarda_ingresso = 0;
   qtd_ingresso = 0;
   total_ingresso = 0;
-  do{
+  sele_ingresso = 't';
+  loop_tela = 0;
+  while (sele_ingresso != 's' && sele_ingresso != 'S' && sele_ingresso != 'n' && sele_ingresso != 'N'){
     cout << endl;
     cout << "\n[1]Ingresso inteiro R$" << ing_int;
     cout << "\n[2]Ingresso meio R$" << ing_meia;
@@ -1057,11 +1059,10 @@ float compra_ing(int guarda_polt){
     cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
     cin >> sele_ingresso;
     // system("cls");
-  } while (sele_ingresso != 's' && sele_ingresso != 'S' && sele_ingresso != 'n' && sele_ingresso != 'N');
+  } 
   if (sele_ingresso == 's' || sele_ingresso == 'S'){
-    do{
+    while (loop_tela == 0){
       do{
-        do{
           cout << endl;
           cout << "\n[1]Ingresso inteiro R$" << ing_int;
           cout << "\n[2]Ingresso meio R$" << ing_meia;
@@ -1070,16 +1071,28 @@ float compra_ing(int guarda_polt){
           cin >> compra_ingresso;
           // system("cls");
           cout << endl;
-        } while (compra_ingresso > 3 || compra_ingresso <= 0);
+        while (compra_ingresso > 2 || compra_ingresso <= 0){
+          cout << endl;
+          cout << "\n[1]Ingresso inteiro R$" << ing_int;
+          cout << "\n[2]Ingresso meio R$" << ing_meia;
+          cout << endl;
+          cout << "\nSelecione o numero: ";
+          cin >> compra_ingresso;
+          // system("cls");
+          cout << endl;
+        } 
         if (compra_ingresso == 1){
-          do{
-            cout << "\n[" << mostra_ing << "]Qtd ";
-            cout << "\nQuantidade de ingresso(inteiro):  ";
-            cin >> qtd_ingresso;
+          cout << "\n[" << mostra_ing << "]Qtd ";
+          cout << "\nQuantidade de ingresso(inteiro):  ";
+          cin >> qtd_ingresso;
+          while (qtd_ingresso < 0){
             if (qtd_ingresso < 0){
               cout << "\nQuantidade inválida!";
             }
-          } while (qtd_ingresso < 0);
+            cout << "\n[" << mostra_ing << "]Qtd ";
+            cout << "\nQuantidade de ingresso(inteiro):  ";
+            cin >> qtd_ingresso;
+          } 
           mostra_ing = mostra_ing + qtd_ingresso;
           if (mostra_ing > guarda_polt || mostra_ing == 0 || mostra_ing < 0){
             mostra_ing = 0;
@@ -1091,14 +1104,17 @@ float compra_ing(int guarda_polt){
           guarda_ingresso = guarda_ingresso + qtd_ingresso;
         }
         if (compra_ingresso == 2){
-          do{
-            cout << "\n[" << mostra_ing << "]Qtd ";
-            cout << "\nQuantidade de ingresso(meia):  ";
-            cin >> qtd_ingresso;
+          cout << "\n[" << mostra_ing << "]Qtd ";
+          cout << "\nQuantidade de ingresso(meia):  ";
+          cin >> qtd_ingresso;
+          while (qtd_ingresso < 0){
             if (qtd_ingresso < 0){
               cout << "\nQuantida inválida!";
             }
-          } while (qtd_ingresso < 0);
+            cout << "\n[" << mostra_ing << "]Qtd ";
+            cout << "\nQuantidade de ingresso(meia):  ";
+            cin >> qtd_ingresso;
+          } 
           mostra_ing = mostra_ing + qtd_ingresso;
           if (mostra_ing > guarda_polt || mostra_ing == 0 || mostra_ing < 0){
             mostra_ing = 0;
@@ -1116,18 +1132,19 @@ float compra_ing(int guarda_polt){
       if (mostra_ing < guarda_polt || mostra_ing == 0){
         cout << "\nErro, foram " << guarda_polt << " poltronas selecionadas!";
       }
-      do{
+      loop_tela = 2;
+      while (loop_tela != 0 && loop_tela != 1){
         cout << endl;
         cout << "\n     TROCAR INGRESSOS                COMIDAS E BEBIDAS";
         cout << "\n <-Digite 0 para voltar <-      -> Digite 1 para prosseguir->  ";
         cin >> loop_tela;
-      } while (loop_tela != 0 && loop_tela != 1);
+      } 
       if (loop_tela == 0){
         mostra_ing = 0;
         qtd_ingresso = 0;
         guarda_ingresso = 0;
       }
-    } while (loop_tela == 0);
+    } 
   }
   total_ingresso = total_ingresso + guarda_ingresso;
   cout << "\nTOTAL: " << total_ingresso;
@@ -1259,6 +1276,9 @@ void escolher_tipo_bc(){
   guarda_comida = 0,
   soma_bebida = 0;
   guarda_bebida = 0;
+  loop_tela = 0;
+  sele_comida = 't';
+  sele_comida = 't';
   cout << "\nOpções comidas: " << endl;
   cout << "[1]-> Pipocas" << endl;
   cout << "[2]-> Fandangos" << endl;
@@ -1274,15 +1294,17 @@ void escolher_tipo_bc(){
   cout << "[4]-> Fanta guarana" << endl;
   cout << endl;
 
-  do{
+  while (sele_comida != 'n' && sele_comida != 'N' && sele_comida != 's' && sele_comida != 'S'){
     cout << "\nDeseja entrar na opções de comidas";
     cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
     cin >> sele_comida;
-  } while (sele_comida != 'n' && sele_comida != 'N' && sele_comida != 's' && sele_comida != 'S');
+  } 
   // system("cls");
   if (sele_comida == 'S' || sele_comida == 's'){
-    do{
+    while (loop_tela == 0){
       // system("cls");
+      escolha_comida = 7;
+      while (escolha_comida > 6 || escolha_comida < 0){
       cout << "\nOpçoes comidas: " << endl;
       cout << "[1]-> Pipocas" << endl;
       cout << "[2]-> Fandangos" << endl;
@@ -1290,34 +1312,35 @@ void escolher_tipo_bc(){
       cout << "[4]-> Ruffles" << endl;
       cout << "[5]-> Cheetos" << endl;
       cout << "[6]-> Barras de chocolate" << endl;
-      do{
-        cout << "\nDigite o numero: ";
-        cin >> escolha_comida;
-        if (escolha_comida > 6 || escolha_comida <= 0){
+      cout << "\nDigite o numero: ";
+      cin >> escolha_comida;
+      if (escolha_comida > 6 || escolha_comida <= 0){
           cout << "\nValor inválido, Tente novamente!" << endl;
         }
-      } while (escolha_comida > 6 || escolha_comida < 0);
+      }
       // system("cls");
       soma_comida = escolha_tipo_comida(escolha_comida);
       guarda_comida = guarda_comida + soma_comida;
-      do{
+      loop_tela = 2;
+       while (loop_tela != 1 && loop_tela != 0){
         cout << endl;
         cout << "    OPÇÕES COMIDAS                   OPÇÕES BEBIDAS";
         cout << "\n<- Digite 0 para voltar <-   -> Digite 1 para proseguir ->  ";
-        cout << endl
-             << "                           ";
+        cout << endl << "                           ";
         cin >> loop_tela;
-      } while (loop_tela != 1 && loop_tela != 0);
-    } while (loop_tela == 0);
+      }
+    } 
   }
-  do{
+ while (sele_bebida != 'n' && sele_bebida != 'N' && sele_bebida != 's' && sele_bebida != 'S'){
     cout << "\nDeseja entrar na opções de bebidas";
     cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
     cin >> sele_bebida;
-  } while (sele_bebida != 'n' && sele_bebida != 'N' && sele_bebida != 's' && sele_bebida != 'S');
+  } 
+  loop_tela = 0;
   if (sele_bebida == 's' || sele_bebida == 'S'){
-    do{
-      do{
+    while (loop_tela == 0){
+        escolha_bebida = 5;
+       while (escolha_bebida > 4 || escolha_bebida < 0){
         // system("cls");
         cout << "\nOpções bebidas:" << endl;
         cout << "[1]-> Coca-cola" << endl;
@@ -1329,19 +1352,19 @@ void escolher_tipo_bc(){
         if (escolha_bebida > 4 || escolha_bebida < 0){
           cout << "\nValor inválido, Tente novamente!";
         }
-      } while (escolha_bebida > 4 || escolha_bebida < 0);
+      } 
       soma_bebida = escolha_tipo_bebida(escolha_bebida);
       guarda_bebida = guarda_bebida + soma_bebida;
 
-      do{
+      loop_tela = 2;
+      while (loop_tela != 1 && loop_tela != 0){
         cout << endl;
         cout << "       OPÇÕES BEBIDAS                  TELA INICIAL";
         cout << "\n <- Digite 0 para voltar <-   -> Digite 1 para proseguir ->  ";
-        cout << endl
-             << "                            ";
+        cout << endl << "                            ";
         cin >> loop_tela;
-      } while (loop_tela != 1 && loop_tela != 0);
-    } while (loop_tela == 0);
+      } 
+    } 
   }
   total_bc = total_bc + (guarda_comida + guarda_bebida);
   total_final = total_final + total_bc + total_ingresso;
@@ -1351,7 +1374,8 @@ int escolher_tam_bc(){
   char sele_opcao;
   int escolha_opcao;
   escolha_opcao = 0;
-  do{
+  sele_opcao = 't';
+  while (sele_opcao != 'N' && sele_opcao != 'n'){
     cout << "\nSe deseja selecionar um numero";
     cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
     cin >> sele_opcao;
@@ -1360,7 +1384,7 @@ int escolher_tam_bc(){
       cin >> escolha_opcao;
       return escolha_opcao;
     }
-  } while (sele_opcao != 'N' && sele_opcao != 'n');
+  } 
   return 0;
 }
 
@@ -1371,42 +1395,42 @@ float soma_pipoca(int escolha_pipoca){
   float total;
   i = 0;
   total = 0;
-
+  guarda_pipoca = -1;
   for (i < 0; i < 3; i++){
     qtd_pipoca[i] = 0;
   }
   switch (escolha_pipoca){
   case 1:
-    do{
+    while (guarda_pipoca < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_pipoca;
       // system("cls");
       if (guarda_pipoca < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente! " << endl;
       }
-    } while (guarda_pipoca < 0);
+    } 
     guarda_pipoca = guarda_pipoca * comida1.preco;
     qtd_pipoca[0] = qtd_pipoca[0] + guarda_pipoca;
     break;
   case 2:
-    do{
+    while (guarda_pipoca < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_pipoca;
       if (guarda_pipoca < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente! "<< endl;
       }
-    } while (guarda_pipoca < 0);
+    } 
     guarda_pipoca = guarda_pipoca * comida2.preco;
     qtd_pipoca[1] = qtd_pipoca[1] + guarda_pipoca;
     break;
   case 3:
-    do{
+    while (guarda_pipoca < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_pipoca;
       if (guarda_pipoca < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente! " << endl;
       }
-    } while (guarda_pipoca < 0);
+    } 
     guarda_pipoca = guarda_pipoca * comida3.preco;
     qtd_pipoca[2] = qtd_pipoca[2] + guarda_pipoca;
     break;
@@ -1429,52 +1453,52 @@ float soma_fandangos(int escolha_fand){
   float total;
   i = 0;
   total = 0;
-
+  guarda_fand = -1;
   for (i < 0; i < 4; i++){
     qtd_fand[i] = 0;
   }
   switch (escolha_fand){
   case 1:
-    do{
+    while (guarda_fand < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_fand;
       if (guarda_fand < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_fand < 0);
+    } 
     guarda_fand = guarda_fand * comida4.preco;
     qtd_fand[0] = qtd_fand[0] + guarda_fand;
     break;
   case 2:
-    do{
+    while (guarda_fand < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_pipoca;
       if (guarda_pipoca < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_fand < 0);
+    } 
     guarda_fand = guarda_fand * comida5.preco;
     qtd_fand[1] = qtd_fand[1] + guarda_fand;
     break;
   case 3:
-    do{
+    while (guarda_fand < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_fand;
       if (guarda_fand < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_fand < 0);
+    } 
     guarda_fand = guarda_fand * comida6.preco;
     qtd_fand[2] = qtd_fand[2] + guarda_fand;
     break;
   case 4:
-    do{
+    while (guarda_fand < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_fand;
       if (guarda_fand < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_fand < 0);
+    } 
     guarda_fand = guarda_fand * comida7.preco;
     qtd_fand[3] = qtd_fand[3] + guarda_fand;
     break;
@@ -1497,52 +1521,52 @@ float soma_doritos(int escolha_doritos){
   float total;
   i = 0;
   total = 0;
-
+  guarda_dori = -1;
   for (i < 0; i < 4; i++){
     qtd_dori[i] = 0;
   }
   switch (escolha_dori){
   case 1:
-    do{
+    while (guarda_dori < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_dori;
       if (guarda_dori < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
-    } while (guarda_dori < 0);
+    } 
     guarda_dori = guarda_dori * comida8.preco;
     qtd_dori[0] = qtd_dori[0] + guarda_dori;
     break;
   case 2:
-    do{
+    while (guarda_dori < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_dori;
       if (guarda_dori < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
-    } while (guarda_dori < 0);
+    } 
     guarda_dori = guarda_dori * comida9.preco;
     qtd_dori[1] = qtd_dori[1] + guarda_dori;
     break;
   case 3:
-    do{
+    while (guarda_dori < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_dori;
       if (guarda_fand < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
-    } while (guarda_dori < 0);
+    } 
     guarda_dori = guarda_dori * comida10.preco;
     qtd_dori[2] = qtd_dori[2] + guarda_dori;
     break;
   case 4:
-    do{
+    while (guarda_dori < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_dori;
       if (guarda_dori < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
-    } while (guarda_dori < 0);
+    } 
     guarda_dori = guarda_dori * comida11.preco;
     qtd_dori[3] = qtd_dori[3] + guarda_dori;
     break;
@@ -1565,52 +1589,53 @@ float soma_ruffles(int escolha_ruffles){
   float total;
   i = 0;
   total = 0;
-
+  guarda_ruffles = -1;
+  
   for (i < 0; i < 4; i++){
     qtd_ruffles[i] = 0;
   }
   switch (escolha_ruffles){
   case 1:
-    do{
+    while (guarda_ruffles < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_ruffles;
       if (guarda_ruffles < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
-    } while (guarda_ruffles < 0);
+    } 
     guarda_ruffles = guarda_ruffles * comida12.preco;
     qtd_ruffles[0] = qtd_ruffles[0] + guarda_ruffles;
     break;
   case 2:
-    do{
+    while (guarda_ruffles < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_ruffles;
       if (guarda_ruffles < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
-    } while (guarda_ruffles < 0);
+    } 
     guarda_ruffles = guarda_ruffles * comida13.preco;
     qtd_ruffles[1] = qtd_ruffles[1] + guarda_ruffles;
     break;
   case 3:
-    do{
+    while (guarda_ruffles < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_ruffles;
       if (guarda_ruffles < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
-    } while (guarda_ruffles < 0);
+    } 
     guarda_ruffles = guarda_ruffles * comida14.preco;
     qtd_ruffles[2] = qtd_ruffles[2] + guarda_ruffles;
     break;
   case 4:
-    do{
+    while (guarda_ruffles < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_ruffles;
       if (guarda_ruffles < 0){
-        cout << "\nQuantidade inválida, tente novamente! ";
+        cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
-    } while (guarda_ruffles < 0);
+    } 
     guarda_ruffles = guarda_ruffles * comida15.preco;
     qtd_ruffles[3] = qtd_ruffles[3] + guarda_ruffles;
     break;
@@ -1633,52 +1658,52 @@ float soma_cheetos(int escolha_cheetos){
   float total;
   i = 0;
   total = 0;
-
+  guarda_cheetos = -1;
   for (i < 0; i < 4; i++){
     qtd_cheetos[i] = 0;
   }
   switch (escolha_cheetos){
   case 1:
-    do{
+     while (guarda_cheetos < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_cheetos;
       if (guarda_cheetos < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_cheetos < 0);
+    }
     guarda_cheetos = guarda_cheetos * comida16.preco;
     qtd_cheetos[0] = qtd_cheetos[0] + guarda_cheetos;
     break;
   case 2:
-    do{
+     while (guarda_cheetos < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_cheetos;
       if (guarda_cheetos < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_cheetos < 0);
+    } 
     guarda_cheetos = guarda_cheetos * comida17.preco;
     qtd_cheetos[1] = qtd_cheetos[1] + guarda_cheetos;
     break;
   case 3:
-    do{
+    while (guarda_cheetos < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_cheetos;
       if (guarda_cheetos < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_cheetos < 0);
+    } 
     guarda_cheetos = guarda_cheetos * comida18.preco;
     qtd_cheetos[2] = qtd_cheetos[2] + guarda_cheetos;
     break;
   case 4:
-    do{
+    while (guarda_cheetos < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_cheetos;
       if (guarda_cheetos < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_cheetos < 0);
+    }
     guarda_cheetos = guarda_cheetos * comida19.preco;
     qtd_cheetos[3] = qtd_cheetos[3] + guarda_cheetos;
     break;
@@ -1701,53 +1726,54 @@ float soma_chocolate(int escolha_choc){
   float total;
   i = 0;
   total = 0;
-
+  guarda_choc = -1;
+  
   for (i < 0; i < 4; i++){
     qtd_choc[i] = 0;
   }
   switch (escolha_choc){
   case 1:
-    do{
+    while (guarda_choc < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_choc;
       if (guarda_choc < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_choc < 0);
+    } 
     guarda_choc = guarda_choc * comida20.preco;
     qtd_choc[0] = qtd_choc[0] + guarda_choc;
     break;
   case 2:
-    do{
+    while (guarda_choc < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_choc;
       if (guarda_choc < 0)
       {
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_choc < 0);
+    } 
     guarda_choc = guarda_choc * comida21.preco;
     qtd_choc[1] = qtd_choc[1] + guarda_choc;
     break;
   case 3:
-    do{
+    while (guarda_choc < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_choc;
       if (guarda_choc < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_choc < 0);
+    } 
     guarda_choc = guarda_choc * comida22.preco;
     qtd_choc[2] = qtd_choc[2] + guarda_choc;
     break;
   case 4:
-    do{
+    while (guarda_choc < 0){
       cout << "\nQuantidade: ";
       cin >> guarda_choc;
       if (guarda_choc < 0){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
-    } while (guarda_choc < 0);
+    } 
     guarda_choc = guarda_choc * comida23.preco;
     qtd_choc[3] = qtd_choc[3] + guarda_choc;
     break;
