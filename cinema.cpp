@@ -798,15 +798,15 @@ void sessao_3(){
         }
         cout << endl;
       }
-          cout << endl;
-          cout << "\n                  TELA";
-          cout << "\n-----------------------------------------";
-          cout << "\n[ ] Disponivel";
-          cout << "\n[/] Selecionado";
-          cout << "\n[-] Ocupados";
-          cout << "\n[B] Bloqueado";
-          cout << "\n[C] Cadeirante";
-          cout << endl;
+        cout << endl;
+        cout << "\n                  TELA";
+        cout << "\n-----------------------------------------";
+        cout << "\n[ ] Disponivel";
+        cout << "\n[/] Selecionado";
+        cout << "\n[-] Ocupados";
+        cout << "\n[B] Bloqueado";
+        cout << "\n[C] Cadeirante";
+        cout << endl;
       
       cout << "\nAssentos selecionados: ";
       for (i = 0; i < 10; i++){
