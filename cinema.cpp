@@ -941,6 +941,7 @@ void sessao_4(){
       if (cadeiras4[escolha1][escolha2] != "[--]" && cadeiras4[escolha1][escolha2] != "[ ]"){
         cadeiras4[escolha1][escolha2] = "[//]";
       }
+      system("cls");
       for (i = 0; i < 12; i++){
         for (j = 0; j < 6; j++){
           if (cadeiras4[i][j] == "[//]" || cadeiras4[i][j] == "[--]"){
@@ -957,7 +958,16 @@ void sessao_4(){
         }
         cout << endl;
       }
-      cout << endl;
+        cout << endl;
+        cout << "\n             TELA";
+        cout << "\n---------------------------------";
+        cout << "\n[ ] Disponivel";
+        cout << "\n[/] Selecionado";
+        cout << "\n[-] Ocupados";
+        cout << "\n[B] Bloqueado";
+        cout << "\n[C] Cadeirante";
+        cout << endl;
+     
       cout << "\nAssentos selecionados: ";
       for (i = 0; i < 12; i++){
         for (j = 0; j < 6; j++){
