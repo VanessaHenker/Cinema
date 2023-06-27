@@ -1189,16 +1189,21 @@ float compra_ing(int guarda_polt){
 void finalizar_compra(){
 setlocale(LC_ALL, "Portuguese_Brazil");
 float total2, dinheiro2;
-dinheiro = -1;
+dinheiro = 0;
 troco = 0;
+total2 = 0;
+dinheiro2 = 0;
+total2 = total_final + total2;
+dinheiro2 = dinheiro + dinheiro2; 
+
 cout << endl;
 cout << "\nTotal da compra R$: " <<  total_final;
-
+dinheiro = -1;
 while(dinheiro < 0){
-  cout << "\nDinheiro recebido: ";
+  cout << "\nDinheiro recebido: " << endl;
   cin >> dinheiro;
     if(dinheiro < 0){
-    cout << "\nValor inválido!";
+    cout << "\nValor inválido!" << endl;
   }
 }
 troco = dinheiro - total_final;
@@ -1207,8 +1212,12 @@ if(troco < 0){
     cout << "\nDinheiro insuficiente. Faltam R$" << troco * (-1) << " REAIS";
     total2 = troco * (-1); 
     cout << endl;
-    cout << "\nQuanto sera o pagamento: ";
+    cout << "\nQuanto sera o pagamento: " << endl;
     cin >> dinheiro2;
+    if(dinheiro2 < 0){
+      cout << "\nValor inválido!" << endl;
+      dinheiro2 = 0;
+    }
     troco = dinheiro2 - total2;
     dinheiro = dinheiro + dinheiro2; 
     }
