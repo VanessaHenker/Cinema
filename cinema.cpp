@@ -21,7 +21,7 @@ void polt_selecionada();
 void mostrar_sala();
 void loop_hora();
 
-float finalizar_compra();
+void finalizar_compra();
 float escolha_tipo_comida(int escolha_comida);
 float escolha_tipo_bebida(int escolha_bebida);
 float compra_ing(int guarda_polt);
@@ -170,9 +170,11 @@ int main(){
         mostrar_sala();
       }
     }
-    cout << endl;
     //system("cls");
     escolher_tipo_bc();
+    if(total_final > 0){
+      finalizar_compra();
+    }
     loop_menu = 0;
   }
   return 0;
@@ -1184,16 +1186,39 @@ float compra_ing(int guarda_polt){
   return 0;
 }
 
-float finalizar_compra(){
+void finalizar_compra(){
 setlocale(LC_ALL, "Portuguese_Brazil");
-dinheiro = 0;
+float total2, dinheiro2;
+dinheiro = -1;
 troco = 0;
+cout << endl;
 cout << "\nTotal da compra R$: " <<  total_final;
-cout << "\nDinheiro recebido: ";
-cin >> dinheiro;
 
-
-return total_final;
+while(dinheiro < 0){
+  cout << "\nDinheiro recebido: ";
+  cin >> dinheiro;
+    if(dinheiro < 0){
+    cout << "\nValor inválido!";
+  }
+}
+troco = dinheiro - total_final;
+if(troco < 0){
+    while (troco < 0){
+    cout << "\nDinheiro insuficiente. Faltam R$" << troco * (-1) << " REAIS";
+    total2 = troco * (-1); 
+    cout << endl;
+    cout << "\nQuanto sera o pagamento: ";
+    cin >> dinheiro2;
+    troco = dinheiro2 - total2;
+    dinheiro = dinheiro + dinheiro2; 
+    }
+  }
+  cout << "\nTOTAL DA COMPRA...............................................R$ " << total_final;
+  cout << "\nDINHEIRO RECEBIDO.............................................R$ " << dinheiro;
+  cout << "\nTROCO.........................................................R$ " << troco;
+  cout << endl;
+  cout << "\nCOMPRA FINALIZADA, VOLTE SEMPRE!";
+  cout << endl;
 }
 
 float escolha_tipo_comida(int escolha_comida){
@@ -1418,9 +1443,9 @@ void escolher_tipo_bc(){
       }
     }
   }
+  }
   total_bc = total_bc + (guarda_comida + guarda_bebida);
   total_final = total_final + total_bc + total_ingresso;
-  }
 }
 int escolher_tam_bc(){
   setlocale(LC_ALL, "Portuguese_Brazil");
