@@ -827,15 +827,7 @@ void sessao_3(){
   cout << endl;
   system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
-    cout << "\nAssentos selecionados: ";
-    for (i = 0; i < 10; i++){
-      for (j = 0; j < 6; j++){
-        if (cadeiras3[i][j] == "[//]"){
-          cout << i << j << ", ";
-          guarda_polt++;
-        }
-      }
-    }
+    polt_selecionada();
     if (guarda_polt > 0){
       compra_ing(guarda_polt);
     }
