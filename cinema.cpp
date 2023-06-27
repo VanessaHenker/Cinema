@@ -21,6 +21,7 @@ void polt_selecionada();
 void mostrar_sala();
 void loop_hora();
 
+float finalizar_compra();
 float escolha_tipo_comida(int escolha_comida);
 float escolha_tipo_bebida(int escolha_bebida);
 float compra_ing(int guarda_polt);
@@ -136,7 +137,10 @@ int escolha_pipoca = 0, escolha_fand = 0, escolha_dori = 0, escolha_ruffles = 0,
 int guarda_pipoca = 0, guarda_fand = 0, guarda_dori = 0, guarda_ruffles = 0, guarda_cheetos = 0, guarda_choc = 0;
 int loop_tela = 0, guarda_coca = 0, guarda_uva = 0, guarda_laran = 0, guarda_guara = 0;
 char sele_bebida, sele_comida;
-float total_final = 0, total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_bebida = 0;
+float total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_bebida = 0;
+
+// variáveis de finalizar compra
+float dinheiro = 0, troco = 0, total_final = 0;
 
 // variaveis pra sessao filme
 int loop_sessao = 0;
@@ -169,7 +173,6 @@ int main(){
     cout << endl;
     //system("cls");
     escolher_tipo_bc();
-    cout << "\nTOTAL: " << "R$ " << total_final << endl;
     loop_menu = 0;
   }
   return 0;
@@ -1179,6 +1182,18 @@ float compra_ing(int guarda_polt){
   total_ingresso = total_ingresso + guarda_ingresso;
   cout << "\nTOTAL: " << total_ingresso;
   return 0;
+}
+
+float finalizar_compra(){
+setlocale(LC_ALL, "Portuguese_Brazil");
+dinheiro = 0;
+troco = 0;
+cout << "\nTotal da compra R$: " <<  total_final;
+cout << "\nDinheiro recebido: ";
+cin >> dinheiro;
+
+
+return total_final;
 }
 
 float escolha_tipo_comida(int escolha_comida){
