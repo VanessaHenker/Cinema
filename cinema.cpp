@@ -147,7 +147,7 @@ int main(){
     total_bc = 0;
     total_final = 0;
     total_ingresso = 0;
-    // system("cls");
+    system("cls");
     cout << "----------------------------------------------";
     cout << "\nBem vindo ao nosso cinema!";
     cout << "\n----------------------------------------------";
@@ -156,17 +156,17 @@ int main(){
     sele_sessao = 't';
     while (sele_sessao != 'N' && sele_sessao != 'n' && sele_sessao != 's' && sele_sessao != 'S'){
       cout << "                                                SELECIONAR SESSÂO ->";
-      cout << "\nSe deseja selecionar algum filme";
+      cout << "\nSe deseja selecionar alguma sessão";
       cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
       cin >> sele_sessao;
       if (sele_sessao == 'S' || sele_sessao == 's'){
         sessao_escolha();
-        // system("cls");
+        system("cls");
         mostrar_sala();
       }
     }
     cout << endl;
-    // system("cls");
+      system("cls");
     escolher_tipo_bc();
     cout << "\nTOTAL: " << "R$ " << total_final << endl;
     loop_menu = 0;
@@ -208,8 +208,8 @@ void sessao_filme(){
   cout << endl;
 
   cout << "----------------------------------------------" << endl;
-  cout << "Filme: " << sessao4.filme.titulo << endl;
   cout << "Sessão 4" << endl;
+  cout << "Filme: " << sessao4.filme.titulo << endl;
   cout << "Horários: " << sessao4.horario << endl;
   cout << "Sala: " << sessao4.sala << endl;
   cout << "Gênero: " << sessao4.filme.genero << endl;
@@ -222,12 +222,12 @@ void sessao_escolha(){
   opcao = 5;
 
   while (opcao > qtd_filme || opcao < 0){
-    cout << "\nSelecione o filme: ";
+    cout << "\nSelecione a sessão: ";
     cin >> opcao;
     switch (opcao){
     case 1:
       while (escolha_hora > 2 || escolha_hora <= 0){
-        cout << "\nEscolha a sessão:" << endl;
+        cout << "\nEscolha o horário:" << endl;
         cout << "[1]-> 15:00" << endl;
         cout << "[2]-> 17:20" << endl;
         cin >> escolha_hora;
@@ -236,32 +236,32 @@ void sessao_escolha(){
         }
       }
       escolha_horario(escolha_hora, opcao);
-      // system("cls");
+      system("cls");
       break;
     case 2:
       while (escolha_hora > 3 || escolha_hora <= 0){
-        cout << "\nEscolha a sessão:" << endl;
+        cout << "\nEscolha o horário:" << endl;
         cout << "[1]-> 16:00" << endl;
         cout << "[2]-> 18:30" << endl;
         cout << "[3]-> 21:00" << endl;
         cin >> escolha_hora;
       }
       escolha_horario(escolha_hora, opcao);
-      // system("cls");
+      system("cls");
       break;
     case 3:
       while (escolha_hora > 2 || escolha_hora <= 0){
-        cout << "\nEscolha a sessão:" << endl;
+        cout << "\nEscolha o horário:" << endl;
         cout << "[1]-> 15:30" << endl;
         cout << "[2]-> 20:30" << endl;
         cin >> escolha_hora;
       }
       escolha_horario(escolha_hora, opcao);
-      // system("cls");
+      system("cls");
       break;
     case 4:
       while (escolha_hora > 2 || escolha_hora <= 0){
-        cout << "\nEscolha a sessão:" << endl;
+        cout << "\nEscolha o horário:" << endl;
         cout << "[1]-> 20:15" << endl;
         cin >> escolha_hora;
         if (escolha_hora > 1 || escolha_hora <= 0){
@@ -269,7 +269,7 @@ void sessao_escolha(){
         }
       }
       escolha_horario(escolha_hora, opcao);
-      // system("cls");
+      system("cls");
       break;
     default:
       cout << "\nSessão não existe, Tente novamente!";
@@ -280,7 +280,7 @@ void sessao_escolha(){
 }
 void escolha_horario(int escolha_hora, int opcao){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  // system("cls");
+  system("cls");
   //  Horário selecionado da opcao 1
   if (escolha_hora == 1 && opcao == 1 || escolha_hora == 2 && opcao == 1){
     cout << "\nSessão " << opcao << ":" << " SELECIONADA" << "!" << endl;
@@ -415,7 +415,7 @@ void sessao_1(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          // system("cls");
+          system("cls");
           cout << endl;
           for (i = 0; i < 10; i++){
             for (j = 0; j < 5; j++){
@@ -460,7 +460,7 @@ void sessao_1(){
       if (cadeiras1[escolha1][escolha2] != "[--]" && cadeiras1[escolha1][escolha2] != "[ ]"){
         cadeiras1[escolha1][escolha2] = "[//]";
       }
-
+      system("cls");
       for (i = 0; i < 10; i++){
         for (j = 0; j < 5; j++){
           if (cadeiras1[i][j] == "[//]" || cadeiras1[i][j] == "[--]"){
@@ -477,7 +477,16 @@ void sessao_1(){
         }
         cout << endl;
       }
-      cout << endl;
+        cout << "\n            TELA";
+        cout << "\n--------------------------";
+        cout << "\n[ ] Disponivel";
+        cout << "\n[/] Selecionado";
+        cout << "\n[-] Ocupados";
+        cout << "\n[B] Bloqueado";
+        cout << "\n[C] Cadeirante";
+        cout << endl;
+        cout << endl;
+        
       cout << "\nAssentos selecionados: ";
       for (i = 0; i < 10; i++){
         for (j = 0; j < 5; j++){
@@ -497,7 +506,7 @@ void sessao_1(){
     }
   }
   cout << endl;
-  // system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     cout << "\nAssentos selecionados: ";
     for (i = 0; i < 10; i++){
@@ -567,7 +576,7 @@ void sessao_2(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          // system("cls");
+          system("cls");
           if (cadeiras2[escolha1][escolha2] == "[--]"){
             cout << "\nEstá ocupado!" << endl;
           }
@@ -647,7 +656,7 @@ void sessao_2(){
   }
   cout << endl;
 
-  // system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     cout << "\nAssentos selecionados: ";
     for (i = 0; i < 12; i++){
@@ -716,7 +725,7 @@ void sessao_3(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          // system("cls");
+          system("cls");
           cout << endl;
           for (i = 0; i < 10; i++){
             for (j = 0; j < 6; j++){
@@ -798,7 +807,7 @@ void sessao_3(){
     }
   }
   cout << endl;
-  // system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     cout << "\nAssentos selecionados: ";
     for (i = 0; i < 10; i++){
@@ -867,7 +876,7 @@ void sessao_4(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          // system("cls");
+          system("cls");
           if (cadeiras4[escolha1][escolha2] == "[--]"){
             cout << "\nEstá ocupado!" << endl;
           }
@@ -947,7 +956,7 @@ void sessao_4(){
     }
   }
   cout << endl;
-  // system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     cout << "\nAssentos selecionados: ";
     for (i = 0; i < 12; i++){
@@ -989,7 +998,7 @@ void loop_hora(){
     sessao_escolha();
     mostrar_sala();
     escolher_tipo_bc();
-    // system("cls");
+    system("cls");
     main();
   }
 }
@@ -1012,7 +1021,7 @@ float compra_ing(int guarda_polt){
     cout << "\nSe deseja selecionar algum ingresso";
     cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
     cin >> sele_ingresso;
-    // system("cls");
+    system("cls");
   }
   if (sele_ingresso == 's' || sele_ingresso == 'S'){
     while (loop_tela == 0){
@@ -1023,7 +1032,7 @@ float compra_ing(int guarda_polt){
         cout << endl;
         cout << "\nSelecione o numero: ";
         cin >> compra_ingresso;
-        // system("cls");
+        system("cls");
         cout << endl;
         while (compra_ingresso > 2 || compra_ingresso <= 0){
           cout << endl;
@@ -1032,7 +1041,7 @@ float compra_ing(int guarda_polt){
           cout << endl;
           cout << "\nSelecione o numero: ";
           cin >> compra_ingresso;
-          // system("cls");
+          system("cls");
           cout << endl;
         }
         if (compra_ingresso == 1){
