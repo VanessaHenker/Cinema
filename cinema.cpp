@@ -397,13 +397,15 @@ void sessao_1(){
     cout << endl;
   }
   cout << endl;
-  cout << "\n            TELA";
+  cout << endl;
+  cout << "\n         TELA";
   cout << "\n--------------------------";
-  cout << "\n[ ] Disponivel";
-  cout << "\n[/] Selecionado";
-  cout << "\n[-] Ocupados";
-  cout << "\n[B] Bloqueado";
-  cout << "\n[C] Cadeirante";
+  cout << endl;
+  cout << "\n[ ] Disponivel      [B]Bloqueado";
+  cout << "\n[/] Selecionado     [C]Cadeirante";
+  cout << "\n[-] Ocupados";       
+  
+ 
   cout << endl;
 
   if (loop_sessao == 0){
@@ -433,7 +435,9 @@ void sessao_1(){
             }
             cout << endl;
           }
-          cout << "\n            TELA";
+          cout << endl;
+          cout << endl;
+          cout << "\n          TELA";
           cout << "\n--------------------------";
           cout << "\n[ ] Disponivel";
           cout << "\n[/] Selecionado";
@@ -477,14 +481,14 @@ void sessao_1(){
         }
         cout << endl;
       }
-        cout << "\n            TELA";
-        cout << "\n--------------------------";
-        cout << "\n[ ] Disponivel";
-        cout << "\n[/] Selecionado";
-        cout << "\n[-] Ocupados";
-        cout << "\n[B] Bloqueado";
-        cout << "\n[C] Cadeirante";
         cout << endl;
+        cout << endl;
+        cout << "\n          TELA";
+        cout << "\n--------------------------";
+        cout << endl;
+        cout << "\n[ ] Disponivel      [B]Bloqueado";
+        cout << "\n[/] Selecionado     [C]Cadeirante";
+        cout << "\n[-] Ocupados";       
         cout << endl;
         
       cout << "\nAssentos selecionados: ";
@@ -560,13 +564,11 @@ void sessao_2(){
   cout << endl;
   cout << "\n                 TELA";
   cout << "\n-----------------------------------------";
-  cout << "\n[ ] Disponivel";
-  cout << "\n[/] Selecionado";
-  cout << "\n[-] Ocupados";
-  cout << "\n[B] Bloqueado";
-  cout << "\n[C] Cadeirante";
   cout << endl;
-
+  cout << "\n[ ] Disponivel      [B]Bloqueado";
+  cout << "\n[/] Selecionado     [C]Cadeirante";
+  cout << "\n[-] Ocupados";       
+  cout << endl;
   if (loop_sessao == 0){
     loop_hora();
   }
@@ -597,13 +599,12 @@ void sessao_2(){
             cout << endl;
           }
           cout << endl;
-          cout << "\n                  TELA";
+          cout << "\n               TELA";
           cout << "\n-----------------------------------------";
-          cout << "\n[ ] Disponivel";
-          cout << "\n[/] Selecionado";
-          cout << "\n[-] Ocupados";
-          cout << "\n[B] Bloqueado";
-          cout << "\n[C] Cadeirante";
+          cout << endl;
+          cout << "\n[ ] Disponivel      [B]Bloqueado";
+          cout << "\n[/] Selecionado     [C]Cadeirante";
+          cout << "\n[-] Ocupados";       
           cout << endl;
           if (escolha1 > 11 || escolha2 > 5){
             cout << "\nNão existe, Tente novamente!";
@@ -638,13 +639,12 @@ void sessao_2(){
         cout << endl;
       }
           cout << endl;
-          cout << "\n                  TELA";
+          cout << "\n               TELA";
           cout << "\n-----------------------------------------";
-          cout << "\n[ ] Disponivel";
-          cout << "\n[/] Selecionado";
-          cout << "\n[-] Ocupados";
-          cout << "\n[B] Bloqueado";
-          cout << "\n[C] Cadeirante";
+          cout << endl;
+          cout << "\n[ ] Disponivel      [B]Bloqueado";
+          cout << "\n[/] Selecionado     [C]Cadeirante";
+          cout << "\n[-] Ocupados";       
           cout << endl;
       
       cout << "\nAssentos selecionados: ";
@@ -719,11 +719,10 @@ void sessao_3(){
   cout << endl;
   cout << "\n            TELA";
   cout << "\n-----------------------------";
-  cout << "\n[ ] Disponivel";
-  cout << "\n[/] Selecionado";
-  cout << "\n[-] Ocupados";
-  cout << "\n[B] Bloqueado";
-  cout << "\n[C] Cadeirante";
+  cout << endl;
+  cout << "\n[ ] Disponivel      [B]Bloqueado";
+  cout << "\n[/] Selecionado     [C]Cadeirante";
+  cout << "\n[-] Ocupados";       
   cout << endl;
 
   if (loop_sessao == 0){
@@ -753,13 +752,12 @@ void sessao_3(){
             }
             cout << endl;
           }
-          cout << "\n            TELA";
+          cout << "\n         TELA";
           cout << "\n--------------------------";
-          cout << "\n[ ] Disponivel";
-          cout << "\n[/] Selecionado";
-          cout << "\n[-] Ocupados";
-          cout << "\n[B] Bloqueado";
-          cout << "\n[C] Cadeirante";
+          cout << endl;
+          cout << "\n[ ] Disponivel      [B]Bloqueado";
+          cout << "\n[/] Selecionado     [C]Cadeirante";
+          cout << "\n[-] Ocupados";       
           cout << endl;
           if (escolha1 > 9 || escolha2 > 5){
             cout << "\nNão existe, Tente novamente!";
@@ -801,11 +799,10 @@ void sessao_3(){
         cout << endl;
         cout << "\n                  TELA";
         cout << "\n-----------------------------------------";
-        cout << "\n[ ] Disponivel";
-        cout << "\n[/] Selecionado";
-        cout << "\n[-] Ocupados";
-        cout << "\n[B] Bloqueado";
-        cout << "\n[C] Cadeirante";
+        cout << endl;
+        cout << "\n[ ] Disponivel      [B]Bloqueado";
+        cout << "\n[/] Selecionado     [C]Cadeirante";
+        cout << "\n[-] Ocupados";       
         cout << endl;
       
       cout << "\nAssentos selecionados: ";
@@ -880,11 +877,10 @@ void sessao_4(){
   cout << endl;
   cout << "\n             TELA";
   cout << "\n---------------------------------";
-  cout << "\n[ ] Disponivel";
-  cout << "\n[/] Selecionado";
-  cout << "\n[-] Ocupados";
-  cout << "\n[B] Bloqueado";
-  cout << "\n[C] Cadeirante";
+  cout << endl;
+  cout << "\n[ ] Disponivel      [B]Bloqueado";
+  cout << "\n[/] Selecionado     [C]Cadeirante";
+  cout << "\n[-] Ocupados";       
   cout << endl;
 
   if (loop_sessao == 0){
@@ -919,11 +915,10 @@ void sessao_4(){
           cout << endl;
           cout << "\n             TELA";
           cout << "\n---------------------------------";
-          cout << "\n[ ] Disponivel";
-          cout << "\n[/] Selecionado";
-          cout << "\n[-] Ocupados";
-          cout << "\n[B] Bloqueado";
-          cout << "\n[C] Cadeirante";
+          cout << endl;
+          cout << "\n[ ] Disponivel      [B]Bloqueado";
+          cout << "\n[/] Selecionado     [C]Cadeirante";
+          cout << "\n[-] Ocupados";       
           cout << endl;
 
           if (escolha1 > 11 || escolha2 > 5){
@@ -959,13 +954,13 @@ void sessao_4(){
         cout << endl;
       }
         cout << endl;
+        cout << endl;
         cout << "\n             TELA";
         cout << "\n---------------------------------";
-        cout << "\n[ ] Disponivel";
-        cout << "\n[/] Selecionado";
-        cout << "\n[-] Ocupados";
-        cout << "\n[B] Bloqueado";
-        cout << "\n[C] Cadeirante";
+        cout << endl;
+        cout << "\n[ ] Disponivel      [B]Bloqueado";
+        cout << "\n[/] Selecionado     [C]Cadeirante";
+        cout << "\n[-] Ocupados";       
         cout << endl;
      
       cout << "\nAssentos selecionados: ";
