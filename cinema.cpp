@@ -513,6 +513,13 @@ void sessao_1(){
   cout << endl;
   system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
+    for (i = 0; i < 10; i++){
+      for (j = 0; j < 5; j++){
+        if (cadeiras1[i][j] == "[//]"){
+          guarda_polt++;
+        }
+      }
+    }
     polt_selecionada();
     if (guarda_polt > 0){
       compra_ing(guarda_polt);
@@ -661,6 +668,13 @@ void sessao_2(){
 
   system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
+    for (i = 0; i < 10; i++){
+      for (j = 0; j < 5; j++){
+        if (cadeiras2[i][j] == "[//]"){
+          guarda_polt++;
+        }
+      }
+    }
     polt_selecionada();
     if (guarda_polt > 0){
       compra_ing(guarda_polt);
@@ -811,6 +825,13 @@ void sessao_3(){
   cout << endl;
   system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
+    for (i = 0; i < 10; i++){
+      for (j = 0; j < 5; j++){
+        if (cadeiras3[i][j] == "[//]"){
+          guarda_polt++;
+        }
+      }
+    }
     polt_selecionada();
     if (guarda_polt > 0){
       compra_ing(guarda_polt);
@@ -960,6 +981,13 @@ void sessao_4(){
   cout << endl;
   system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
+    for (i = 0; i < 10; i++){
+      for (j = 0; j < 5; j++){
+        if (cadeiras4[i][j] == "[//]"){
+          guarda_polt++;
+        }
+      }
+    }
     polt_selecionada();
     if (guarda_polt > 0){
       compra_ing(guarda_polt);
@@ -1034,6 +1062,7 @@ cout << "\nAssentos selecionados: ";
     }
   }   
 }
+
 float compra_ing(int guarda_polt){
   setlocale(LC_ALL, "Portuguese_Brazil");
   ing_int = 30;
@@ -1134,6 +1163,7 @@ float compra_ing(int guarda_polt){
         cout << "\n <- Digite 0 para voltar <-   -> Digite 1 para proseguir ->  ";
         cout << endl << "                            ";
         cin >> loop_tela;
+        system("cls");
       }
       if (loop_tela == 0){
         mostra_ing = 0;
