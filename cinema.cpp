@@ -17,6 +17,7 @@ void sessao_1();
 void sessao_2();
 void sessao_3();
 void sessao_4();
+void polt_selecionada();
 void mostrar_sala();
 void loop_hora();
 
@@ -166,7 +167,7 @@ int main(){
       }
     }
     cout << endl;
-      system("cls");
+    system("cls");
     escolher_tipo_bc();
     cout << "\nTOTAL: " << "R$ " << total_final << endl;
     loop_menu = 0;
@@ -1028,6 +1029,43 @@ void loop_hora(){
   }
 }
 
+void polt_selecionada(){
+setlocale(LC_ALL, "Portuguese_Brazil");
+int i, j;
+i = 0;
+j = 0;     
+cout << "\nAssentos selecionados: ";
+  for (i = 0; i < 10; i++){
+    for (j = 0; j < 5; j++){
+      if (cadeiras1[i][j] == "[//]"){
+        cout << i << j << ", ";
+      }
+    }
+  }
+
+  for (i = 0; i < 12; i++){
+    for (j = 0; j < 6; j++){
+      if (cadeiras2[i][j] == "[//]"){
+        cout << i << j << ", ";
+      }
+    }
+  }
+  for (i = 0; i < 12; i++){
+    for (j = 0; j < 6; j++){
+      if (cadeiras4[i][j] == "[//]"){
+        cout << i << j << ", ";
+      }
+    }
+  }  
+
+  for (i = 0; i < 10; i++){
+    for (j = 0; j < 6; j++){
+      if (cadeiras3[i][j] == "[//]"){
+       cout << i << j << ", ";
+      }
+    }
+  }   
+}
 float compra_ing(int guarda_polt){
   setlocale(LC_ALL, "Portuguese_Brazil");
   ing_int = 30;
@@ -1051,14 +1089,15 @@ float compra_ing(int guarda_polt){
   if (sele_ingresso == 's' || sele_ingresso == 'S'){
     while (loop_tela == 0){
       do{
+        polt_selecionada();
         cout << endl;
         cout << "\n[1]Ingresso inteiro R$" << ing_int;
         cout << "\n[2]Ingresso meio R$" << ing_meia;
         cout << endl;
         cout << "\nSelecione o numero: ";
         cin >> compra_ingresso;
-        system("cls");
         cout << endl;
+        system("cls");
         while (compra_ingresso > 2 || compra_ingresso <= 0){
           cout << endl;
           cout << "\n[1]Ingresso inteiro R$" << ing_int;
@@ -1086,7 +1125,7 @@ float compra_ing(int guarda_polt){
             mostra_ing = 0;
             qtd_ingresso = 0;
             guarda_ingresso = 0;
-            cout << "\nErro, foram " << guarda_polt << " assentos selecionados!";
+            cout << "\nErro, foram " << guarda_polt << " assentos selecionados!" << endl;
           }
           qtd_ingresso = qtd_ingresso * ing_int;
           guarda_ingresso = guarda_ingresso + qtd_ingresso;
@@ -1108,7 +1147,7 @@ float compra_ing(int guarda_polt){
             mostra_ing = 0;
             qtd_ingresso = 0;
             guarda_ingresso = 0;
-            cout << "\nErro, foram " << guarda_polt << " assentos selecionados!";
+            cout << "\nErro, foram " << guarda_polt << " assentos selecionados!" << endl;
           }
           qtd_ingresso = qtd_ingresso * ing_meia;
           guarda_ingresso = guarda_ingresso + qtd_ingresso;
