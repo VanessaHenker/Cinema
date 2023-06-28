@@ -120,7 +120,7 @@ Comida comida23 = {"[4]Chocalate Garoto ao Leite 90g         R$ ", 7.50};
 
 // váriaveis de ingressos
 int escolha, sessao, fin_compra;
-int i, qtd_ingresso, loop_menu;
+int i, qtd_ingresso[2], loop_menu;
 int ingresso_poltrona = 0, guarda_ingresso = 0, compra_ingresso = 0, mostra_ing = 0;
 char sele_ingresso;
 float ing_int, ing_meia, total_ingresso = 0;
@@ -1077,10 +1077,12 @@ float compra_ing(int guarda_polt){
   ing_meia = 15;
   mostra_ing = 0;
   guarda_ingresso = 0;
-  qtd_ingresso = 0;
   total_ingresso = 0;
   sele_ingresso = 't';
-  loop_tela = 0;
+  loop_tela = 0; 
+  for(i = 0; i < 2; i++){
+    qtd_ingresso[i] = 0;
+  }
   while (sele_ingresso != 's' && sele_ingresso != 'S' && sele_ingresso != 'n' && sele_ingresso != 'N'){
     cout << endl;
     cout << "\n[1]Ingresso inteiro R$" << ing_int;
@@ -1116,48 +1118,48 @@ float compra_ing(int guarda_polt){
         if (compra_ingresso == 1){
           cout << "\n[" << mostra_ing << "]Qtd ";
           cout << "\nQuantidade de ingresso(inteiro):  ";
-          cin >> qtd_ingresso;
+          cin >> guarda_ingresso;
           //system("cls");
-          while (qtd_ingresso < 0){
-            if (qtd_ingresso < 0){
+          while (guarda_ingresso < 0){
+            if (guarda_ingresso < 0){
               cout << "\nQuantidade inválida!";
             }
             cout << "\n[" << mostra_ing << "]Qtd ";
             cout << "\nQuantidade de ingresso(inteiro):  ";
-            cin >> qtd_ingresso;
+            cin >> guarda_ingresso;
           }
-          mostra_ing = mostra_ing + qtd_ingresso;
+          mostra_ing = mostra_ing + guarda_ingresso;
           if (mostra_ing > guarda_polt || mostra_ing == 0 || mostra_ing < 0){
             mostra_ing = 0;
-            qtd_ingresso = 0;
+            guarda_ingresso = 0;
             guarda_ingresso = 0;
             cout << "\nErro, foram " << guarda_polt << " assentos selecionados!" << endl;
           }
-          qtd_ingresso = qtd_ingresso * ing_int;
-          guarda_ingresso = guarda_ingresso + qtd_ingresso;
+          guarda_ingresso = guarda_ingresso * ing_int;
+          qtd_ingresso[0] = qtd_ingresso[0] + guarda_ingresso;
         }
         if (compra_ingresso == 2){
           cout << "\n[" << mostra_ing << "]Qtd ";
           cout << "\nQuantidade de ingresso(meia):  ";
-          cin >> qtd_ingresso;
+          cin >> guarda_ingresso;
           //system("cls");
-          while (qtd_ingresso < 0){
-            if (qtd_ingresso < 0){
+          while (guarda_ingresso < 0){
+            if (guarda_ingresso < 0){
               cout << "\nQuantida inválida!";
             }
             cout << "\n[" << mostra_ing << "]Qtd ";
             cout << "\nQuantidade de ingresso(meia):  ";
-            cin >> qtd_ingresso;
+            cin >> guarda_ingresso;
           }
-          mostra_ing = mostra_ing + qtd_ingresso;
+          mostra_ing = mostra_ing + guarda_ingresso;
           if (mostra_ing > guarda_polt || mostra_ing == 0 || mostra_ing < 0){
             mostra_ing = 0;
-            qtd_ingresso = 0;
+            guarda_ingresso = 0;
             guarda_ingresso = 0;
             cout << "\nErro, foram " << guarda_polt << " assentos selecionados!" << endl;
           }
-          qtd_ingresso = qtd_ingresso * ing_meia;
-          guarda_ingresso = guarda_ingresso + qtd_ingresso;
+          guarda_ingresso = guarda_ingresso * ing_meia;
+          qtd_ingresso[1] = qtd_ingresso[1] + guarda_ingresso;
         }
         if (mostra_ing == guarda_polt){
           cout << "\nAtenção! É necessário comprovar este ingresso para entrar na sessão.";
@@ -1176,12 +1178,15 @@ float compra_ing(int guarda_polt){
       }
       if (loop_tela == 0){
         mostra_ing = 0;
-        qtd_ingresso = 0;
         guarda_ingresso = 0;
+        qtd_ingresso[0] = 0;
+        qtd_ingresso[1] = 0;
       }
     }
   }
-  total_ingresso = total_ingresso + guarda_ingresso;
+    for(i = 0; i < 2; i++){
+      total_ingresso = total_ingresso + qtd_ingresso[i];
+    }
   cout << "\nTOTAL: " << total_ingresso;
   return 0;
 }
@@ -1200,7 +1205,7 @@ cout << endl;
 cout << "\nTotal da compra R$: " <<  total_final;
 dinheiro = -1;
 while(dinheiro < 0){
-  cout << "\nDinheiro recebido: " << endl;
+  cout << "\nDinheiro recebido: ";
   cin >> dinheiro;
     if(dinheiro < 0){
     cout << "\nValor inválido!" << endl;
@@ -1209,10 +1214,10 @@ while(dinheiro < 0){
 troco = dinheiro - total_final;
 if(troco < 0){
     while (troco < 0){
-    cout << "\nDinheiro insuficiente. Faltam R$" << troco * (-1) << " REAIS";
+    cout << "\nDinheiro insuficiente. Faltam R$" << troco * (-1) << " REAIS" <<endl;
     total2 = troco * (-1); 
     cout << endl;
-    cout << "\nQuanto sera o pagamento: " << endl;
+    cout << "\nQuanto sera o pagamento: ";
     cin >> dinheiro2;
     if(dinheiro2 < 0){
       cout << "\nValor inválido!" << endl;
