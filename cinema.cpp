@@ -1241,7 +1241,9 @@ void nota_fiscal(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   
   escolha_horario(escolha_hora, opcao);
-  polt_selecionada();
+  if(total_ingresso > 0){
+    polt_selecionada();
+  }
   cout << endl;
   cout << "\nTOTAL DA COMPRA...............................................R$ " << total_final;
   cout << "\nDINHEIRO RECEBIDO.............................................R$ " << dinheiro;
