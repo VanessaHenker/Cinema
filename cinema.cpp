@@ -1047,7 +1047,7 @@ cout << "\nAssentos selecionados: ";
   // assentos selecionados da sessao 2
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
-      if (cadeiras2[i][j] == "[//]"){
+      if (cadeiras2[i][j] == "[//]" || cadeiras2[i][j] == "[--]"){
         cout << i << j << ", ";
       }
     }
@@ -1055,7 +1055,7 @@ cout << "\nAssentos selecionados: ";
   // assentos selecionados da sessao 3
   for (i = 0; i < 10; i++){
     for (j = 0; j < 6; j++){
-      if (cadeiras3[i][j] == "[//]"){
+      if (cadeiras3[i][j] == "[//]" || cadeiras3[i][j] == "[--]"){
        cout << i << j << ", ";
       }
     }
@@ -1063,7 +1063,7 @@ cout << "\nAssentos selecionados: ";
   // assentos selecionados da sessao 4
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
-      if (cadeiras4[i][j] == "[//]"){
+      if (cadeiras4[i][j] == "[//]" || cadeiras4[i][j] == "[--]"){
         cout << i << j << ", ";
       }
     }
