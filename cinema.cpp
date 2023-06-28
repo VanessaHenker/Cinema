@@ -123,7 +123,7 @@ int escolha, sessao, fin_compra;
 int i, qtd_ingresso[2], loop_menu;
 int ingresso_poltrona = 0, guarda_ingresso = 0, compra_ingresso = 0, mostra_ing = 0;
 char sele_ingresso;
-float ing_int, ing_meia, total_ingresso = 0;
+float ing_int, ing_meia, total_ingresso;
 
 // variaveis de escolha de sessao e filme
 int qtd_filme = 4;
@@ -534,10 +534,12 @@ void sessao_1(){
     }
     cout << endl;
     // system("cls");
-    for (i = 0; i < 10; i++){
-      for (j = 0; j < 5; j++){
-        if (cadeiras1[i][j] == "[//]"){
-          cadeiras1[i][j] = "[--]";
+    if(total_ingresso > 0){
+      for (i = 0; i < 10; i++){
+        for (j = 0; j < 5; j++){
+          if (cadeiras1[i][j] == "[//]"){
+            cadeiras1[i][j] = "[--]";
+          }
         }
       }
     }
@@ -1000,10 +1002,12 @@ void sessao_4(){
     else{
       cout << "\nNenhum assento foi selecionado!" << endl;
     }
-    for (i = 0; i < 10; i++){
-      for (j = 0; j < 5; j++){
-        if (cadeiras1[i][j] == "[//]"){
-          cadeiras1[i][j] = "[--]";
+    if(total_ingresso > 0){
+      for (i = 0; i < 10; i++){
+        for (j = 0; j < 5; j++){
+          if (cadeiras1[i][j] == "[//]"){
+            cadeiras1[i][j] = "[--]";
+          }
         }
       }
     }
@@ -1016,8 +1020,7 @@ void loop_hora(){
     cout << endl;
     cout << "\n      SESSÂO FILME                SELECIONAR POLTRONAS";
     cout << "\n <- Digite 0 para voltar <-   ->Digite 1 para prosseguir->  ";
-    cout << endl
-         << "                            ";
+    cout << endl << "                            ";
     cin >> loop_sessao;
   }
   if (loop_sessao == 0){
@@ -1025,7 +1028,7 @@ void loop_hora(){
     sessao_escolha();
     mostrar_sala();
     escolher_tipo_bc();
-    system("cls");
+    //system("cls");
     main();
   }
 }
