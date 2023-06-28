@@ -6,12 +6,11 @@
 using namespace std;
 
 int selecionar_poltronas();
+int escolher_tam_bc();
 
 void sessao_escolha();
 void sessao_filme();
 void escolha_horario(int escolha_hora, int opcao);
-
-int escolher_tam_bc();
 void escolher_tipo_bc();
 void sessao_1();
 void sessao_2();
@@ -20,8 +19,9 @@ void sessao_4();
 void polt_selecionada();
 void mostrar_sala();
 void loop_hora();
-
+void nota_fiscal();
 void finalizar_compra();
+
 float escolha_tipo_comida(int escolha_comida);
 float escolha_tipo_bebida(int escolha_bebida);
 float compra_ing(int guarda_polt);
@@ -1039,7 +1039,7 @@ cout << "\nAssentos selecionados: ";
   // assentos selecionados da sessao 1
   for (i = 0; i < 10; i++){
     for (j = 0; j < 5; j++){
-      if (cadeiras1[i][j] == "[//]"){
+      if (cadeiras1[i][j] == "[//]" || cadeiras1[i][j] == "[--]"){
         cout << i << j << ", ";
       }
     }
@@ -1187,7 +1187,7 @@ float compra_ing(int guarda_polt){
     for(i = 0; i < 2; i++){
       total_ingresso = total_ingresso + qtd_ingresso[i];
     }
-  cout << "\nTOTAL: " << total_ingresso;
+  cout << "\nTOTAL R$: " << total_ingresso;
   return 0;
 }
 
@@ -1227,6 +1227,15 @@ if(troco < 0){
     dinheiro = dinheiro + dinheiro2; 
     }
   }
+  nota_fiscal();
+}
+
+void nota_fiscal(){
+  setlocale(LC_ALL, "Portuguese_Brazil");
+  
+  escolha_horario(escolha_hora, opcao);
+  polt_selecionada();
+  cout << endl;
   cout << "\nTOTAL DA COMPRA...............................................R$ " << total_final;
   cout << "\nDINHEIRO RECEBIDO.............................................R$ " << dinheiro;
   cout << "\nTROCO.........................................................R$ " << troco;
