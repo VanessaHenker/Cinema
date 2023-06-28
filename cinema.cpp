@@ -1435,17 +1435,18 @@ void escolher_tipo_bc(){
       }
     }
   }
-  if(loop_tela != 1 || sele_comida == 'n' || sele_comida == 'N'){
+  sele_comida = 'n';
+  if(loop_tela == 1 || sele_comida == 'n' || sele_comida == 'N'){
     while (sele_bebida != 'n' && sele_bebida != 'N' && sele_bebida != 's' && sele_bebida != 'S'){
       cout << "\nDeseja entrar na opções de bebidas";
       cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
       cin >> sele_bebida;
-      loop_tela = 1;
     }
   }
-  if(loop_tela == 1 && sele_bebida == 's' || sele_bebida == 'S'){
+
+  if(loop_tela == 1 || sele_bebida == 's' || sele_bebida == 'S' && sele_comida == 'n' || sele_comida == 'N'){
     sele_bebida = 's';
-    if (sele_bebida == 's' || sele_bebida == 'S'){
+   if (sele_bebida == 's' || sele_bebida == 'S'){
       loop_tela = 0;
       while (loop_tela == 0){
         escolha_bebida = 5;
@@ -1476,6 +1477,7 @@ void escolher_tipo_bc(){
     }
   }
   }
+  
   total_bc = total_bc + (guarda_comida + guarda_bebida);
   total_final = total_final + total_bc + total_ingresso;
 }
