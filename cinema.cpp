@@ -1240,10 +1240,12 @@ if(troco < 0){
 void nota_fiscal(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   
-  escolha_horario(escolha_hora, opcao);
+ 
   if(total_ingresso > 0){
+    escolha_horario(escolha_hora, opcao);
     polt_selecionada();
   }
+  if(total_final > 0){
   cout << endl;
   cout << "\nTOTAL DA COMPRA...............................................R$ " << total_final;
   cout << "\nDINHEIRO RECEBIDO.............................................R$ " << dinheiro;
@@ -1251,6 +1253,7 @@ void nota_fiscal(){
   cout << endl;
   cout << "\nCOMPRA FINALIZADA, VOLTE SEMPRE!";
   cout << endl;
+  }
 }
 
 float escolha_tipo_comida(int escolha_comida){
