@@ -1815,55 +1815,55 @@ float soma_ruffles(int escolha_ruffles){
   float total;
   i = 0;
   total = 0;
-  guarda_ruffles = -1;
+  opcao_ruffles = -1;
 
   for (i < 0; i < 4; i++){
     qtd_ruffles[i] = 0;
   }
   switch (escolha_ruffles){
   case 1:
-    while (guarda_ruffles < 0){
+    while (opcao_ruffles < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_ruffles;
-      if (guarda_ruffles < 0){
+      cin >> opcao_ruffles;
+      if (opcao_ruffles < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    guarda_ruffles = guarda_ruffles * comida12.preco;
-    qtd_ruffles[0] = qtd_ruffles[0] + guarda_ruffles;
+    opcao_ruffles = opcao_ruffles * comida12.preco;
+    qtd_ruffles[0] = qtd_ruffles[0] + opcao_ruffles;
     break;
   case 2:
-    while (guarda_ruffles < 0){
+    while (opcao_ruffles < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_ruffles;
-      if (guarda_ruffles < 0){
+      cin >> opcao_ruffles;
+      if (opcao_ruffles < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    guarda_ruffles = guarda_ruffles * comida13.preco;
-    qtd_ruffles[1] = qtd_ruffles[1] + guarda_ruffles;
+    opcao_ruffles = opcao_ruffles * comida13.preco;
+    qtd_ruffles[1] = qtd_ruffles[1] + opcao_ruffles;
     break;
   case 3:
-    while (guarda_ruffles < 0){
+    while (opcao_ruffles < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_ruffles;
-      if (guarda_ruffles < 0){
+      cin >> opcao_ruffles;
+      if (opcao_ruffles < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    guarda_ruffles = guarda_ruffles * comida14.preco;
-    qtd_ruffles[2] = qtd_ruffles[2] + guarda_ruffles;
+    opcao_ruffles = opcao_ruffles * comida14.preco;
+    qtd_ruffles[2] = qtd_ruffles[2] + opcao_ruffles;
     break;
   case 4:
-    while (guarda_ruffles < 0){
+    while (opcao_ruffles < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_ruffles;
-      if (guarda_ruffles < 0){
+      cin >> opcao_ruffles;
+      if (opcao_ruffles < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    guarda_ruffles = guarda_ruffles * comida15.preco;
-    qtd_ruffles[3] = qtd_ruffles[3] + guarda_ruffles;
+    opcao_ruffles = opcao_ruffles * comida15.preco;
+    qtd_ruffles[3] = qtd_ruffles[3] + opcao_ruffles;
     break;
   default:
     cout << endl;
