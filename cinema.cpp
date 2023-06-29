@@ -21,6 +21,7 @@ void mostrar_sala();
 void loop_hora();
 void nota_fiscal();
 void finalizar_compra();
+void nomes_produtos();
 
 float escolha_tipo_comida(int escolha_comida);
 float escolha_tipo_bebida(int escolha_bebida);
@@ -132,6 +133,7 @@ int opcao = 0, escolha_hora = 0;
 string cadeiras1[10][5], cadeiras2[12][6], cadeiras3[10][6], cadeiras4[12][6];
 
 // variáveis de escolha comidas e bebidas;
+int qtd_pipoca[3], qtd_fand[4], qtd_dori[4], qtd_ruffles[4],  qtd_cheetos[4], qtd_choc[4], qtd_coca[4],  qtd_uva[4], qtd_laran[4], qtd_guara[4];
 int escolha_bebida = 0, escolha_comida = 0, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
 int escolha_pipoca = 0, escolha_fand = 0, escolha_dori = 0, escolha_ruffles = 0, escolha_cheetos = 0, escolha_choc = 0;
 int guarda_pipoca = 0, guarda_fand = 0, guarda_dori = 0, guarda_ruffles = 0, guarda_cheetos = 0, guarda_choc = 0;
@@ -141,7 +143,7 @@ float total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_
 
 // variáveis de finalizar compra
 float dinheiro = 0, troco = 0, total_final;
-string nomes_prod[10];
+string nomes_prod[50];
 // variaveis pra sessao filme
 int loop_sessao = 0;
 
@@ -1287,24 +1289,68 @@ cout << endl;
   }
 }
 
-void nota_fiscal(){
+void nomes_produtos(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   nomes_prod[0] = "Ingresso int";
   nomes_prod[1] = "ingresso meio";
+  nomes_prod[2] = "Pipoca P";
+  nomes_prod[3] = "Pipoca M";
+  nomes_prod[4] = "Pipoca G";
+  nomes_prod[5] = "Fandangos 37g";
+  nomes_prod[6] = "Fandangos 45g";
+  nomes_prod[7] = "Fandangos 90g";
+  nomes_prod[8] = "Fandangos 140g";
+  nomes_prod[9] = "Doritos 37g";
+  nomes_prod[10] = "Doritos 45g";
+  nomes_prod[11] = "Doritos 90g";
+  nomes_prod[12] = "Doritos 140g";
+  nomes_prod[13] = "Ruffles 37g";
+  nomes_prod[14] = "Ruffles 45g";
+  nomes_prod[15] = "Ruffles 90g";
+  nomes_prod[16] = "Ruffles 140g";
+  nomes_prod[17] = "Cheetos 37g";
+  nomes_prod[18] = "Cheetos 45g";  
+  nomes_prod[19] = "Cheetos 90g";
+  nomes_prod[20] = "Cheetos 140g";
+  nomes_prod[21] = "Choc garoto 90g";
+
+  nomes_prod[22] = "Coca-coca 237ml";
+  nomes_prod[23] = "Coca-coca 350ml";  
+  nomes_prod[24] = "Coca-coca ZERO 350ml";
+  nomes_prod[25] = "Coca-coca 600ml";
+  nomes_prod[26] = "Fanta uva 237ml";
+  nomes_prod[27] = "Fanta uva 350ml";  
+  nomes_prod[28] = "Fanta uva ZERO 350ml";
+  nomes_prod[29] = "Fanta uva 600ml";
+  nomes_prod[30] = "Fanta laran 237ml";
+  nomes_prod[31] = "Fanta laran 350ml";  
+  nomes_prod[32] = "Fanta laran ZERO 350ml";
+  nomes_prod[33] = "Fanta laran 600ml";
+  nomes_prod[34] = "Fanta guará 237ml";
+  nomes_prod[35] = "Fanta guará 350ml";  
+  nomes_prod[36] = "Fanta guará ZERO 350ml";
+  nomes_prod[37] = "Fanta guará 600ml";
+}
+
+void nota_fiscal(){
+  setlocale(LC_ALL, "Portuguese_Brazil");
+  nomes_produtos();
+  
   if(total_ingresso > 0){
     escolha_horario(escolha_hora, opcao);
     polt_selecionada();
   }
   if(total_final > 0){
   cout << endl;
-  cout << "\n                   PRECO UNI              QUANTIDADE                 PRECO";
+  cout << "\n                      PREÇO UNI         QUANTIDADE           PREÇO";
+  cout << endl;
   cout << endl;
   if(ing_qtd[0] > 0){
-    cout << nomes_prod[0] << ".............R$ " << ing_int << "............... "<< ing_qtd[0] << ".........."<< ing_int * ing_qtd[0];
-  }
-  if(ing_qtd[0] > 0){
-    cout << nomes_prod[1] << ".............R$ " << ing_int << "............... "<< ing_qtd[1] << ".........."<< ing_int * ing_qtd[1];
-  }
+    cout << nomes_prod[0] << "  .............R$ " << ing_int << " .............. "<< ing_qtd[0] << " .............. "<< ing_int * ing_qtd[0] << endl;
+  }   
+  if(ing_qtd[1] > 0){   
+    cout << nomes_prod[1] << " .............R$ " << ing_meia << " .............. "<< ing_qtd[1] << " .............. "<< ing_meia* ing_qtd[1] << endl;
+  }   
   
   cout << endl;
   cout << "\nTOTAL DA COMPRA...............................................R$ " << total_final;
@@ -1569,8 +1615,6 @@ int escolher_tam_bc(){
 
 float soma_pipoca(int escolha_pipoca){
   setlocale(LC_ALL, "Portuguese_Brazil");
-
-  int i, qtd_pipoca[3];
   float total;
   i = 0;
   total = 0;
@@ -1628,7 +1672,7 @@ float soma_pipoca(int escolha_pipoca){
 }
 float soma_fandangos(int escolha_fand){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  int i, qtd_fand[4];
+  int i;
   float total;
   i = 0;
   total = 0;
@@ -1696,7 +1740,7 @@ float soma_fandangos(int escolha_fand){
 }
 float soma_doritos(int escolha_doritos){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  int i, qtd_dori[4];
+  int i;
   float total;
   i = 0;
   total = 0;
@@ -1764,7 +1808,7 @@ float soma_doritos(int escolha_doritos){
 }
 float soma_ruffles(int escolha_ruffles){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  int i, qtd_ruffles[4];
+  int i;
   float total;
   i = 0;
   total = 0;
@@ -1833,7 +1877,7 @@ float soma_ruffles(int escolha_ruffles){
 }
 float soma_cheetos(int escolha_cheetos){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  int i, qtd_cheetos[4];
+  int i;
   float total;
   i = 0;
   total = 0;
@@ -1901,7 +1945,7 @@ float soma_cheetos(int escolha_cheetos){
 }
 float soma_chocolate(int escolha_choc){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  int i, qtd_choc[4];
+  int i;
   float total;
   i = 0;
   total = 0;
@@ -1971,7 +2015,7 @@ float soma_chocolate(int escolha_choc){
 
 float soma_coca(int escolha_coca){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  int i, qtd_coca[4];
+  int i;
   float total;
   i = 0;
   total = 0;
@@ -2038,7 +2082,7 @@ float soma_coca(int escolha_coca){
 }
 float soma_fanta_uva(int escolha_uva){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  int i, qtd_uva[4];
+  int i;
   float total;
   i = 0;
   total = 0;
@@ -2105,7 +2149,7 @@ float soma_fanta_uva(int escolha_uva){
 }
 float soma_fanta_laran(int escolha_laran){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  int i, qtd_laran[4];
+  int i;
   float total;
   i = 0;
   total = 0;
@@ -2172,7 +2216,7 @@ float soma_fanta_laran(int escolha_laran){
 }
 float soma_fanta_guara(int escolha_guara){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  int i, qtd_guara[4];
+  int i;
   float total;
   i = 0;
   total = 0;
