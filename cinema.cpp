@@ -134,9 +134,10 @@ string cadeiras1[10][5], cadeiras2[12][6], cadeiras3[10][6], cadeiras4[12][6];
 
 // variáveis de escolha comidas e bebidas;
 int qtd_pipoca[3], qtd_fand[4], qtd_dori[4], qtd_ruffles[4],  qtd_cheetos[4], qtd_choc[4], qtd_coca[4],  qtd_uva[4], qtd_laran[4], qtd_guara[4];
+
 int escolha_bebida = 0, escolha_comida = 0, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
 int escolha_pipoca = 0, escolha_fand = 0, escolha_dori = 0, escolha_ruffles = 0, escolha_cheetos = 0, escolha_choc = 0;
-int guarda_pipoca = 0, guarda_fand = 0, guarda_dori = 0, guarda_ruffles = 0, guarda_cheetos = 0, guarda_choc = 0;
+int opcao_pipoca = 0, guarda_fand = 0, guarda_dori = 0, guarda_ruffles = 0, guarda_cheetos = 0, guarda_choc = 0;
 int loop_tela = 0, guarda_coca = 0, guarda_uva = 0, guarda_laran = 0, guarda_guara = 0;
 char sele_bebida, sele_comida;
 float total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_bebida = 0;
@@ -1351,7 +1352,9 @@ void nota_fiscal(){
   if(ing_qtd[1] > 0){   
     cout << nomes_prod[1] << " .............R$ " << ing_meia << " .............. "<< ing_qtd[1] << " .............. "<< ing_meia* ing_qtd[1] << endl;
   }   
-  
+  if(qtd_pipoca[0] > 0){
+    cout << nomes_prod[2] << "    .............R$ " << comida1.preco << " .............. " << qtd_pipoca[0] << " .............. " << comida1.preco * qtd_pipoca[0] << endl;
+  }
   cout << endl;
   cout << "\nTOTAL DA COMPRA...............................................R$ " << total_final;
   cout << "\nDINHEIRO RECEBIDO.............................................R$ " << dinheiro;
@@ -1618,44 +1621,44 @@ float soma_pipoca(int escolha_pipoca){
   float total;
   i = 0;
   total = 0;
-  guarda_pipoca = -1;
+  opcao_pipoca = -1;
   for (i < 0; i < 3; i++){
     qtd_pipoca[i] = 0;
   }
   switch (escolha_pipoca){
   case 1:
-    while (guarda_pipoca < 0){
+    while (opcao_pipoca < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_pipoca;
+      cin >> opcao_pipoca;
       // system("cls");
-      if (guarda_pipoca < 0){
+      if (opcao_pipoca < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    guarda_pipoca = guarda_pipoca * comida1.preco;
-    qtd_pipoca[0] = qtd_pipoca[0] + guarda_pipoca;
+    opcao_pipoca = opcao_pipoca * comida1.preco;
+    qtd_pipoca[0] = qtd_pipoca[0] + opcao_pipoca;
     break;
   case 2:
-    while (guarda_pipoca < 0){
+    while (opcao_pipoca < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_pipoca;
-      if (guarda_pipoca < 0){
+      cin >> opcao_pipoca;
+      if (opcao_pipoca < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    guarda_pipoca = guarda_pipoca * comida2.preco;
-    qtd_pipoca[1] = qtd_pipoca[1] + guarda_pipoca;
+    opcao_pipoca = opcao_pipoca * comida2.preco;
+    qtd_pipoca[1] = qtd_pipoca[1] + opcao_pipoca;
     break;
   case 3:
-    while (guarda_pipoca < 0){
+    while (opcao_pipoca < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_pipoca;
-      if (guarda_pipoca < 0){
+      cin >> opcao_pipoca;
+      if (opcao_pipoca < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    guarda_pipoca = guarda_pipoca * comida3.preco;
-    qtd_pipoca[2] = qtd_pipoca[2] + guarda_pipoca;
+    opcao_pipoca = opcao_pipoca * comida3.preco;
+    qtd_pipoca[2] = qtd_pipoca[2] + opcao_pipoca;
     break;
   default:
     cout << endl;
