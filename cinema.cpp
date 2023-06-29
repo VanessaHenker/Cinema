@@ -1240,7 +1240,6 @@ if(troco < 0){
 void nota_fiscal(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   
- 
   if(total_ingresso > 0){
     escolha_horario(escolha_hora, opcao);
     polt_selecionada();
@@ -1438,8 +1437,13 @@ void escolher_tipo_bc(){
       }
     }
   }
-  sele_comida = 'n';
-  if(loop_tela == 1 || sele_comida == 'n' || sele_comida == 'N'){
+  if(loop_tela == 0){
+    loop_tela = 1;
+  }
+  if(loop_tela == 1 && sele_comida == 'n' || sele_comida == 'N'){
+    if(sele_bebida == 'n'){
+      sele_bebida = 't';
+    }
     while (sele_bebida != 'n' && sele_bebida != 'N' && sele_bebida != 's' && sele_bebida != 'S'){
       cout << "\nDeseja entrar na opções de bebidas";
       cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
@@ -1447,9 +1451,8 @@ void escolher_tipo_bc(){
     }
   }
 
-  if(loop_tela == 1 || sele_bebida == 's' || sele_bebida == 'S' && sele_comida == 'n' || sele_comida == 'N'){
-    sele_bebida = 's';
-   if (sele_bebida == 's' || sele_bebida == 'S'){
+  if(loop_tela == 1 && sele_bebida == 's' || sele_bebida == 'S'){
+    if (sele_bebida == 's' || sele_bebida == 'S'){
       loop_tela = 0;
       while (loop_tela == 0){
         escolha_bebida = 5;
