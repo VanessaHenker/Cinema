@@ -120,7 +120,7 @@ Comida comida23 = {"[4]Chocalate Garoto ao Leite 90g         R$ ", 7.50};
 
 // váriaveis de ingressos
 int escolha, sessao, fin_compra;
-int i, qtd_ingresso[2], loop_menu;
+int i, qtd_ingresso[2],ing_qtd[2], loop_menu;
 int ingresso_poltrona = 0, guarda_ingresso = 0, compra_ingresso = 0, mostra_ing = 0;
 char sele_ingresso;
 float ing_int, ing_meia, total_ingresso, guarda_sessao = 0;
@@ -141,7 +141,7 @@ float total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_
 
 // variáveis de finalizar compra
 float dinheiro = 0, troco = 0, total_final;
-
+string nomes_prod[10];
 // variaveis pra sessao filme
 int loop_sessao = 0;
 
@@ -1129,6 +1129,10 @@ float compra_ing(int guarda_polt){
   for(i = 0; i < 2; i++){
     qtd_ingresso[i] = 0;
   }
+  for(i = 0; i < 2; i++){
+    ing_qtd[i] = 0;
+  }
+  
   while (sele_ingresso != 's' && sele_ingresso != 'S' && sele_ingresso != 'n' && sele_ingresso != 'N'){
     cout << endl;
     cout << "\n[1]Ingresso inteiro R$" << ing_int;
@@ -1174,6 +1178,7 @@ float compra_ing(int guarda_polt){
             cout << "\nQuantidade de ingresso(inteiro):  ";
             cin >> guarda_ingresso;
           }
+          ing_qtd[0] = ing_qtd[0] + guarda_ingresso;
           mostra_ing = mostra_ing + guarda_ingresso;
           if (mostra_ing > guarda_polt || mostra_ing == 0 || mostra_ing < 0){
             mostra_ing = 0;
@@ -1197,6 +1202,7 @@ float compra_ing(int guarda_polt){
             cout << "\nQuantidade de ingresso(meia):  ";
             cin >> guarda_ingresso;
           }
+          ing_qtd[1] = ing_qtd[1] + guarda_ingresso;
           mostra_ing = mostra_ing + guarda_ingresso;
           if (mostra_ing > guarda_polt || mostra_ing == 0 || mostra_ing < 0){
             mostra_ing = 0;
@@ -1233,6 +1239,7 @@ float compra_ing(int guarda_polt){
     for(i = 0; i < 2; i++){
       total_ingresso = total_ingresso + qtd_ingresso[i];
     }
+  
   cout << "\nTOTAL R$: " << total_ingresso;
   guarda_sessao = guarda_sessao + total_ingresso;
   
@@ -1282,12 +1289,23 @@ cout << endl;
 
 void nota_fiscal(){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  
+  nomes_prod[0] = "Ingresso int";
+  nomes_prod[1] = "ingresso meio";
   if(total_ingresso > 0){
     escolha_horario(escolha_hora, opcao);
     polt_selecionada();
   }
   if(total_final > 0){
+  cout << endl;
+  cout << "\n                   PRECO UNI              QUANTIDADE                 PRECO";
+  cout << endl;
+  if(ing_qtd[0] > 0){
+    cout << nomes_prod[0] << ".............R$ " << ing_int << "............... "<< ing_qtd[0] << ".........."<< ing_int * ing_qtd[0];
+  }
+  if(ing_qtd[0] > 0){
+    cout << nomes_prod[1] << ".............R$ " << ing_int << "............... "<< ing_qtd[1] << ".........."<< ing_int * ing_qtd[1];
+  }
+  
   cout << endl;
   cout << "\nTOTAL DA COMPRA...............................................R$ " << total_final;
   cout << "\nDINHEIRO RECEBIDO.............................................R$ " << dinheiro;
