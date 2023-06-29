@@ -123,7 +123,7 @@ int escolha, sessao, fin_compra;
 int i, qtd_ingresso[2], loop_menu;
 int ingresso_poltrona = 0, guarda_ingresso = 0, compra_ingresso = 0, mostra_ing = 0;
 char sele_ingresso;
-float ing_int, ing_meia, total_ingresso;
+float ing_int, ing_meia, total_ingresso, guarda_sessao = 0;
 
 // variaveis de escolha de sessao e filme
 int qtd_filme = 4;
@@ -388,7 +388,7 @@ void sessao_1(){
   j = 0;
   cout << endl;
   
-  if(total_final > 0){
+  if(guarda_sessao > 0){
   for (i = 0; i < 10; i++){
       for (j = 0; j < 5; j++){
         if (cadeiras1[i][j] == "[//]"){
@@ -397,7 +397,7 @@ void sessao_1(){
       }
     }
   }
-  
+  guarda_sessao = 0;
   for (i = 0; i < 10; i++){
     for (j = 0; j < 5; j++){
       if (cadeiras1[i][j] == "[--]"){
@@ -1195,6 +1195,8 @@ float compra_ing(int guarda_polt){
       total_ingresso = total_ingresso + qtd_ingresso[i];
     }
   cout << "\nTOTAL R$: " << total_ingresso;
+  guarda_sessao = guarda_sessao + total_ingresso;
+  
   return 0;
 }
 
@@ -1205,21 +1207,22 @@ dinheiro = 0;
 troco = 0;
 total2 = 0;
 dinheiro2 = 0;
-total2 = total_final + total2;
-dinheiro2 = dinheiro + dinheiro2; 
+total2 = total_final;
+dinheiro2 = dinheiro; 
 
 cout << endl;
-cout << "\nTotal da compra R$: " <<  total_final;
-dinheiro = -1;
-while(dinheiro < 0){
-  cout << "\nDinheiro recebido: ";
-  cin >> dinheiro;
+  if(total_final > 0){
+    cout << "\nTotal da compra R$: " <<  total_final;
+    dinheiro = -1;
+  while(dinheiro < 0){
+    cout << "\nDinheiro recebido: ";
+    cin >> dinheiro;
     if(dinheiro < 0){
     cout << "\nValor inválido!" << endl;
   }
 }
-troco = dinheiro - total_final;
-if(troco < 0){
+  troco = dinheiro - total_final;
+  if(troco < 0){
     while (troco < 0){
     cout << "\nDinheiro insuficiente. Faltam R$" << troco * (-1) << " REAIS" <<endl;
     total2 = troco * (-1); 
@@ -1235,6 +1238,7 @@ if(troco < 0){
     }
   }
   nota_fiscal();
+  }
 }
 
 void nota_fiscal(){
@@ -1469,19 +1473,19 @@ void escolher_tipo_bc(){
           cout << "\nValor inválido, Tente novamente!";
         }
       }
-      soma_bebida = escolha_tipo_bebida(escolha_bebida);
-      guarda_bebida = guarda_bebida + soma_bebida;
+        soma_bebida = escolha_tipo_bebida(escolha_bebida);
+        guarda_bebida = guarda_bebida + soma_bebida;
 
-      loop_tela = 2;
+        loop_tela = 2;
       while (loop_tela != 1 && loop_tela != 0){
         cout << endl;
         cout << "       OPÇÕES BEBIDAS                  FINALIZAR COMPRA";
         cout << "\n <- Digite 0 para voltar <-   -> Digite 1 para proseguir ->  ";
         cout << endl << "                            ";
         cin >> loop_tela;
+        }
       }
     }
-  }
   }
   
   total_bc = total_bc + (guarda_comida + guarda_bebida);
