@@ -137,7 +137,7 @@ int qtd_pipoca[3], qtd_fand[4], qtd_dori[4], qtd_ruffles[4],  qtd_cheetos[4], qt
 
 int escolha_bebida = 0, escolha_comida = 0, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
 int escolha_pipoca = 0, escolha_fand = 0, escolha_dori = 0, escolha_ruffles = 0, escolha_cheetos = 0, escolha_choc = 0;
-int opcao_pipoca = 0, guarda_fand = 0, guarda_dori = 0, guarda_ruffles = 0, guarda_cheetos = 0, guarda_choc = 0;
+int opcao_pipoca = 0, opcao_fand = 0, opcao_dori = 0, opcao_ruffles = 0, opcao_cheetos = 0, opcao_choc = 0;
 int loop_tela = 0, guarda_coca = 0, guarda_uva = 0, guarda_laran = 0, guarda_guara = 0;
 char sele_bebida, sele_comida;
 float total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_bebida = 0;
@@ -1679,54 +1679,54 @@ float soma_fandangos(int escolha_fand){
   float total;
   i = 0;
   total = 0;
-  guarda_fand = -1;
+  opcao_fand = -1;
   for (i < 0; i < 4; i++){
     qtd_fand[i] = 0;
   }
   switch (escolha_fand){
   case 1:
-    while (guarda_fand < 0){
+    while (opcao_fand < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_fand;
-      if (guarda_fand < 0){
+      cin >> opcao_fand;
+      if (opcao_fand < 0){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
-    guarda_fand = guarda_fand * comida4.preco;
-    qtd_fand[0] = qtd_fand[0] + guarda_fand;
+    opcao_fand = opcao_fand * comida4.preco;
+    qtd_fand[0] = qtd_fand[0] + opcao_fand;
     break;
   case 2:
-    while (guarda_fand < 0){
+    while (opcao_fand < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_pipoca;
-      if (guarda_pipoca < 0){
+      cin >> opcao_fand;
+      if (opcao_fand < 0){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
-    guarda_fand = guarda_fand * comida5.preco;
-    qtd_fand[1] = qtd_fand[1] + guarda_fand;
+    opcao_fand = opcao_fand * comida5.preco;
+    qtd_fand[1] = qtd_fand[1] + opcao_fand;
     break;
   case 3:
-    while (guarda_fand < 0){
+    while (opcao_fand < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_fand;
-      if (guarda_fand < 0){
+      cin >> opcao_fand;
+      if (opcao_fand < 0){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
-    guarda_fand = guarda_fand * comida6.preco;
-    qtd_fand[2] = qtd_fand[2] + guarda_fand;
+    opcao_fand = opcao_fand * comida6.preco;
+    qtd_fand[2] = qtd_fand[2] + opcao_fand;
     break;
   case 4:
-    while (guarda_fand < 0){
+    while (opcao_fand < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_fand;
-      if (guarda_fand < 0){
+      cin >> opcao_fand;
+      if (opcao_fand < 0){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
-    guarda_fand = guarda_fand * comida7.preco;
-    qtd_fand[3] = qtd_fand[3] + guarda_fand;
+    opcao_fand = opcao_fand * comida7.preco;
+    qtd_fand[3] = qtd_fand[3] + opcao_fand;
     break;
   default:
     cout << endl;
