@@ -1747,54 +1747,54 @@ float soma_doritos(int escolha_doritos){
   float total;
   i = 0;
   total = 0;
-  guarda_dori = -1;
+  opcao_dori = -1;
   for (i < 0; i < 4; i++){
     qtd_dori[i] = 0;
   }
   switch (escolha_dori){
   case 1:
-    while (guarda_dori < 0){
+    while (opcao_dori < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_dori;
-      if (guarda_dori < 0){
+      cin >> opcao_dori;
+      if (opcao_dori < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    guarda_dori = guarda_dori * comida8.preco;
-    qtd_dori[0] = qtd_dori[0] + guarda_dori;
+    opcao_dori = opcao_dori * comida8.preco;
+    qtd_dori[0] = qtd_dori[0] + opcao_dori;
     break;
   case 2:
-    while (guarda_dori < 0){
+    while (opcao_dori < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_dori;
-      if (guarda_dori < 0){
+      cin >> opcao_dori;
+      if (opcao_dori < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    guarda_dori = guarda_dori * comida9.preco;
-    qtd_dori[1] = qtd_dori[1] + guarda_dori;
+    opcao_dori = opcao_dori * comida9.preco;
+    qtd_dori[1] = qtd_dori[1] + opcao_dori;
     break;
   case 3:
-    while (guarda_dori < 0){
+    while (opcao_dori < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_dori;
-      if (guarda_fand < 0){
+      cin >> opcao_dori;
+      if (opcao_dori < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    guarda_dori = guarda_dori * comida10.preco;
-    qtd_dori[2] = qtd_dori[2] + guarda_dori;
+    opcao_dori = opcao_dori * comida10.preco;
+    qtd_dori[2] = qtd_dori[2] + opcao_dori;
     break;
   case 4:
-    while (guarda_dori < 0){
+    while (opcao_dori < 0){
       cout << "\nQuantidade: ";
-      cin >> guarda_dori;
-      if (guarda_dori < 0){
+      cin >> opcao_dori;
+      if (opcao_dori < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    guarda_dori = guarda_dori * comida11.preco;
-    qtd_dori[3] = qtd_dori[3] + guarda_dori;
+    opcao_dori = opcao_dori * comida11.preco;
+    qtd_dori[3] = qtd_dori[3] + opcao_dori;
     break;
   default:
     cout << endl;
