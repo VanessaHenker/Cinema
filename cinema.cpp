@@ -140,16 +140,18 @@ char sele_bebida, sele_comida;
 float total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_bebida = 0;
 
 // variáveis de finalizar compra
-float dinheiro = 0, troco = 0, total_final = 0;
+float dinheiro = 0, troco = 0, total_final;
 
 // variaveis pra sessao filme
 int loop_sessao = 0;
 
 int main(){
   int escolha_sessao;
-
+  total_final = 0;
+  total_bc = 0;
+  total_ingresso = 0;
   while (loop_menu == 0){
-   //system("cls");
+  //system("cls");
     cout << "----------------------------------------------";
     cout << "\nBem vindo ao nosso cinema!";
     cout << "\n----------------------------------------------";
@@ -826,7 +828,7 @@ void sessao_3(){
       }
         cout << endl;
         cout << "\n                  TELA";
-        cout << "\n-----------------------------------------";
+        cout << "\n--------------------------------------";
         cout << endl;
         cout << "\n[ ] Disponivel      [B]Bloqueado";
         cout << "\n[/] Selecionado     [C]Cadeirante";
@@ -1067,6 +1069,9 @@ void loop_hora(){
     mostrar_sala();
     escolher_tipo_bc();
     //system("cls");
+    if(total_final > 0){
+      finalizar_compra();
+    }
     main();
   }
 }
@@ -1523,7 +1528,7 @@ void escolher_tipo_bc(){
   }
   
   total_bc = total_bc + (guarda_comida + guarda_bebida);
-  total_final = total_final + total_bc + total_ingresso;
+  total_final = total_bc + total_ingresso;
 }
 int escolher_tam_bc(){
   setlocale(LC_ALL, "Portuguese_Brazil");
