@@ -1538,8 +1538,10 @@ float escolha_tipo_bebida(int escolha_bebida){
     total[3] = soma_fanta_guara(escolha_guara);
     break;
   default:
+    if(escolha_bebida != 0){
     cout << endl;
-    cout << "\nNumero não existe, Tente novamente!" << endl;
+    cout << "\nNumero inválido, Tente novamente" << endl;
+    }
     break;
   }
   for (i = 0; i < 4; i++){
