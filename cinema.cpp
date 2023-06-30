@@ -156,6 +156,7 @@ int main(){
   total_final = 0;
   total_bc = 0;
   total_ingresso = 0;
+  valor_variavel();
   //system("cls");
     cout << "----------------------------------------------";
     cout << "\nBem vindo ao nosso cinema!";
@@ -1187,7 +1188,7 @@ while (sele_ingresso != 's' && sele_ingresso != 'S' && sele_ingresso != 'n' && s
           if (mostra_ing > guarda_polt || mostra_ing == 0 || mostra_ing < 0){
             mostra_ing = 0;
             opcao_ingresso = 0;
-            opcao_ingresso = 0;
+            
             cout << "\nErro, foram " << guarda_polt << " assentos selecionados!" << endl;
           }
           opcao_ingresso = opcao_ingresso * ing_int;
@@ -1211,7 +1212,10 @@ while (sele_ingresso != 's' && sele_ingresso != 'S' && sele_ingresso != 'n' && s
           if (mostra_ing > guarda_polt || mostra_ing == 0 || mostra_ing < 0){
             mostra_ing = 0;
             opcao_ingresso = 0;
-            opcao_ingresso = 0;
+            guarda_ingresso[0] = 0;
+            guarda_ingresso[1] = 0;
+            qtd_ingresso[0] = 0;
+            qtd_ingresso[1] = 0;
             cout << "\nErro, foram " << guarda_polt << " assentos selecionados!" << endl;
           }
           opcao_ingresso = opcao_ingresso * ing_meia;
@@ -1222,6 +1226,12 @@ while (sele_ingresso != 's' && sele_ingresso != 'S' && sele_ingresso != 'n' && s
         }
       } while (mostra_ing < guarda_polt || mostra_ing > guarda_polt || mostra_ing == 0);
       if (mostra_ing < guarda_polt || mostra_ing == 0){
+        mostra_ing = 0;
+        opcao_ingresso = 0;
+        guarda_ingresso[0] = 0;
+        guarda_ingresso[1] = 0;
+        qtd_ingresso[0] = 0;
+        qtd_ingresso[1] = 0;
         cout << "\nErro, foram " << guarda_polt << " assentos selecionados!";
       }
       loop_tela = 2;
@@ -1378,8 +1388,6 @@ void soma_qtd_prod(){
   if(qtd_pipoca[2] > 0){
     cout << nomes_prod[4] << "      .............R$ " << comida3.preco << " .............. " << qtd_pipoca[2] << " .............. " << comida3.preco * qtd_pipoca[2] << endl;
   }
-   valor_variavel();
-  
 }
 void valor_variavel(){
   setlocale(LC_ALL, "Portuguese_Brazil");
@@ -1690,7 +1698,6 @@ float soma_pipoca(int escolha_pipoca){
   i = 0;
   total = 0;
   opcao_pipoca = -1;
-  
   for (i < 0; i < 3; i++){
     guarda_pipoca[i] = 0;
     qtd_pipoca[i] = 0;
