@@ -137,6 +137,7 @@ string cadeiras1[10][5], cadeiras2[12][6], cadeiras3[10][6], cadeiras4[12][6];
 int guarda_pipoca[3], guarda_fand[4], guarda_dori[4], guarda_ruffles[4], guarda_cheetos[4], guarda_choc[4];
 int guarda_coca[4], guarda_uva[4], guarda_laran[4], guarda_guara[4];
 int qtd_pipoca[3], qtd_fand[4], qtd_dori[4], qtd_ruffles[4], qtd_cheetos[4], qtd_choc[4];
+int qtd_coca[4], qtd_uva[4], qtd_laran[4], qtd_guara[4];
 int escolha_bebida = 0, escolha_comida = 0, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
 int escolha_pipoca = 0, escolha_fand = 0, escolha_dori = 0, escolha_ruffles = 0, escolha_cheetos = 0, escolha_choc = 0;
 int opcao_pipoca = 0, opcao_fand = 0, opcao_dori = 0, opcao_ruffles = 0, opcao_cheetos = 0, opcao_choc = 0;
@@ -2087,6 +2088,7 @@ float soma_coca(int escolha_coca){
   opcao_coca = -1;
   for (i < 0; i < 4; i++){
     guarda_coca[i] = 0;
+    qtd_coca[i] = 0;
   }
   switch (escolha_coca){
   case 1:
@@ -2097,6 +2099,7 @@ float soma_coca(int escolha_coca){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     } 
+    qtd_coca[0] = qtd_coca[0] + opcao_coca;
     opcao_coca = opcao_coca * bebida1.preco;
     guarda_coca[0] = guarda_coca[0] + opcao_coca;
     break;
@@ -2108,6 +2111,7 @@ float soma_coca(int escolha_coca){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     } 
+    qtd_coca[1] = qtd_coca[1] + opcao_coca;
     opcao_coca = opcao_coca * bebida2.preco;
     guarda_coca[1] = guarda_coca[1] + opcao_coca;
     break;
@@ -2119,6 +2123,7 @@ float soma_coca(int escolha_coca){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_coca[2] = qtd_coca[2] + opcao_coca;
     opcao_coca = opcao_coca * bebida3.preco;
     guarda_coca[2] = guarda_coca[2] + opcao_coca;
     break;
@@ -2130,6 +2135,7 @@ float soma_coca(int escolha_coca){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_coca[3] = qtd_coca[3] + opcao_coca;
     opcao_coca = opcao_coca * bebida4.preco;
     guarda_coca[3] = guarda_coca[3] + opcao_coca;
     break;
@@ -2154,6 +2160,7 @@ float soma_fanta_uva(int escolha_uva){
   opcao_uva = -1;
   for (i < 0; i < 4; i++){
     guarda_uva[i] = 0;
+    qtd_uva[i] = 0;
   }
   switch (escolha_uva){
   case 1:
@@ -2164,6 +2171,7 @@ float soma_fanta_uva(int escolha_uva){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_uva[0] = qtd_uva[0] + opcao_uva;
     opcao_uva = opcao_uva * bebida5.preco;
     guarda_uva[0] = guarda_uva[0] + opcao_uva;
     break;
@@ -2175,6 +2183,7 @@ float soma_fanta_uva(int escolha_uva){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_uva[1] = qtd_uva[1] + opcao_uva;
     opcao_uva = opcao_uva * bebida6.preco;
     guarda_uva[1] = guarda_uva[1] + opcao_uva;
     break;
@@ -2186,6 +2195,7 @@ float soma_fanta_uva(int escolha_uva){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_uva[2] = qtd_uva[2] + opcao_uva;
     opcao_uva = opcao_uva * bebida7.preco;
     guarda_uva[2] = guarda_uva[2] + opcao_uva;
     break;
@@ -2197,6 +2207,7 @@ float soma_fanta_uva(int escolha_uva){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_uva[3] = qtd_uva[3] + opcao_uva;
     opcao_uva = opcao_uva * bebida8.preco;
     guarda_uva[3] = guarda_uva[3] + opcao_uva;
     break;
@@ -2221,6 +2232,7 @@ float soma_fanta_laran(int escolha_laran){
   opcao_laran = -1;
   for (i < 0; i < 4; i++){
     guarda_laran[i] = 0;
+    qtd_laran[i] = 0;
   }
   switch (escolha_laran){
   case 1:
@@ -2231,6 +2243,7 @@ float soma_fanta_laran(int escolha_laran){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_laran[0] = qtd_laran[0] + opcao_laran;
     opcao_laran = opcao_laran * bebida9.preco;
     guarda_laran[0] = guarda_laran[0] + opcao_laran;
     break;
@@ -2242,6 +2255,7 @@ float soma_fanta_laran(int escolha_laran){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_laran[1] = qtd_laran[1] + opcao_laran;
     opcao_laran = opcao_laran * bebida10.preco;
     guarda_laran[1] = guarda_laran[1] + opcao_laran;
     break;
@@ -2253,6 +2267,7 @@ float soma_fanta_laran(int escolha_laran){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_laran[2] = qtd_laran[2] + opcao_laran;
     opcao_laran = opcao_laran * bebida11.preco;
     guarda_laran[2] = guarda_laran[2] + opcao_laran;
     break;
@@ -2264,6 +2279,7 @@ float soma_fanta_laran(int escolha_laran){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_laran[3] = qtd_laran[3] + opcao_laran;
     opcao_laran = opcao_laran * bebida12.preco;
     guarda_laran[3] = guarda_laran[3] + opcao_laran;
     break;
@@ -2288,6 +2304,7 @@ float soma_fanta_guara(int escolha_guara){
   opcao_guara = -1;
   for (i < 0; i < 4; i++){
     guarda_guara[i] = 0;
+    qtd_laran[i] = 0;
   }
   switch (escolha_guara){
   case 1:
@@ -2298,6 +2315,7 @@ float soma_fanta_guara(int escolha_guara){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_laran[0] = qtd_laran[0] + opcao_guara;
     opcao_guara = opcao_guara * bebida5.preco;
     guarda_guara[0] = guarda_guara[0] + opcao_guara;
     break;
@@ -2309,6 +2327,7 @@ float soma_fanta_guara(int escolha_guara){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_laran[1] = qtd_laran[1] + opcao_guara;
     opcao_guara = opcao_guara * bebida6.preco;
     guarda_guara[1] = guarda_guara[1] + opcao_guara;
     break;
@@ -2320,6 +2339,7 @@ float soma_fanta_guara(int escolha_guara){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_laran[2] = qtd_laran[2] + opcao_guara;
     opcao_guara = opcao_guara * bebida7.preco;
     guarda_guara[2] = guarda_guara[2] + opcao_guara;
     break;
@@ -2331,6 +2351,7 @@ float soma_fanta_guara(int escolha_guara){
         cout << "\nQuantidade inválida, tente novamente! ";
       }
     }
+    qtd_laran[3] = qtd_laran[3] + opcao_guara;
     opcao_guara = opcao_guara * bebida8.preco;
     guarda_guara[3] = guarda_guara[3] + opcao_guara;
     break;
