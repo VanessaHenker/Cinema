@@ -1363,6 +1363,7 @@ void nota_fiscal(){
   cout << endl;
   cout << "\nCOMPRA FINALIZADA! VOLTE SEMPRE :)";
   cout << endl;
+  valor_variavel();
   }
 }
 
@@ -1393,47 +1394,36 @@ void valor_variavel(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i = 0;
 for(i = 0; i < 2; i++){
-    guarda_ingresso[i] = 0;
     qtd_ingresso[i] = 0;
   }
 for (i < 0; i < 3; i++){
-    guarda_pipoca[i] = 0;
     qtd_pipoca[i] = 0;
   }
 for (i < 0; i < 4; i++){
-    guarda_fand[i] = 0;
     qtd_fand[i] = 0;
   }
 for (i < 0; i < 4; i++){
-    guarda_dori[i] = 0;
     qtd_fand[i] = 0;
   }
 for (i < 0; i < 4; i++){
-    guarda_ruffles[i] = 0;
     qtd_ruffles[i] = 0;
   }
 for (i < 0; i < 4; i++){
-    guarda_cheetos[i] = 0;
     qtd_cheetos[i] = 0;
   }
 for (i < 0; i < 4; i++){
-    guarda_choc[i] = 0;
     qtd_choc[i] = 0;
   }
 for (i < 0; i < 4; i++){
-    guarda_coca[i] = 0;
     qtd_coca[i] = 0;
   }
 for (i < 0; i < 4; i++){
-    guarda_uva[i] = 0;
     qtd_uva[i] = 0;
   }
 for (i < 0; i < 4; i++){
-    guarda_laran[i] = 0;
     qtd_laran[i] = 0;
   }
 for (i < 0; i < 4; i++){
-    guarda_guara[i] = 0;
     qtd_guara[i] = 0;
   }
 }
@@ -1495,8 +1485,10 @@ float escolha_tipo_comida(int escolha_comida){
     total[5] = soma_chocolate(escolha_choc);
     break;
   default:
+    if(escolha_comida != 0){
     cout << endl;
     cout << "\nNumero inválido, Tente novamente" << endl;
+    }
     break;
   }
 
@@ -1595,6 +1587,7 @@ void escolher_tipo_bc(){
       escolha_comida = 7;
       while (escolha_comida > 6 || escolha_comida < 0){
         cout << "\nOpçoes comidas: " << endl;
+        cout << "[0]-> Prosseguir" << endl;
         cout << "[1]-> Pipocas" << endl;
         cout << "[2]-> Fandangos" << endl;
         cout << "[3]-> Doritos" << endl;
@@ -1603,7 +1596,7 @@ void escolher_tipo_bc(){
         cout << "[6]-> Barras de chocolate" << endl;
         cout << "\nDigite o numero: ";
         cin >> escolha_comida;
-        if (escolha_comida > 6 || escolha_comida <= 0){
+        if (escolha_comida > 6 || escolha_comida < 0){
           cout << "\nValor inválido, Tente novamente!" << endl;
         }
       }
@@ -1644,6 +1637,7 @@ void escolher_tipo_bc(){
         while (escolha_bebida > 4 || escolha_bebida < 0){
         // system("cls");
         cout << "\nOpções bebidas:" << endl;
+        cout << "[0]-> Prosseguir" << endl;
         cout << "[1]-> Coca-cola" << endl;
         cout << "[2]-> Fanta uva" << endl;
         cout << "[3]-> Fanta laranja" << endl;
