@@ -122,7 +122,7 @@ Comida comida23 = {"[4]Chocalate Garoto ao Leite 90g         R$ ", 7.50};
 
 // váriaveis de ingressos
 int escolha, sessao, fin_compra;
-int i, guarda_ingresso[2], qtd_ingresso[2], loop_menu;
+int guarda_ingresso[2], qtd_ingresso[2], loop_menu;
 int ingresso_poltrona = 0, opcao_ingresso = 0, compra_ingresso = 0, mostra_ing = 0;
 char sele_ingresso;
 float ing_int, ing_meia, total_ingresso, guarda_sessao = 0;
@@ -1124,6 +1124,7 @@ cout << "\nAssentos selecionados: ";
 
 float compra_ing(int guarda_polt){
   setlocale(LC_ALL, "Portuguese_Brazil");
+  int i = 0;
   ing_int = 30;
   ing_meia = 15;
   mostra_ing = 0;
@@ -1358,6 +1359,7 @@ void nota_fiscal(){
 
 void soma_qtd_prod(){
   setlocale(LC_ALL, "Portuguese_Brazil");
+  
   cout << endl;
   cout << "\n                       PREÇO UNI         QUANTIDADE           PREÇO";
   cout << endl;
@@ -1372,10 +1374,10 @@ void soma_qtd_prod(){
     cout << nomes_prod[2] << "      .............R$ " << comida1.preco << " .............. " << qtd_pipoca[0] << " .............. " << comida1.preco * qtd_pipoca[0] << endl;
   }
   if(qtd_pipoca[1] > 0){
-    cout << nomes_prod[3] << "      .............R$ " << comida2.preco << " .............. " << qtd_pipoca[1] << " .............. " << comida1.preco * qtd_pipoca[1] << endl;
+    cout << nomes_prod[3] << "      .............R$ " << comida2.preco << " .............. " << qtd_pipoca[1] << " .............. " << comida2.preco * qtd_pipoca[1] << endl;
   }
   if(qtd_pipoca[2] > 0){
-    cout << nomes_prod[4] << "      .............R$ " << comida3.preco << " .............. " << qtd_pipoca[2] << " .............. " << comida1.preco * qtd_pipoca[2] << endl;
+    cout << nomes_prod[4] << "      .............R$ " << comida3.preco << " .............. " << qtd_pipoca[2] << " .............. " << comida3.preco * qtd_pipoca[2] << endl;
   }
 }
 
@@ -1566,16 +1568,18 @@ void escolher_tipo_bc(){
     loop_tela = 1;
   }
   if(loop_tela == 1 && sele_comida == 'n' || sele_comida == 'N'){
-    if(sele_bebida == 'n'){
       sele_bebida = 't';
-    }
+    
     while (sele_bebida != 'n' && sele_bebida != 'N' && sele_bebida != 's' && sele_bebida != 'S'){
       cout << "\nDeseja entrar na opções de bebidas";
       cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
       cin >> sele_bebida;
     }
   }
-
+  if(sele_comida == 's' || sele_comida == 'S'){
+    sele_bebida = 's';
+  }
+  
   if(loop_tela == 1 && sele_bebida == 's' || sele_bebida == 'S'){
     if (sele_bebida == 's' || sele_bebida == 'S'){
       loop_tela = 0;
@@ -1634,6 +1638,7 @@ int escolher_tam_bc(){
 float soma_pipoca(int escolha_pipoca){
   setlocale(LC_ALL, "Portuguese_Brazil");
   float total;
+  int i;
   i = 0;
   total = 0;
   opcao_pipoca = -1;
@@ -1667,7 +1672,7 @@ float soma_pipoca(int escolha_pipoca){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    qtd_pipoca[0] = qtd_pipoca[0] + opcao_pipoca;
+    qtd_pipoca[1] = qtd_pipoca[1] + opcao_pipoca;
     opcao_pipoca = opcao_pipoca * comida2.preco;
     guarda_pipoca[1] = guarda_pipoca[1] + opcao_pipoca;
     break;
@@ -1679,7 +1684,7 @@ float soma_pipoca(int escolha_pipoca){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    qtd_pipoca[0] = qtd_pipoca[0] + opcao_pipoca;
+    qtd_pipoca[2] = qtd_pipoca[2] + opcao_pipoca;
     opcao_pipoca = opcao_pipoca * comida3.preco;
     guarda_pipoca[2] = guarda_pipoca[2] + opcao_pipoca;
     break;
