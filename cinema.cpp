@@ -156,7 +156,9 @@ int main(){
   total_final = 0;
   total_bc = 0;
   total_ingresso = 0;
-  valor_variavel();
+  qtd_ingresso[0] = 0;
+  qtd_ingresso[1] = 0;
+  
   //system("cls");
     cout << "----------------------------------------------";
     cout << "\nBem vindo ao nosso cinema!";
@@ -180,7 +182,7 @@ int main(){
     if(total_final > 0){
       finalizar_compra();
     }
-    loop_menu = 0;
+   loop_menu = 0;
   }
   return 0;
 }
@@ -1363,8 +1365,7 @@ void nota_fiscal(){
   cout << endl;
   cout << "\nCOMPRA FINALIZADA! VOLTE SEMPRE :)";
   cout << endl;
-  valor_variavel();
-  }
+ }
 }
 
 void soma_qtd_prod(){
@@ -1393,11 +1394,9 @@ void soma_qtd_prod(){
 void valor_variavel(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i = 0;
-for(i = 0; i < 2; i++){
-    qtd_ingresso[i] = 0;
-  }
 for (i < 0; i < 3; i++){
     qtd_pipoca[i] = 0;
+    guarda_pipoca[i] = 0;
   }
 for (i < 0; i < 4; i++){
     qtd_fand[i] = 0;
@@ -1486,7 +1485,6 @@ float escolha_tipo_comida(int escolha_comida){
     break;
   default:
     if(escolha_comida != 0){
-    cout << endl;
     cout << "\nNumero inválido, Tente novamente" << endl;
     }
     break;
@@ -1539,7 +1537,6 @@ float escolha_tipo_bebida(int escolha_bebida){
     break;
   default:
     if(escolha_bebida != 0){
-    cout << endl;
     cout << "\nNumero inválido, Tente novamente" << endl;
     }
     break;
@@ -1561,7 +1558,8 @@ void escolher_tipo_bc(){
   loop_tela = 0;
   sele_comida = 't';
   sele_comida = 't';
-  
+  valor_variavel(); 
+
   cout << "\nOpções comidas: " << endl;
   cout << "[1]-> Pipocas" << endl;
   cout << "[2]-> Fandangos" << endl;
