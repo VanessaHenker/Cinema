@@ -23,6 +23,7 @@ void nota_fiscal();
 void finalizar_compra();
 void nomes_produtos();
 void soma_qtd_prod();
+void valor_variavel();
 
 float escolha_tipo_comida(int escolha_comida);
 float escolha_tipo_bebida(int escolha_bebida);
@@ -121,14 +122,13 @@ Comida comida22 = {"[3]Chocolate Garoto Crocante 90g         R$ ", 7.50};
 Comida comida23 = {"[4]Chocalate Garoto ao Leite 90g         R$ ", 7.50};
 
 // váriaveis de ingressos
-int escolha, sessao, fin_compra;
 int guarda_ingresso[2], qtd_ingresso[2], loop_menu;
 int ingresso_poltrona = 0, opcao_ingresso = 0, compra_ingresso = 0, mostra_ing = 0;
 char sele_ingresso;
-float ing_int, ing_meia, total_ingresso, guarda_sessao = 0;
+float ing_int, ing_meia, total_ingresso = 0, guarda_sessao = 0;
 
 // variaveis de escolha de sessao e filme
-int qtd_filme = 4;
+int i, qtd_filme = 4;
 char sele_sessao;
 int opcao = 0, escolha_hora = 0;
 string cadeiras1[10][5], cadeiras2[12][6], cadeiras3[10][6], cadeiras4[12][6];
@@ -143,7 +143,6 @@ int opcao_pipoca = 0, opcao_fand = 0, opcao_dori = 0, opcao_ruffles = 0, opcao_c
 int loop_tela = 0, opcao_coca = 0, opcao_uva = 0, opcao_laran = 0, opcao_guara = 0;
 char sele_bebida, sele_comida;
 float total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_bebida = 0;
-
 // variáveis de finalizar compra
 float dinheiro = 0, troco = 0, total_final;
 string nomes_prod[50];
@@ -151,11 +150,11 @@ string nomes_prod[50];
 int loop_sessao = 0;
 
 int main(){
-  int escolha_sessao;
+  
+  while (loop_menu == 0){
   total_final = 0;
   total_bc = 0;
   total_ingresso = 0;
-  while (loop_menu == 0){
   //system("cls");
     cout << "----------------------------------------------";
     cout << "\nBem vindo ao nosso cinema!";
@@ -175,7 +174,7 @@ int main(){
       }
     }
     //system("cls");
-    escolher_tipo_bc();
+      escolher_tipo_bc();
     if(total_final > 0){
       finalizar_compra();
     }
@@ -1236,9 +1235,10 @@ float compra_ing(int guarda_polt){
       }
       if (loop_tela == 0){
         mostra_ing = 0;
-        opcao_ingresso = 0;
         guarda_ingresso[0] = 0;
         guarda_ingresso[1] = 0;
+        qtd_ingresso[0] = 0;
+        qtd_ingresso[1] = 0;
       }
     }
   }
@@ -1352,7 +1352,7 @@ void nota_fiscal(){
   cout << "\nDINHEIRO RECEBIDO.............................................R$ " << dinheiro;
   cout << "\nTROCO.........................................................R$ " << troco;
   cout << endl;
-  cout << "\nCOMPRA FINALIZADA, VOLTE SEMPRE!";
+  cout << "\nCOMPRA FINALIZADA! VOLTE SEMPRE :)";
   cout << endl;
   }
 }
@@ -1379,8 +1379,15 @@ void soma_qtd_prod(){
   if(qtd_pipoca[2] > 0){
     cout << nomes_prod[4] << "      .............R$ " << comida3.preco << " .............. " << qtd_pipoca[2] << " .............. " << comida3.preco * qtd_pipoca[2] << endl;
   }
+  
+  
 }
-
+void valor_variavel(){
+  setlocale(LC_ALL, "Portuguese_Brazil");
+  for ( int i = 0; i < 3; i++){
+    qtd_pipoca[i] = 0;
+  }
+}
 float escolha_tipo_comida(int escolha_comida){
   setlocale(LC_ALL, "Portuguese_Brazil");
   float total_comida, total[6];
@@ -1710,8 +1717,10 @@ float soma_fandangos(int escolha_fand){
   opcao_fand = -1;
   for (i < 0; i < 4; i++){
     guarda_fand[i] = 0;
+    qtd_fand[i] = 0;
   }
-  switch (escolha_fand){
+  
+switch (escolha_fand){
   case 1:
     while (opcao_fand < 0){
       cout << "\nQuantidade: ";
@@ -1720,7 +1729,7 @@ float soma_fandangos(int escolha_fand){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
-    
+    qtd_fand[0] = qtd_fand[0] = opcao_fand;
     opcao_fand = opcao_fand * comida4.preco;
     guarda_fand[0] = guarda_fand[0] + opcao_fand;
     break;
@@ -1732,6 +1741,7 @@ float soma_fandangos(int escolha_fand){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
+    qtd_fand[1] = qtd_fand[1] = opcao_fand;
     opcao_fand = opcao_fand * comida5.preco;
     guarda_fand[1] = guarda_fand[1] + opcao_fand;
     break;
@@ -1743,6 +1753,7 @@ float soma_fandangos(int escolha_fand){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
+    qtd_fand[2] = qtd_fand[2] = opcao_fand;
     opcao_fand = opcao_fand * comida6.preco;
     guarda_fand[2] = guarda_fand[2] + opcao_fand;
     break;
@@ -1754,6 +1765,7 @@ float soma_fandangos(int escolha_fand){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
+    qtd_fand[3] = qtd_fand[3] = opcao_fand;
     opcao_fand = opcao_fand * comida7.preco;
     guarda_fand[3] = guarda_fand[3] + opcao_fand;
     break;
@@ -1779,7 +1791,9 @@ float soma_doritos(int escolha_doritos){
   opcao_dori = -1;
   for (i < 0; i < 4; i++){
     guarda_dori[i] = 0;
+    qtd_fand[i] = 0;
   }
+  
   switch (escolha_dori){
   case 1:
     while (opcao_dori < 0){
@@ -1789,6 +1803,7 @@ float soma_doritos(int escolha_doritos){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_fand[0] = qtd_fand[0] + opcao_dori;
     opcao_dori = opcao_dori * comida8.preco;
     guarda_dori[0] = guarda_dori[0] + opcao_dori;
     break;
@@ -1800,6 +1815,7 @@ float soma_doritos(int escolha_doritos){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_fand[1] = qtd_fand[1] + opcao_dori;
     opcao_dori = opcao_dori * comida9.preco;
     guarda_dori[1] = guarda_dori[1] + opcao_dori;
     break;
@@ -1811,6 +1827,7 @@ float soma_doritos(int escolha_doritos){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_fand[2] = qtd_fand[2] + opcao_dori;
     opcao_dori = opcao_dori * comida10.preco;
     guarda_dori[2] = guarda_dori[2] + opcao_dori;
     break;
@@ -1822,6 +1839,7 @@ float soma_doritos(int escolha_doritos){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_fand[3] = qtd_fand[3] + opcao_dori;
     opcao_dori = opcao_dori * comida11.preco;
     guarda_dori[3] = guarda_dori[3] + opcao_dori;
     break;
@@ -1848,6 +1866,7 @@ float soma_ruffles(int escolha_ruffles){
 
   for (i < 0; i < 4; i++){
     guarda_ruffles[i] = 0;
+    qtd_ruffles[i] = 0;
   }
   switch (escolha_ruffles){
   case 1:
@@ -1858,6 +1877,7 @@ float soma_ruffles(int escolha_ruffles){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_ruffles[0] = qtd_ruffles[0] + opcao_ruffles;
     opcao_ruffles = opcao_ruffles * comida12.preco;
     guarda_ruffles[0] = guarda_ruffles[0] + opcao_ruffles;
     break;
@@ -1869,6 +1889,7 @@ float soma_ruffles(int escolha_ruffles){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_ruffles[1] = qtd_ruffles[1] + opcao_ruffles;
     opcao_ruffles = opcao_ruffles * comida13.preco;
     guarda_ruffles[1] = guarda_ruffles[1] + opcao_ruffles;
     break;
@@ -1880,6 +1901,7 @@ float soma_ruffles(int escolha_ruffles){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_ruffles[2] = qtd_ruffles[2] + opcao_ruffles;
     opcao_ruffles = opcao_ruffles * comida14.preco;
     guarda_ruffles[2] = guarda_ruffles[2] + opcao_ruffles;
     break;
@@ -1891,6 +1913,7 @@ float soma_ruffles(int escolha_ruffles){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_ruffles[3] = qtd_ruffles[3] + opcao_ruffles;
     opcao_ruffles = opcao_ruffles * comida15.preco;
     guarda_ruffles[3] = guarda_ruffles[3] + opcao_ruffles;
     break;
@@ -1916,6 +1939,7 @@ float soma_cheetos(int escolha_cheetos){
   opcao_cheetos = -1;
   for (i < 0; i < 4; i++){
     guarda_cheetos[i] = 0;
+    qtd_cheetos[i] = 0;
   }
   switch (escolha_cheetos){
   case 1:
@@ -1926,6 +1950,7 @@ float soma_cheetos(int escolha_cheetos){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
+    qtd_cheetos[0] = qtd_cheetos[0] + opcao_cheetos;
     opcao_cheetos = opcao_cheetos * comida16.preco;
     guarda_cheetos[0] = guarda_cheetos[0] + opcao_cheetos;
     break;
@@ -1937,6 +1962,7 @@ float soma_cheetos(int escolha_cheetos){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
+    qtd_cheetos[1] = qtd_cheetos[1] + opcao_cheetos;
     opcao_cheetos = opcao_cheetos * comida17.preco;
     guarda_cheetos[1] = guarda_cheetos[1] + opcao_cheetos;
     break;
@@ -1948,6 +1974,7 @@ float soma_cheetos(int escolha_cheetos){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
+    qtd_cheetos[2] = qtd_cheetos[2] + opcao_cheetos;
     opcao_cheetos = opcao_cheetos * comida18.preco;
     guarda_cheetos[2] = guarda_cheetos[2] + opcao_cheetos;
     break;
@@ -1959,6 +1986,7 @@ float soma_cheetos(int escolha_cheetos){
         cout << "\nQuantidade inválida, tente novamente!";
       }
     }
+    qtd_cheetos[3] = qtd_cheetos[3] + opcao_cheetos;
     opcao_cheetos = opcao_cheetos * comida19.preco;
     guarda_cheetos[3] = guarda_cheetos[3] + opcao_cheetos;
     break;
@@ -1985,6 +2013,7 @@ float soma_chocolate(int escolha_choc){
 
   for (i < 0; i < 4; i++){
     guarda_choc[i] = 0;
+    qtd_choc[i] = 0;
   }
   switch (escolha_choc){
   case 1:
@@ -1995,6 +2024,7 @@ float soma_chocolate(int escolha_choc){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_choc[0] = qtd_choc[0] + opcao_choc;
     opcao_choc = opcao_choc * comida20.preco;
     guarda_choc[0] = guarda_choc[0] + opcao_choc;
     break;
@@ -2006,6 +2036,7 @@ float soma_chocolate(int escolha_choc){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_choc[1] = qtd_choc[1] + opcao_choc;
     opcao_choc = opcao_choc * comida21.preco;
     guarda_choc[1] = guarda_choc[1] + opcao_choc;
     break;
@@ -2017,6 +2048,7 @@ float soma_chocolate(int escolha_choc){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_choc[2] = qtd_choc[2] + opcao_choc;
     opcao_choc = opcao_choc * comida22.preco;
     guarda_choc[2] = guarda_choc[2] + opcao_choc;
     break;
@@ -2028,6 +2060,7 @@ float soma_chocolate(int escolha_choc){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
+    qtd_choc[3] = qtd_choc[3] + opcao_choc;
     opcao_choc = opcao_choc * comida23.preco;
     guarda_choc[3] = guarda_choc[3] + opcao_choc;
     break;
