@@ -1463,55 +1463,55 @@ void soma_qtd_prod(){
   }
   // soma coca-cola
   if (qtd_coca[0] > 0){
-    cout << nomes_prod[22] << "...............R$ " << bebida1.preco << "  .............. " << qtd_coca[0] << " .............. " << bebida1.preco * qtd_coca[0] << endl;
+    cout << nomes_prod[22] << ".............R$ " << bebida1.preco << " ................ " << qtd_coca[0] << " .............. " << bebida1.preco * qtd_coca[0] << endl;
   }
   if (qtd_coca[1] > 0){
-    cout << nomes_prod[23] << "...............R$ " << bebida2.preco << "  .............. " << qtd_coca[1] << " .............. " << bebida2.preco * qtd_coca[1] << endl;
+    cout << nomes_prod[23] << ".............R$ " << bebida2.preco << " ................ " << qtd_coca[1] << " .............. " << bebida2.preco * qtd_coca[1] << endl;
   }
   if (qtd_coca[2] > 0){
-    cout << nomes_prod[24] << "...............R$ " << bebida3.preco << "  .............. " << qtd_coca[2] << " .............. " << bebida3.preco * qtd_coca[2] << endl;
+    cout << nomes_prod[24] << "........R$ " << bebida3.preco << " .............. " << qtd_coca[2] << " .............. " << bebida3.preco * qtd_coca[2] << endl;
   }
   if (qtd_coca[3] > 0){
-    cout << nomes_prod[25] << "...............R$ " << bebida4.preco << "  .............. " << qtd_coca[3] << " .............. " << bebida4.preco * qtd_coca[3] << endl;
+    cout << nomes_prod[25] << ".............R$ " << bebida4.preco << " ................ " << qtd_coca[3] << " .............. " << bebida4.preco * qtd_coca[3] << endl;
   }
   // soma fanta uva
   if (qtd_uva[0] > 0){
-    cout << nomes_prod[26] << "...............R$ " << bebida5.preco << "  .............. " << qtd_uva[0] << " .............. " << bebida5.preco * qtd_uva[0] << endl;
+    cout << nomes_prod[26] << ".............R$ " << bebida5.preco << " ................ " << qtd_uva[0] << " .............. " << bebida5.preco * qtd_uva[0] << endl;
   }
   if (qtd_uva[1] > 0){
-    cout << nomes_prod[27] << "...............R$ " << bebida6.preco << "  .............. " << qtd_uva[1] << " .............. " << bebida6.preco * qtd_uva[1] << endl;
+    cout << nomes_prod[27] << ".............R$ " << bebida6.preco << " ................ " << qtd_uva[1] << " .............. " << bebida6.preco * qtd_uva[1] << endl;
   }
   if (qtd_uva[2] > 0){
-    cout << nomes_prod[28] << "...............R$ " << bebida7.preco << "  .............. " << qtd_uva[2] << " .............. " << bebida7.preco * qtd_uva[2] << endl;
+    cout << nomes_prod[28] << "........R$ " << bebida7.preco << " .............. " << qtd_uva[2] << " .............. " << bebida7.preco * qtd_uva[2] << endl;
   }
   if (qtd_uva[3] > 0){
-    cout << nomes_prod[29] << "...............R$ " << bebida8.preco << "  .............. " << qtd_uva[3] << " .............. " << bebida8.preco * qtd_uva[3] << endl;
+    cout << nomes_prod[29] << ".............R$ " << bebida8.preco << " ................ " << qtd_uva[3] << " .............. " << bebida8.preco * qtd_uva[3] << endl;
   }
   // soma fanta laranja
   if (qtd_laran[0] > 0){
-    cout << nomes_prod[30] << "...............R$ " << bebida9.preco << "  .............. " << qtd_laran[0] << " .............. " << bebida9.preco * qtd_laran[0] << endl;
+    cout << nomes_prod[30] << "...........R$ " << bebida9.preco << " ................ " << qtd_laran[0] << " .............. " << bebida9.preco * qtd_laran[0] << endl;
   }
   if (qtd_laran[1] > 0){
-    cout << nomes_prod[31] << "...............R$ " << bebida10.preco << "  .............. " << qtd_laran[1] << " .............. " << bebida10.preco * qtd_laran[1] << endl;
+    cout << nomes_prod[31] << "...........R$ " << bebida10.preco << " ................ " << qtd_laran[1] << " .............. " << bebida10.preco * qtd_laran[1] << endl;
   }
   if (qtd_laran[2] > 0){
-    cout << nomes_prod[32] << "...............R$ " << bebida11.preco << "  .............. " << qtd_laran[2] <<  " .............. " << bebida11.preco * qtd_laran[2] << endl;
+    cout << nomes_prod[32] << "......R$ " << bebida11.preco << " .............. " << qtd_laran[2] <<  " .............. " << bebida11.preco * qtd_laran[2] << endl;
   }
   if (qtd_laran[3] > 0){
-    cout << nomes_prod[33] << "...............R$ " << bebida12.preco << "  .............. " << qtd_laran[3] << " .............. " << bebida12.preco * qtd_laran[3] << endl;
+    cout << nomes_prod[33] << "...........R$ " << bebida12.preco << " ................ " << qtd_laran[3] << " .............. " << bebida12.preco * qtd_laran[3] << endl;
   }
   // soma fanta guaraná
   if (qtd_guara[0] > 0){
-    cout << nomes_prod[33] << "...............R$ " << bebida13.preco << "  .............. " << qtd_guara[0] << " .............. " << bebida13.preco * qtd_guara[0] << endl;
+    cout << nomes_prod[34] << "...........R$ " << bebida13.preco << " ................ " << qtd_guara[0] << " .............. " << bebida13.preco * qtd_guara[0] << endl;
   }
   if (qtd_guara[1] > 0){
-    cout << nomes_prod[34] << "...............R$ " << bebida14.preco << "  .............. " << qtd_guara[1] << " .............. " << bebida14.preco * qtd_guara[1] << endl;
+    cout << nomes_prod[35] << "...........R$ " << bebida14.preco << " ................ " << qtd_guara[1] << " .............. " << bebida14.preco * qtd_guara[1] << endl;
   }
   if (qtd_guara[2] > 0){
-    cout << nomes_prod[35] << "...............R$ " << bebida15.preco << "  .............. " << qtd_guara[2] << " .............. " << bebida15.preco * qtd_guara[2] << endl;
+    cout << nomes_prod[36] << "......R$ " << bebida15.preco << " .............. " << qtd_guara[2] << " .............. " << bebida15.preco * qtd_guara[2] << endl;
   }
   if (qtd_guara[3] > 0){
-    cout << nomes_prod[36] << "...............R$ " << bebida16.preco << "  .............. " << qtd_guara[3] << " .............. " << bebida16.preco * qtd_guara[3] << endl;
+    cout << nomes_prod[37] << "...........R$ " << bebida16.preco << " ................ " << qtd_guara[3] << " .............. " << bebida16.preco * qtd_guara[3] << endl;
   }
 }
 
