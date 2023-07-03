@@ -1363,9 +1363,9 @@ void nota_fiscal(){
     soma_qtd_prod();
 
     cout << endl;
-    cout << "\nTOTAL DA COMPRA...............................................R$ " << total_final;
-    cout << "\nDINHEIRO RECEBIDO.............................................R$ " << dinheiro;
-    cout << "\nTROCO.........................................................R$ " << troco;
+    cout << "\nTOTAL DA COMPRA...................................................R$ " << total_final;
+    cout << "\nDINHEIRO RECEBIDO.................................................R$ " << dinheiro;
+    cout << "\nTROCO.............................................................R$ " << troco;
     cout << endl;
     cout << "\nCOMPRA FINALIZADA! VOLTE SEMPRE :)";
     cout << endl;
@@ -1381,14 +1381,14 @@ void soma_qtd_prod(){
   cout << endl;
   // soma ingresso
   if (qtd_ingresso[0] > 0){
-    cout << nomes_prod[0] << "................R$ " << ing_int       << "  .............. " << qtd_ingresso[0] << " .............. " << ing_int * qtd_ingresso[0] << endl;
+    cout << nomes_prod[0] << "................R$ " << ing_int       << " ............... " << qtd_ingresso[0] << " .............. " << ing_int * qtd_ingresso[0] << endl;
   }
   if (qtd_ingresso[1] > 0){
-    cout << nomes_prod[1] << "...............R$ " << ing_meia      << "  .............. " << qtd_ingresso[1] << " .............. " << ing_meia * qtd_ingresso[1] << endl;
+    cout << nomes_prod[1] << "...............R$ " << ing_meia      << " ............... " << qtd_ingresso[1] << " .............. " << ing_meia * qtd_ingresso[1] << endl;
   }
   // soma pipoca
   if (qtd_pipoca[0] > 0){
-    cout << nomes_prod[2] << "....................R$ " << comida1.preco  << "  .............. " << qtd_pipoca[0] << " .............. " << comida1.preco * qtd_pipoca[0] << endl;
+    cout << nomes_prod[2] << "....................R$ " << comida1.preco  << " ................ " << qtd_pipoca[0] << " .............. " << comida1.preco * qtd_pipoca[0] << endl;
   }
   if (qtd_pipoca[1] > 0){
     cout << nomes_prod[3] << "....................R$ " << comida2.preco << " ............. " << qtd_pipoca[1] << " ............. " << comida2.preco * qtd_pipoca[1] << endl;
@@ -1398,68 +1398,68 @@ void soma_qtd_prod(){
   }
   // soma fandangos
   if (qtd_fand[0] > 0){
-    cout << nomes_prod[5] << "...............R$ " << comida4.preco << " ................ " << qtd_fand[0] << " ............... " << comida4.preco * qtd_fand[0] << endl;
+    cout << nomes_prod[5] << "...............R$ " << comida4.preco << " ................ "<< qtd_fand[0] << " .............. " << comida4.preco * qtd_fand[0] << endl;
   }
   if (qtd_fand[1] > 0){
-    cout << nomes_prod[6] << "...............R$ " << comida5.preco << " ................ " << qtd_fand[1] << " ............... " << comida5.preco * qtd_fand[1] << endl;
+    cout << nomes_prod[6] << "...............R$ " << comida5.preco << " ................ "<< qtd_fand[1] << " .............. " << comida5.preco * qtd_fand[1] << endl;
   }
   if (qtd_fand[2] > 0){
-    cout << nomes_prod[7] << "...............R$ " << comida6.preco << "  ............... " << qtd_fand[2] << " .............. " << comida6.preco * qtd_fand[2] << endl;
+    cout << nomes_prod[7] << "...............R$ " << comida6.preco << " ................ "<< qtd_fand[2] << " .............. " << comida6.preco * qtd_fand[2] << endl;
   }
   if (qtd_fand[3] > 0){
-    cout << nomes_prod[8] << "..............R$ " << comida7.preco << "  .............. " << qtd_fand[3] << " .............. " << comida7.preco * qtd_fand[3] << endl;
+    cout << nomes_prod[8] << "..............R$ " << comida7.preco  << " ............... " << qtd_fand[3] << " .............. " << comida7.preco * qtd_fand[3] << endl;
   }
   // soma doritos
   if (qtd_dori[0] > 0){
-    cout << nomes_prod[9] << "...............R$ " << comida8.preco << "  .............. " << qtd_dori[0] << " .............. " << comida8.preco * qtd_dori[0] << endl;
+    cout << nomes_prod[9] << ".................R$ " << comida8.preco << " ................ "<< qtd_dori[0] << " .............. " << comida8.preco * qtd_dori[0] << endl;
   }
   if (qtd_dori[1] > 0){
-    cout << nomes_prod[10] << "...............R$ " << comida9.preco << "  .............. " << qtd_dori[1] << " .............. " << comida9.preco * qtd_dori[1] << endl;
+    cout << nomes_prod[10] << ".................R$ " << comida9.preco<< " ................ "<< qtd_dori[1] << " .............. " << comida9.preco * qtd_dori[1] << endl;
   }
   if (qtd_dori[2] > 0){
-    cout << nomes_prod[11] << "...............R$ " << comida10.preco << "  .............. " << qtd_dori[2] << " .............. " << comida10.preco * qtd_dori[2] << endl;
+    cout << nomes_prod[11] << ".................R$ " <<comida10.preco<< " ................ "<< qtd_dori[2]  << " .............. " << comida10.preco * qtd_dori[2] << endl;
   }
   if (qtd_dori[3] > 0){
-    cout << nomes_prod[12] << "...............R$ " << comida11.preco << "  .............. " << qtd_dori[3] << " .............. " << comida11.preco * qtd_dori[3] << endl;
+    cout << nomes_prod[12] << "................R$ " << comida11.preco<< " ............... " << qtd_dori[3]  << " .............. " << comida11.preco * qtd_dori[3] << endl;
   }
   // soma ruffles 
   if (qtd_ruffles[0] > 0){
-    cout << nomes_prod[13] << "...............R$ " << comida12.preco << "  .............. " << qtd_ruffles[0] << " .............. " << comida12.preco * qtd_ruffles[0] << endl;
+    cout << nomes_prod[13] << ".................R$ " << comida12.preco << " .............. "<< qtd_ruffles[0] << " .............. " << comida12.preco * qtd_ruffles[0] << endl;
   }
   if (qtd_ruffles[1] > 0){
-    cout << nomes_prod[14] << "...............R$ " << comida13.preco << "  .............. " << qtd_ruffles[1] << " .............. " << comida13.preco * qtd_ruffles[1] << endl;
+    cout << nomes_prod[14] << ".................R$ " << comida13.preco << " ................ "<< qtd_ruffles[1] << " .............. " << comida13.preco * qtd_ruffles[1] << endl;
   }
   if (qtd_ruffles[2] > 0){
-    cout << nomes_prod[15] << "...............R$ " << comida14.preco << "  .............. " << qtd_ruffles[2] << " .............. " << comida14.preco * qtd_ruffles[2] << endl;
+    cout << nomes_prod[15] << ".................R$ " << comida14.preco << " ................ "<< qtd_ruffles[2]  << " .............. " << comida14.preco * qtd_ruffles[2] << endl;
   }
   if (qtd_ruffles[3] > 0){
-    cout << nomes_prod[16] << "...............R$ " << comida15.preco << "  .............. " << qtd_ruffles[3] << " .............. " << comida15.preco * qtd_ruffles[3] << endl;
+    cout << nomes_prod[16] << "................R$ " << comida15.preco   << " ............... " << qtd_ruffles[3]  << " .............. " << comida15.preco * qtd_ruffles[3] << endl;
   }
   // soma cheetos
   if (qtd_cheetos[0] > 0){
-    cout << nomes_prod[17] << "...............R$ " << comida16.preco << "  .............. " << qtd_cheetos[0] << " .............. " << comida16.preco * qtd_cheetos[0] << endl;
+    cout << nomes_prod[17] << ".................R$ " << comida16.preco << " ................ " << qtd_cheetos[0] << " .............. " << comida16.preco * qtd_cheetos[0] << endl;
   }
   if (qtd_cheetos[1] > 0){
-    cout << nomes_prod[18] << "...............R$ " << comida17.preco << "  .............. " << qtd_cheetos[1] << " .............. " << comida17.preco * qtd_cheetos[1] << endl;
+    cout << nomes_prod[18] << ".................R$ " << comida17.preco << " ................ " << qtd_cheetos[1] << " .............. " << comida17.preco * qtd_cheetos[1] << endl;
   }
   if (qtd_cheetos[2] > 0){
-    cout << nomes_prod[19] << "...............R$ " << comida18.preco << "  .............. " << qtd_cheetos[2] << " .............. " << comida18.preco * qtd_cheetos[2] << endl;
+    cout << nomes_prod[19] << ".................R$ " << comida18.preco << " ................ " << qtd_cheetos[2] << " .............. " << comida18.preco * qtd_cheetos[2] << endl;
   }
   if (qtd_cheetos[3] > 0){
-    cout << nomes_prod[20] << "...............R$ " << comida19.preco << "  .............. " << qtd_cheetos[3] << " .............. " << comida19.preco * qtd_cheetos[3] << endl;
+    cout << nomes_prod[20] << "................R$ " << comida19.preco << " ............... " << qtd_cheetos[3] << " .............. " << comida19.preco * qtd_cheetos[3] << endl;
   }
   // soma chocolate
   if (qtd_choc[0] > 0){
-    cout << nomes_prod[21] << "...............R$ " << comida20.preco << "  .............. " << qtd_choc[0] << " .............. " << comida20.preco * qtd_choc[0] << endl;
+    cout << nomes_prod[21] << ".............R$ " << comida20.preco << " .............. " << qtd_choc[0] << " .............. " << comida20.preco * qtd_choc[0] << endl;
   }
   if (qtd_choc[1] > 0){
-    cout << nomes_prod[21] << "...............R$ " << comida21.preco << "  .............. " << qtd_choc[1] << " .............. " << comida21.preco * qtd_choc[1] << endl;
+    cout << nomes_prod[21] << ".............R$ " << comida21.preco << " .............. " << qtd_choc[1] << " .............. " << comida21.preco * qtd_choc[1] << endl;
   }
   if (qtd_choc[2] > 0){
-    cout << nomes_prod[21] << "...............R$ " << comida22.preco << "  .............. " << qtd_choc[2] << " .............. " << comida22.preco * qtd_choc[2] << endl;
+    cout << nomes_prod[21] << ".............R$ " << comida22.preco << " .............. " << qtd_choc[2] << " .............. " << comida22.preco * qtd_choc[2] << endl;
   }
   if (qtd_choc[3] > 0){
-    cout << nomes_prod[21] << "...............R$ " << comida23.preco << "  .............. " << qtd_choc[3] << " .............. " << comida23.preco * qtd_choc[3] << endl;
+    cout << nomes_prod[21] << ".............R$ " << comida23.preco << " .............. " << qtd_choc[3] << " .............. " << comida23.preco * qtd_choc[3] << endl;
   }
   // soma coca-cola
   if (qtd_coca[0] > 0){
@@ -1524,29 +1524,37 @@ void valor_variavel(){
   }
   for (i < 0; i < 4; i++){
     qtd_fand[i] = 0;
+    guarda_fand[i] = 0;
   }
   for (i < 0; i < 4; i++){
     qtd_fand[i] = 0;
   }
   for (i < 0; i < 4; i++){
     qtd_ruffles[i] = 0;
+    qtd_ruffles[i] = 0;
   }
   for (i < 0; i < 4; i++){
+    qtd_cheetos[i] = 0;
     qtd_cheetos[i] = 0;
   }
   for (i < 0; i < 4; i++){
     qtd_choc[i] = 0;
+    qtd_choc[i] = 0;
   }
   for (i < 0; i < 4; i++){
+    qtd_coca[i] = 0;
     qtd_coca[i] = 0;
   }
   for (i < 0; i < 4; i++){
     qtd_uva[i] = 0;
+    qtd_uva[i] = 0;
   }
   for (i < 0; i < 4; i++){
     qtd_laran[i] = 0;
+    qtd_laran[i] = 0;
   }
   for (i < 0; i < 4; i++){
+    qtd_guara[i] = 0;
     qtd_guara[i] = 0;
   }
 }
@@ -1589,7 +1597,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida14.aperit << comida14.preco << endl;
     cout << comida15.aperit << comida15.preco << endl;
     escolha_ruffles = escolher_tam_bc();
-    total[3] = soma_ruffles(escolha_dori);
+    total[3] = soma_ruffles(escolha_ruffles);
     break;
   case 5:
     cout << comida16.aperit << comida16.preco << endl;
@@ -1796,7 +1804,6 @@ int escolher_tam_bc(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   char sele_opcao;
   int escolha_opcao;
-  escolha_opcao = 0;
   sele_opcao = 't';
   while (sele_opcao != 'N' && sele_opcao != 'n'){
     cout << "\nSe deseja selecionar um numero";
@@ -1954,7 +1961,7 @@ float soma_doritos(int escolha_doritos){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    qtd_fand[0] = qtd_fand[0] + opcao_dori;
+    qtd_dori[0] = qtd_dori[0] + opcao_dori;
     opcao_dori = opcao_dori * comida8.preco;
     guarda_dori[0] = guarda_dori[0] + opcao_dori;
     break;
@@ -1966,7 +1973,7 @@ float soma_doritos(int escolha_doritos){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    qtd_fand[1] = qtd_fand[1] + opcao_dori;
+    qtd_dori[1] = qtd_dori[1] + opcao_dori;
     opcao_dori = opcao_dori * comida9.preco;
     guarda_dori[1] = guarda_dori[1] + opcao_dori;
     break;
@@ -1978,7 +1985,7 @@ float soma_doritos(int escolha_doritos){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    qtd_fand[2] = qtd_fand[2] + opcao_dori;
+    qtd_dori[2] = qtd_dori[2] + opcao_dori;
     opcao_dori = opcao_dori * comida10.preco;
     guarda_dori[2] = guarda_dori[2] + opcao_dori;
     break;
@@ -1990,7 +1997,7 @@ float soma_doritos(int escolha_doritos){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
     }
-    qtd_fand[3] = qtd_fand[3] + opcao_dori;
+    qtd_dori[3] = qtd_dori[3] + opcao_dori;
     opcao_dori = opcao_dori * comida11.preco;
     guarda_dori[3] = guarda_dori[3] + opcao_dori;
     break;
@@ -2064,7 +2071,6 @@ float soma_ruffles(int escolha_ruffles){
     guarda_ruffles[3] = guarda_ruffles[3] + opcao_ruffles;
     break;
   default:
-    cout << endl;
     if (escolha_ruffles < 0 || escolha_ruffles > 4){
       cout << "\nValor inválido, tente novamente!" << endl;
       break;
@@ -2140,8 +2146,7 @@ float soma_cheetos(int escolha_cheetos){
     }
   }
 
-  for (i = 0; i < 4; i++)
-  {
+  for (i = 0; i < 4; i++){
     total = total + guarda_cheetos[i];
   }
   return total;
