@@ -1130,8 +1130,8 @@ void polt_selecionada(){
 float compra_ing(int guarda_polt){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i = 0;
-  ing_int = 30;
-  ing_meia = 15;
+  ing_int = 30.00;
+  ing_meia = 15.00;
   mostra_ing = 0;
   opcao_ingresso = 0;
   total_ingresso = 0;
@@ -1391,23 +1391,23 @@ void soma_qtd_prod(){
     cout << nomes_prod[2] << "....................R$ " << comida1.preco  << "  .............. " << qtd_pipoca[0] << " .............. " << comida1.preco * qtd_pipoca[0] << endl;
   }
   if (qtd_pipoca[1] > 0){
-    cout << nomes_prod[3] << "....................R$ " << comida2.preco << "  .............. " << qtd_pipoca[1] << " .............. " << comida2.preco * qtd_pipoca[1] << endl;
+    cout << nomes_prod[3] << "....................R$ " << comida2.preco << " ............. " << qtd_pipoca[1] << " ............. " << comida2.preco * qtd_pipoca[1] << endl;
   }
   if (qtd_pipoca[2] > 0){
     cout << nomes_prod[4] << "....................R$ " << comida3.preco << " ............. " << qtd_pipoca[2] << " .............. " << comida3.preco * qtd_pipoca[2] << endl;
   }
   // soma fandangos
   if (qtd_fand[0] > 0){
-    cout << nomes_prod[5] << "...............R$ " << comida4.preco << "  .............. " << qtd_fand[0] << " .............. " << comida4.preco * qtd_fand[0] << endl;
+    cout << nomes_prod[5] << "...............R$ " << comida4.preco << " ................ " << qtd_fand[0] << " ............... " << comida4.preco * qtd_fand[0] << endl;
   }
   if (qtd_fand[1] > 0){
-    cout << nomes_prod[6] << "...............R$ " << comida5.preco << "  .............. " << qtd_fand[1] << " .............. " << comida5.preco * qtd_fand[1] << endl;
+    cout << nomes_prod[6] << "...............R$ " << comida5.preco << " ................ " << qtd_fand[1] << " ............... " << comida5.preco * qtd_fand[1] << endl;
   }
   if (qtd_fand[2] > 0){
-    cout << nomes_prod[7] << "...............R$ " << comida6.preco << "  .............. " << qtd_fand[2] << " .............. " << comida6.preco * qtd_fand[2] << endl;
+    cout << nomes_prod[7] << "...............R$ " << comida6.preco << "  ............... " << qtd_fand[2] << " .............. " << comida6.preco * qtd_fand[2] << endl;
   }
   if (qtd_fand[3] > 0){
-    cout << nomes_prod[8] << "...............R$ " << comida7.preco << "  .............. " << qtd_fand[3] << " .............. " << comida7.preco * qtd_fand[3] << endl;
+    cout << nomes_prod[8] << "..............R$ " << comida7.preco << "  .............. " << qtd_fand[3] << " .............. " << comida7.preco * qtd_fand[3] << endl;
   }
   // soma doritos
   if (qtd_dori[0] > 0){
@@ -1565,7 +1565,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida2.aperit << comida2.preco << endl;
     cout << comida3.aperit << comida3.preco << endl;
     escolha_pipoca = escolher_tam_bc();
-    total[0] = total[0] + soma_pipoca(escolha_pipoca);
+    total[0] = soma_pipoca(escolha_pipoca);
     break;
   case 2:
     cout << comida4.aperit << comida4.preco << endl;
@@ -1573,7 +1573,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida6.aperit << comida6.preco << endl;
     cout << comida7.aperit << comida7.preco << endl;
     escolha_fand = escolher_tam_bc();
-    total[1] = total[1] + soma_fandangos(escolha_fand);
+    total[1] = soma_fandangos(escolha_fand);
     break;
   case 3:
     cout << comida8.aperit << comida8.preco << endl;
@@ -1581,7 +1581,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida10.aperit << comida10.preco << endl;
     cout << comida11.aperit << comida11.preco << endl;
     escolha_dori = escolher_tam_bc();
-    total[2] = total[2] + soma_doritos(escolha_dori);
+    total[2] = soma_doritos(escolha_dori);
     break;
   case 4:
     cout << comida12.aperit << comida12.preco << endl;
@@ -1589,7 +1589,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida14.aperit << comida14.preco << endl;
     cout << comida15.aperit << comida15.preco << endl;
     escolha_ruffles = escolher_tam_bc();
-    total[3] = total[3] + soma_ruffles(escolha_dori);
+    total[3] = soma_ruffles(escolha_dori);
     break;
   case 5:
     cout << comida16.aperit << comida16.preco << endl;
@@ -1597,7 +1597,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida18.aperit << comida18.preco << endl;
     cout << comida19.aperit << comida19.preco << endl;
     escolha_cheetos = escolher_tam_bc();
-    total[4] = total[4] + soma_cheetos(escolha_cheetos);
+    total[4] = soma_cheetos(escolha_cheetos);
     break;
   case 6:
     cout << comida20.aperit << comida20.preco << endl;
@@ -1605,7 +1605,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida22.aperit << comida22.preco << endl;
     cout << comida23.aperit << comida23.preco << endl;
     escolha_choc = escolher_tam_bc();
-    total[5] = total[5] + soma_chocolate(escolha_choc);
+    total[5] = soma_chocolate(escolha_choc);
     break;
   default:
     if (escolha_comida != 0){
@@ -1876,11 +1876,6 @@ float soma_fandangos(int escolha_fand){
   i = 0;
   total = 0;
   opcao_fand = -1;
-  for (i < 0; i < 4; i++){
-    guarda_fand[i] = 0;
-    qtd_fand[i] = 0;
-  }
-
   switch (escolha_fand){
   case 1:
     while (opcao_fand < 0){
@@ -1950,11 +1945,6 @@ float soma_doritos(int escolha_doritos){
   i = 0;
   total = 0;
   opcao_dori = -1;
-  for (i < 0; i < 4; i++){
-    guarda_dori[i] = 0;
-    qtd_fand[i] = 0;
-  }
-
   switch (escolha_dori){
   case 1:
     while (opcao_dori < 0){
@@ -2024,11 +2014,6 @@ float soma_ruffles(int escolha_ruffles){
   i = 0;
   total = 0;
   opcao_ruffles = -1;
-
-  for (i < 0; i < 4; i++){
-    guarda_ruffles[i] = 0;
-    qtd_ruffles[i] = 0;
-  }
   switch (escolha_ruffles){
   case 1:
     while (opcao_ruffles < 0){
@@ -2098,10 +2083,6 @@ float soma_cheetos(int escolha_cheetos){
   i = 0;
   total = 0;
   opcao_cheetos = -1;
-  for (i < 0; i < 4; i++){
-    guarda_cheetos[i] = 0;
-    qtd_cheetos[i] = 0;
-  }
   switch (escolha_cheetos){
   case 1:
     while (opcao_cheetos < 0){
@@ -2172,11 +2153,6 @@ float soma_chocolate(int escolha_choc){
   i = 0;
   total = 0;
   opcao_choc = -1;
-
-  for (i < 0; i < 4; i++){
-    guarda_choc[i] = 0;
-    qtd_choc[i] = 0;
-  }
   switch (escolha_choc){
   case 1:
     while (opcao_choc < 0){
