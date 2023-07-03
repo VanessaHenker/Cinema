@@ -2228,10 +2228,6 @@ float soma_coca(int escolha_coca){
   i = 0;
   total = 0;
   opcao_coca = -1;
-  for (i < 0; i < 4; i++){
-    guarda_coca[i] = 0;
-    qtd_coca[i] = 0;
-  }
   switch (escolha_coca){
   case 1:
     while (opcao_coca < 0){
@@ -2300,10 +2296,6 @@ float soma_fanta_uva(int escolha_uva){
   i = 0;
   total = 0;
   opcao_uva = -1;
-  for (i < 0; i < 4; i++){
-    guarda_uva[i] = 0;
-    qtd_uva[i] = 0;
-  }
   switch (escolha_uva){
   case 1:
     while (opcao_uva < 0){
@@ -2372,10 +2364,6 @@ float soma_fanta_laran(int escolha_laran){
   i = 0;
   total = 0;
   opcao_laran = -1;
-  for (i < 0; i < 4; i++){
-    guarda_laran[i] = 0;
-    qtd_laran[i] = 0;
-  }
   switch (escolha_laran){
   case 1:
     while (opcao_laran < 0){
@@ -2444,10 +2432,6 @@ float soma_fanta_guara(int escolha_guara){
   i = 0;
   total = 0;
   opcao_guara = -1;
-  for (i < 0; i < 4; i++){
-    guarda_guara[i] = 0;
-    qtd_guara[i] = 0;
-  }
   switch (escolha_guara){
   case 1:
     while (opcao_guara < 0){
