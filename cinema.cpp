@@ -1718,6 +1718,8 @@ void escolher_tipo_bc(){
   //system("cls");
   if (sele_comida == 'S' || sele_comida == 's'){
     while (loop_tela == 0){
+      soma_comida = 0;
+      guarda_comida = 0;
       //system("cls");
       escolha_comida = 7;
       while (escolha_comida > 6 || escolha_comida < 0){
@@ -1739,8 +1741,7 @@ void escolher_tipo_bc(){
       soma_comida = escolha_tipo_comida(escolha_comida);
       guarda_comida = guarda_comida + soma_comida;
       loop_tela = 2;
-    
-    if(escolha_comida != 0){
+      if(escolha_comida != 0){
       while (loop_tela != 1 && loop_tela != 0){
         cout << endl;
         cout << "    OPÇÕES COMIDAS                   OPÇÕES BEBIDAS";
@@ -1771,6 +1772,8 @@ void escolher_tipo_bc(){
     if (sele_bebida == 's' || sele_bebida == 'S'){
       loop_tela = 0;
       while (loop_tela == 0){
+        soma_bebida = 0;
+        guarda_bebida = 0;
         escolha_bebida = 5;
         while (escolha_bebida > 4 || escolha_bebida < 0){
           //system("cls");
@@ -1802,9 +1805,10 @@ void escolher_tipo_bc(){
       }
     }
   }
-
+  
   total_bc = total_bc + (guarda_comida + guarda_bebida);
   total_final = total_bc + total_ingresso;
+  cout << "\nTOTAL: " << total_final << endl;
 }
 int escolher_tam_bc(){
   setlocale(LC_ALL, "Portuguese_Brazil");
