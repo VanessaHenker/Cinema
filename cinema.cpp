@@ -143,7 +143,7 @@ int escolha_pipoca = 0, escolha_fand = 0, escolha_dori = 0, escolha_ruffles = 0,
 int opcao_pipoca = 0, opcao_fand = 0, opcao_dori = 0, opcao_ruffles = 0, opcao_cheetos = 0, opcao_choc = 0;
 int loop_tela = 0, opcao_coca = 0, opcao_uva = 0, opcao_laran = 0, opcao_guara = 0;
 char sele_bebida, sele_comida;
-float total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_bebida = 0, total_comida, total_c[6];
+float total_bc = 0, total_c[6], total_b[4], soma_comida = 0, soma_bebida = 0, guarda_comida = 0, guarda_bebida = 0, total_comida = 0, total_bebida = 0;
 // variáveis de finalizar compra
 float dinheiro = 0, troco = 0, total_final;
 string nomes_prod[50];
@@ -1562,7 +1562,8 @@ void valor_variavel(){
 }
 float escolha_tipo_comida(int escolha_comida){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  int i, guarda;
+  int i;
+  float guarda;
   total_comida = 0;
   guarda = 0;
   i = 0;
@@ -1639,10 +1640,14 @@ float escolha_tipo_comida(int escolha_comida){
 }
 float escolha_tipo_bebida(int escolha_bebida){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  float total[4], total_bebida;
   int i;
-  for (i = 0; i < 4; i++){
-    total[i] = 0;
+  float guarda;
+  guarda = 0;
+  total_bebida = 0;
+  if(soma_bebida == 0){
+    for (i = 0; i < 4; i++){
+    total_b[i] = 0;
+    }
   }
   switch (escolha_bebida){
   case 1:
@@ -1651,7 +1656,8 @@ float escolha_tipo_bebida(int escolha_bebida){
     cout << bebida3.refri << bebida3.preco << endl;
     cout << bebida4.refri << bebida4.preco << endl;
     escolha_coca = escolher_tam_bc();
-    total[0] = soma_coca(escolha_coca);
+    guarda = soma_coca(escolha_coca);
+    total_b[0] = guarda;
     break;
   case 2:
     cout << bebida5.refri << bebida5.preco << endl;
@@ -1659,7 +1665,8 @@ float escolha_tipo_bebida(int escolha_bebida){
     cout << bebida7.refri << bebida7.preco << endl;
     cout << bebida8.refri << bebida8.preco << endl;
     escolha_uva = escolher_tam_bc();
-    total[1] = soma_fanta_uva(escolha_uva);
+    guarda = soma_fanta_uva(escolha_uva);
+    total_b[1] = guarda;
     break;
   case 3:
     cout << bebida9.refri << bebida9.preco << endl;
@@ -1667,7 +1674,8 @@ float escolha_tipo_bebida(int escolha_bebida){
     cout << bebida11.refri << bebida11.preco << endl;
     cout << bebida12.refri << bebida12.preco << endl;
     escolha_laran = escolher_tam_bc();
-    total[2] = soma_fanta_laran(escolha_laran);
+    guarda = soma_fanta_laran(escolha_laran);
+    total_b[2] = guarda;
     break;
   case 4:
     cout << bebida13.refri << bebida13.preco << endl;
@@ -1675,16 +1683,17 @@ float escolha_tipo_bebida(int escolha_bebida){
     cout << bebida15.refri << bebida15.preco << endl;
     cout << bebida16.refri << bebida16.preco << endl;
     escolha_guara = escolher_tam_bc();
-    total[3] = soma_fanta_guara(escolha_guara);
+    guarda = soma_fanta_guara(escolha_guara);
+    total_b[3] = guarda;
     break;
   default:
     if (escolha_bebida != 0){
-      cout << "\nNumero inválido, Tente novamente" << endl;
+      cout << "\nNumero inválido,Tente novamente" << endl;
     }
     break;
   }
   for (i = 0; i < 4; i++){
-    total_bebida = total_bebida + total[i];
+    total_bebida = total_bebida + total_b[i];
   }
   return total_bebida;
 }
@@ -1779,7 +1788,6 @@ void  escolher_tipo_bc(){
     if (sele_bebida == 's' || sele_bebida == 'S'){
       loop_tela = 0;
       while (loop_tela == 0){
-        soma_bebida = 0;
         guarda_bebida = 0;
         escolha_bebida = 5;
         while (escolha_bebida > 4 || escolha_bebida < 0){
@@ -1803,6 +1811,7 @@ void  escolher_tipo_bc(){
       if(escolha_bebida != 0){
         while (loop_tela != 1 && loop_tela != 0){
           cout << endl;
+          cout << "\nTotal: " << guarda_bebida<< endl;
           cout << "       OPÇÕES BEBIDAS                 FINALIZAR COMPRA";
           cout << "\n <- Digite 0 para voltar <-   -> Digite 1 para proseguir ->  ";
           cout << endl << "                            ";
