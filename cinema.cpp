@@ -1564,6 +1564,7 @@ float escolha_tipo_comida(int escolha_comida){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i, guarda;
   total_comida = 0;
+  guarda = 0;
   i = 0;
   if(soma_comida == 0){
     for (i = 0; i < 6; i++){
@@ -1577,7 +1578,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida3.aperit << comida3.preco << endl;
     escolha_pipoca = escolher_tam_bc();
     guarda = soma_pipoca(escolha_pipoca);
-    total_c[0] = total_c[0] + guarda;
+    total_c[0] = guarda;
     break;
   case 2:
     cout << comida4.aperit << comida4.preco << endl;
@@ -1586,7 +1587,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida7.aperit << comida7.preco << endl;
     escolha_fand = escolher_tam_bc();
     guarda = soma_fandangos(escolha_fand);
-    total_c[1] = total_c[1] + guarda;
+    total_c[1] = guarda;
     break;
   case 3:
     cout << comida8.aperit << comida8.preco << endl;
@@ -1595,7 +1596,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida11.aperit << comida11.preco << endl;
     escolha_dori = escolher_tam_bc();
     guarda = soma_doritos(escolha_dori);
-    total_c[2] = total_c[2] + guarda;
+    total_c[2] = guarda;
     break;
   case 4:
     cout << comida12.aperit << comida12.preco << endl;
@@ -1604,7 +1605,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida15.aperit << comida15.preco << endl;
     escolha_ruffles = escolher_tam_bc();
     guarda = soma_ruffles(escolha_ruffles);
-    total_c[3] = total_c[3] + guarda;
+    total_c[3] = guarda;
     break;
   case 5:
     cout << comida16.aperit << comida16.preco << endl;
@@ -1613,7 +1614,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida19.aperit << comida19.preco << endl;
     escolha_cheetos = escolher_tam_bc();
     guarda = soma_cheetos(escolha_cheetos);
-    total_c[4] = total_c[4] + guarda;
+    total_c[4] = guarda;
     break;
   case 6:
     cout << comida20.aperit << comida20.preco << endl;
@@ -1622,7 +1623,7 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida23.aperit << comida23.preco << endl;
     escolha_choc = escolher_tam_bc();
     guarda = soma_chocolate(escolha_choc);
-    total_c[5] = total_c[5] + guarda;
+    total_c[5] = guarda;
     break;
   default:
     if (escolha_comida != 0){
