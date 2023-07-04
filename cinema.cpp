@@ -47,8 +47,7 @@ struct Filme{
   int duracao;
 };
 
-struct Sessao
-{
+struct Sessao{
   string horario;
   string sala;
   Filme filme;
@@ -135,8 +134,8 @@ int opcao = 0, escolha_hora = 0;
 string cadeiras1[10][5], cadeiras2[12][6], cadeiras3[10][6], cadeiras4[12][6];
 
 // variáveis de escolha comidas e bebidas;
-int guarda_pipoca[3], guarda_fand[4], guarda_dori[4], guarda_ruffles[4], guarda_cheetos[4], guarda_choc[4];
-int guarda_coca[4], guarda_uva[4], guarda_laran[4], guarda_guara[4];
+float guarda_pipoca[3], guarda_fand[4], guarda_dori[4], guarda_ruffles[4], guarda_cheetos[4], guarda_choc[4];
+float guarda_coca[4], guarda_uva[4], guarda_laran[4], guarda_guara[4];
 int qtd_pipoca[3], qtd_fand[4], qtd_dori[4], qtd_ruffles[4], qtd_cheetos[4], qtd_choc[4];
 int qtd_coca[4], qtd_uva[4], qtd_laran[4], qtd_guara[4];
 int escolha_bebida = 0, escolha_comida = 0, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
@@ -144,7 +143,7 @@ int escolha_pipoca = 0, escolha_fand = 0, escolha_dori = 0, escolha_ruffles = 0,
 int opcao_pipoca = 0, opcao_fand = 0, opcao_dori = 0, opcao_ruffles = 0, opcao_cheetos = 0, opcao_choc = 0;
 int loop_tela = 0, opcao_coca = 0, opcao_uva = 0, opcao_laran = 0, opcao_guara = 0;
 char sele_bebida, sele_comida;
-float total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_bebida = 0;
+float total_bc = 0, soma_comida = 0, guarda_comida = 0, soma_bebida = 0, guarda_bebida = 0, total_comida, total_c[6];
 // variáveis de finalizar compra
 float dinheiro = 0, troco = 0, total_final;
 string nomes_prod[50];
@@ -279,14 +278,14 @@ void sessao_escolha(){
         cout << "[1]-> 20:15" << endl;
         cin >> escolha_hora;
         if (escolha_hora > 1 || escolha_hora <= 0){
-          cout << "\nNão existe esse horário, tente novamente";
+          cout << "\nNão existe esse horário, tente novamente" << endl;
         }
       }
       escolha_horario(escolha_hora, opcao);
       //system("cls");
       break;
     default:
-      cout << "\nSessão não existe, Tente novamente!";
+      cout << "\nSessão não existe, Tente novamente!" << endl;
       break;
     }
     loop_sessao = 0;
@@ -1129,8 +1128,8 @@ void polt_selecionada(){
 float compra_ing(int guarda_polt){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i = 0;
-  ing_int = 30.00;
-  ing_meia = 15.00;
+  ing_int = 30;
+  ing_meia = 15;
   mostra_ing = 0;
   opcao_ingresso = 0;
   total_ingresso = 0;
@@ -1563,12 +1562,13 @@ void valor_variavel(){
 }
 float escolha_tipo_comida(int escolha_comida){
   setlocale(LC_ALL, "Portuguese_Brazil");
-  float total_comida, total[6];
-  int i;
-  i = 0;
+  int i, guarda;
   total_comida = 0;
-  for (i = 0; i < 6; i++){
-    total[i] = 0;
+  i = 0;
+  if(soma_comida == 0){
+    for (i = 0; i < 6; i++){
+      total_c[i] = 0;
+    }
   }
   switch (escolha_comida){
   case 1:
@@ -1576,7 +1576,8 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida2.aperit << comida2.preco << endl;
     cout << comida3.aperit << comida3.preco << endl;
     escolha_pipoca = escolher_tam_bc();
-    total[0] = soma_pipoca(escolha_pipoca);
+    guarda = soma_pipoca(escolha_pipoca);
+    total_c[0] = total_c[0] + guarda;
     break;
   case 2:
     cout << comida4.aperit << comida4.preco << endl;
@@ -1584,7 +1585,8 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida6.aperit << comida6.preco << endl;
     cout << comida7.aperit << comida7.preco << endl;
     escolha_fand = escolher_tam_bc();
-    total[1] = soma_fandangos(escolha_fand);
+    guarda = soma_fandangos(escolha_fand);
+    total_c[1] = total_c[1] + guarda;
     break;
   case 3:
     cout << comida8.aperit << comida8.preco << endl;
@@ -1592,7 +1594,8 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida10.aperit << comida10.preco << endl;
     cout << comida11.aperit << comida11.preco << endl;
     escolha_dori = escolher_tam_bc();
-    total[2] = soma_doritos(escolha_dori);
+    guarda = soma_doritos(escolha_dori);
+    total_c[2] = total_c[2] + guarda;
     break;
   case 4:
     cout << comida12.aperit << comida12.preco << endl;
@@ -1600,7 +1603,8 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida14.aperit << comida14.preco << endl;
     cout << comida15.aperit << comida15.preco << endl;
     escolha_ruffles = escolher_tam_bc();
-    total[3] = soma_ruffles(escolha_ruffles);
+    guarda = soma_ruffles(escolha_ruffles);
+    total_c[3] = total_c[3] + guarda;
     break;
   case 5:
     cout << comida16.aperit << comida16.preco << endl;
@@ -1608,7 +1612,8 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida18.aperit << comida18.preco << endl;
     cout << comida19.aperit << comida19.preco << endl;
     escolha_cheetos = escolher_tam_bc();
-    total[4] = soma_cheetos(escolha_cheetos);
+    guarda = soma_cheetos(escolha_cheetos);
+    total_c[4] = total_c[4] + guarda;
     break;
   case 6:
     cout << comida20.aperit << comida20.preco << endl;
@@ -1616,7 +1621,8 @@ float escolha_tipo_comida(int escolha_comida){
     cout << comida22.aperit << comida22.preco << endl;
     cout << comida23.aperit << comida23.preco << endl;
     escolha_choc = escolher_tam_bc();
-    total[5] = soma_chocolate(escolha_choc);
+    guarda = soma_chocolate(escolha_choc);
+    total_c[5] = total_c[5] + guarda;
     break;
   default:
     if (escolha_comida != 0){
@@ -1626,7 +1632,7 @@ float escolha_tipo_comida(int escolha_comida){
   }
 
   for (i = 0; i < 6; i++){
-    total_comida = total_comida + total[i];
+    total_comida = total_comida + total_c[i];
   }
   return total_comida;
 }
@@ -1682,7 +1688,7 @@ float escolha_tipo_bebida(int escolha_bebida){
   return total_bebida;
 }
 
-void escolher_tipo_bc(){
+void  escolher_tipo_bc(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   total_final = 0;
   total_bc = 0;
@@ -1718,9 +1724,8 @@ void escolher_tipo_bc(){
   //system("cls");
   if (sele_comida == 'S' || sele_comida == 's'){
     while (loop_tela == 0){
-      soma_comida = 0;
       guarda_comida = 0;
-      //system("cls");
+     //system("cls");
       escolha_comida = 7;
       while (escolha_comida > 6 || escolha_comida < 0){
         cout << "\nOpçoes comidas: " << endl;
@@ -1744,6 +1749,7 @@ void escolher_tipo_bc(){
       if(escolha_comida != 0){
       while (loop_tela != 1 && loop_tela != 0){
         cout << endl;
+        cout << "\nTotal: " << guarda_comida << endl;
         cout << "    OPÇÕES COMIDAS                   OPÇÕES BEBIDAS";
         cout << "\n<- Digite 0 para voltar <-   -> Digite 1 para proseguir ->";
         cout << endl << "                           ";
