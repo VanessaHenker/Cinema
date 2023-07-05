@@ -2457,6 +2457,7 @@ float soma_fanta_uva(int escolha_uva){
 }
 float soma_fanta_laran(int escolha_laran){
   setlocale(LC_ALL, "Portuguese_Brazil");
+  nomes_produtos();
   int i;
   float total;
   i = 0;
@@ -2465,7 +2466,9 @@ float soma_fanta_laran(int escolha_laran){
   switch (escolha_laran){
   case 1:
     while (opcao_laran < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[30];
+      cout << "\n[" << qtd_laran[0] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_laran;
       if (opcao_laran < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2477,7 +2480,9 @@ float soma_fanta_laran(int escolha_laran){
     break;
   case 2:
     while (opcao_laran < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[31];
+      cout << "\n[" << qtd_laran[1] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_laran;
       if (opcao_laran < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2489,7 +2494,9 @@ float soma_fanta_laran(int escolha_laran){
     break;
   case 3:
     while (opcao_laran < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[32];
+      cout << "\n[" << qtd_laran[2] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_laran;
       if (opcao_laran < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2501,7 +2508,9 @@ float soma_fanta_laran(int escolha_laran){
     break;
   case 4:
     while (opcao_laran < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[33];
+      cout << "\n[" << qtd_laran[3] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_laran;
       if (opcao_laran < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
