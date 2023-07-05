@@ -1759,7 +1759,6 @@ void  escolher_tipo_bc(){
       if(escolha_comida != 0){
       while (loop_tela != 1 && loop_tela != 0){
         cout << endl;
-        cout << "\nTotal: " << guarda_comida << endl;
         cout << "    OP합ES COMIDAS                   OP합ES BEBIDAS";
         cout << "\n<- Digite 0 para voltar <-   -> Digite 1 para proseguir ->";
         cout << endl << "                           ";
@@ -1811,8 +1810,7 @@ void  escolher_tipo_bc(){
       if(escolha_bebida != 0){
         while (loop_tela != 1 && loop_tela != 0){
           cout << endl;
-          cout << "\nTotal: " << guarda_bebida<< endl;
-          cout << "       OP합ES BEBIDAS                 FINALIZAR COMPRA";
+         cout << "       OP합ES BEBIDAS                 FINALIZAR COMPRA";
           cout << "\n <- Digite 0 para voltar <-   -> Digite 1 para proseguir ->  ";
           cout << endl << "                            ";
           cin >> loop_tela;
@@ -1822,9 +1820,11 @@ void  escolher_tipo_bc(){
     }
   }
   
-  total_bc = total_bc + (guarda_comida + guarda_bebida);
-  total_final = total_bc + total_ingresso;
-  cout << "\nTOTAL: " << total_final << endl;
+    total_bc = total_bc + (guarda_comida + guarda_bebida);
+    total_final = total_bc + total_ingresso;
+  if(total_final > 0){
+    cout << "\nTOTAL: " << total_final << endl;
+  }
 }
 int escolher_tam_bc(){
   setlocale(LC_ALL, "Portuguese_Brazil");
