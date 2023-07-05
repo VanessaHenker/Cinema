@@ -1912,6 +1912,7 @@ float soma_pipoca(int escolha_pipoca){
 }
 float soma_fandangos(int escolha_fand){
   setlocale(LC_ALL, "Portuguese_Brazil");
+  nomes_produtos();
   int i;
   float total;
   i = 0;
@@ -1920,7 +1921,9 @@ float soma_fandangos(int escolha_fand){
   switch (escolha_fand){
   case 1:
     while (opcao_fand < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[5];
+      cout << "\n[" << qtd_fand[0] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_fand;
       if (opcao_fand < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -1932,7 +1935,9 @@ float soma_fandangos(int escolha_fand){
     break;
   case 2:
     while (opcao_fand < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[6];
+      cout << "\n[" << qtd_fand[1] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_fand;
       if (opcao_fand < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -1944,7 +1949,9 @@ float soma_fandangos(int escolha_fand){
     break;
   case 3:
     while (opcao_fand < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[7];
+      cout << "\n[" << qtd_fand[2] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_fand;
       if (opcao_fand < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -1956,7 +1963,9 @@ float soma_fandangos(int escolha_fand){
     break;
   case 4:
     while (opcao_fand < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[8];
+      cout << "\n[" << qtd_fand[3] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_fand;
       if (opcao_fand < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
