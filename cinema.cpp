@@ -729,6 +729,7 @@ void sessao_3(){
   escolha2 = 0;
   i = 0;
   j = 0;
+  escolha_horario(escolha_hora, opcao);
   cout << endl;
 
   if (guarda_sessao > 0){
