@@ -2068,6 +2068,7 @@ float soma_doritos(int escolha_doritos){
 }
 float soma_ruffles(int escolha_ruffles){
   setlocale(LC_ALL, "Portuguese_Brazil");
+  nomes_produtos();
   int i;
   float total;
   i = 0;
@@ -2076,7 +2077,9 @@ float soma_ruffles(int escolha_ruffles){
   switch (escolha_ruffles){
   case 1:
     while (opcao_ruffles < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[13];
+      cout << "\n[" << qtd_ruffles[0] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_ruffles;
       if (opcao_ruffles < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2088,7 +2091,9 @@ float soma_ruffles(int escolha_ruffles){
     break;
   case 2:
     while (opcao_ruffles < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[14];
+      cout << "\n[" << qtd_ruffles[1] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_ruffles;
       if (opcao_ruffles < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2100,7 +2105,9 @@ float soma_ruffles(int escolha_ruffles){
     break;
   case 3:
     while (opcao_ruffles < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[15];
+      cout << "\n[" << qtd_ruffles[2] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_ruffles;
       if (opcao_ruffles < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2112,7 +2119,9 @@ float soma_ruffles(int escolha_ruffles){
     break;
   case 4:
     while (opcao_ruffles < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[16];
+      cout << "\n[" << qtd_ruffles[3] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_ruffles;
       if (opcao_ruffles < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
