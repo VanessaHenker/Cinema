@@ -2223,6 +2223,7 @@ float soma_cheetos(int escolha_cheetos){
 }
 float soma_chocolate(int escolha_choc){
   setlocale(LC_ALL, "Portuguese_Brazil");
+  nomes_produtos();
   int i;
   float total;
   i = 0;
@@ -2231,7 +2232,9 @@ float soma_chocolate(int escolha_choc){
   switch (escolha_choc){
   case 1:
     while (opcao_choc < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[21];
+      cout << "\n[" << qtd_choc[0] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_choc;
       if (opcao_choc < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2243,7 +2246,9 @@ float soma_chocolate(int escolha_choc){
     break;
   case 2:
     while (opcao_choc < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[21];
+      cout << "\n[" << qtd_cheetos[1] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_choc;
       if (opcao_choc < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2255,6 +2260,9 @@ float soma_chocolate(int escolha_choc){
     break;
   case 3:
     while (opcao_choc < 0){
+      cout << nomes_prod[21];
+      cout << "\n[" << qtd_cheetos[2] << "]-> ";
+      cout << "Quantidade: ";
       cout << "\nQuantidade: ";
       cin >> opcao_choc;
       if (opcao_choc < 0){
@@ -2267,7 +2275,9 @@ float soma_chocolate(int escolha_choc){
     break;
   case 4:
     while (opcao_choc < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[21];
+      cout << "\n[" << qtd_cheetos[3] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_choc;
       if (opcao_choc < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
