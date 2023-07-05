@@ -1857,7 +1857,7 @@ float soma_pipoca(int escolha_pipoca){
   case 1:
     while (opcao_pipoca < 0){
       cout << nomes_prod[2];
-      cout << "\n[" << qtd_pipoca[0] << "]->";
+      cout << "\n[" << qtd_pipoca[0] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_pipoca;
       //system("cls");
@@ -1922,7 +1922,7 @@ float soma_fandangos(int escolha_fand){
   case 1:
     while (opcao_fand < 0){
       cout << nomes_prod[5];
-      cout << "\n[" << qtd_fand[0] << "]->";
+      cout << "\n[" << qtd_fand[0] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_fand;
       if (opcao_fand < 0){
@@ -1936,7 +1936,7 @@ float soma_fandangos(int escolha_fand){
   case 2:
     while (opcao_fand < 0){
       cout << nomes_prod[6];
-      cout << "\n[" << qtd_fand[1] << "]->";
+      cout << "\n[" << qtd_fand[1] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_fand;
       if (opcao_fand < 0){
@@ -1950,7 +1950,7 @@ float soma_fandangos(int escolha_fand){
   case 3:
     while (opcao_fand < 0){
       cout << nomes_prod[7];
-      cout << "\n[" << qtd_fand[2] << "]->";
+      cout << "\n[" << qtd_fand[2] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_fand;
       if (opcao_fand < 0){
@@ -1964,7 +1964,7 @@ float soma_fandangos(int escolha_fand){
   case 4:
     while (opcao_fand < 0){
       cout << nomes_prod[8];
-      cout << "\n[" << qtd_fand[3] << "]->";
+      cout << "\n[" << qtd_fand[3] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_fand;
       if (opcao_fand < 0){
@@ -2000,7 +2000,7 @@ float soma_doritos(int escolha_doritos){
   case 1:
     while (opcao_dori < 0){
       cout << nomes_prod[9];
-      cout << "\n[" << qtd_dori[0] << "]->";
+      cout << "\n[" << qtd_dori[0] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_dori;
       if (opcao_dori < 0){
@@ -2014,7 +2014,7 @@ float soma_doritos(int escolha_doritos){
   case 2:
     while (opcao_dori < 0){
       cout << nomes_prod[10];
-      cout << "\n[" << qtd_dori[1] << "]->";
+      cout << "\n[" << qtd_dori[1] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_dori;
       if (opcao_dori < 0){
@@ -2028,7 +2028,7 @@ float soma_doritos(int escolha_doritos){
   case 3:
     while (opcao_dori < 0){
       cout << nomes_prod[11];
-      cout << "\n[" << qtd_dori[2] << "]->";
+      cout << "\n[" << qtd_dori[2] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_dori;
       if (opcao_dori < 0){
@@ -2042,7 +2042,7 @@ float soma_doritos(int escolha_doritos){
   case 4:
     while (opcao_dori < 0){
       cout << nomes_prod[12];
-      cout << "\n[" << qtd_dori[3] << "]->";
+      cout << "\n[" << qtd_dori[3] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_dori;
       if (opcao_dori < 0){
@@ -2078,7 +2078,7 @@ float soma_ruffles(int escolha_ruffles){
   case 1:
     while (opcao_ruffles < 0){
       cout << nomes_prod[13];
-      cout << "\n[" << qtd_ruffles[0] << "]->";
+      cout << "\n[" << qtd_ruffles[0] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_ruffles;
       if (opcao_ruffles < 0){
@@ -2092,7 +2092,7 @@ float soma_ruffles(int escolha_ruffles){
   case 2:
     while (opcao_ruffles < 0){
       cout << nomes_prod[14];
-      cout << "\n[" << qtd_ruffles[1] << "]->";
+      cout << "\n[" << qtd_ruffles[1] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_ruffles;
       if (opcao_ruffles < 0){
@@ -2106,7 +2106,7 @@ float soma_ruffles(int escolha_ruffles){
   case 3:
     while (opcao_ruffles < 0){
       cout << nomes_prod[15];
-      cout << "\n[" << qtd_ruffles[2] << "]->";
+      cout << "\n[" << qtd_ruffles[2] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_ruffles;
       if (opcao_ruffles < 0){
@@ -2120,7 +2120,7 @@ float soma_ruffles(int escolha_ruffles){
   case 4:
     while (opcao_ruffles < 0){
       cout << nomes_prod[16];
-      cout << "\n[" << qtd_ruffles[3] << "]->";
+      cout << "\n[" << qtd_ruffles[3] << "]-> ";
       cout << "Quantidade: ";
       cin >> opcao_ruffles;
       if (opcao_ruffles < 0){
@@ -2145,6 +2145,7 @@ float soma_ruffles(int escolha_ruffles){
 }
 float soma_cheetos(int escolha_cheetos){
   setlocale(LC_ALL, "Portuguese_Brazil");
+  nomes_produtos();
   int i;
   float total;
   i = 0;
@@ -2153,7 +2154,9 @@ float soma_cheetos(int escolha_cheetos){
   switch (escolha_cheetos){
   case 1:
     while (opcao_cheetos < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[17];
+      cout << "\n[" << qtd_cheetos[0] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_cheetos;
       if (opcao_cheetos < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2165,7 +2168,9 @@ float soma_cheetos(int escolha_cheetos){
     break;
   case 2:
     while (opcao_cheetos < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[18];
+      cout << "\n[" << qtd_cheetos[1] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_cheetos;
       if (opcao_cheetos < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2177,7 +2182,9 @@ float soma_cheetos(int escolha_cheetos){
     break;
   case 3:
     while (opcao_cheetos < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[18];
+      cout << "\n[" << qtd_cheetos[2] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_cheetos;
       if (opcao_cheetos < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2189,7 +2196,9 @@ float soma_cheetos(int escolha_cheetos){
     break;
   case 4:
     while (opcao_cheetos < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[19];
+      cout << "\n[" << qtd_cheetos[3] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_cheetos;
       if (opcao_cheetos < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
