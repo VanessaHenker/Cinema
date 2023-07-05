@@ -900,8 +900,8 @@ void sessao_4(){
   escolha2 = 0;
   i = 0;
   j = 0;
+  escolha_horario(escolha_hora, opcao);
   cout << endl;
-
   if (guarda_sessao > 0){
     for (i = 0; i < 10; i++){
       for (j = 0; j < 5; j++){
