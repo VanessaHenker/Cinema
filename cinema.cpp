@@ -1990,6 +1990,7 @@ float soma_fandangos(int escolha_fand){
 }
 float soma_doritos(int escolha_doritos){
   setlocale(LC_ALL, "Portuguese_Brazil");
+  nomes_produtos();
   int i;
   float total;
   i = 0;
@@ -1998,7 +1999,9 @@ float soma_doritos(int escolha_doritos){
   switch (escolha_dori){
   case 1:
     while (opcao_dori < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[9];
+      cout << "\n[" << qtd_dori[0] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_dori;
       if (opcao_dori < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2010,7 +2013,9 @@ float soma_doritos(int escolha_doritos){
     break;
   case 2:
     while (opcao_dori < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[10];
+      cout << "\n[" << qtd_dori[1] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_dori;
       if (opcao_dori < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2022,7 +2027,9 @@ float soma_doritos(int escolha_doritos){
     break;
   case 3:
     while (opcao_dori < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[11];
+      cout << "\n[" << qtd_dori[2] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_dori;
       if (opcao_dori < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
@@ -2034,7 +2041,9 @@ float soma_doritos(int escolha_doritos){
     break;
   case 4:
     while (opcao_dori < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[12];
+      cout << "\n[" << qtd_dori[3] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_dori;
       if (opcao_dori < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
