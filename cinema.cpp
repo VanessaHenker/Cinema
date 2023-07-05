@@ -82,7 +82,7 @@ Bebida bebida6 = {"[2]Fanta uva       350ml R$ ", 6};
 Bebida bebida7 = {"[3]Fanta uva ZERO  350ml R$ ", 6.50};
 Bebida bebida8 = {"[4]Fanta uva       600ml R$ ", 8};
 
-Bebida bebida9 = {"[1]Fanta laranja        237ml R$ ", 4};
+Bebida bebida9 = { "[1]Fanta laranja        237ml R$ ", 4};
 Bebida bebida10 = {"[2]Fanta laranja        350ml R$ ", 6};
 Bebida bebida11 = {"[3]Fanta laranja ZERO   350ml R$ ", 6.50};
 Bebida bebida12 = {"[4]Fanta laranja        600ml R$", 8};
@@ -101,8 +101,8 @@ Comida comida5 = {"[2]Fandangos 45g  R$ ", 6};
 Comida comida6 = {"[3]Fandangos 90g  R$ ", 9};
 Comida comida7 = {"[4]Fangangos 140g R$ ", 12};
 
-Comida comida8 = {"[1]Doritos 37g   R$ ", 4};
-Comida comida9 = {"[2]Doritos 45g   R$ ", 6};
+Comida comida8 = { "[1]Doritos 37g   R$ ", 4};
+Comida comida9 = { "[2]Doritos 45g   R$ ", 6};
 Comida comida10 = {"[3]Doritos 90g  R$ ", 9};
 Comida comida11 = {"[4]Doritos 140g R$ ", 12};
 
@@ -1838,6 +1838,7 @@ int escolher_tam_bc(){
     if (sele_opcao == 's' || sele_opcao == 'S'){
       cout << "\nDigite o numero: ";
       cin >> escolha_opcao;
+      cout << endl;
       return escolha_opcao;
     }
   }
@@ -1846,6 +1847,7 @@ int escolher_tam_bc(){
 
 float soma_pipoca(int escolha_pipoca){
   setlocale(LC_ALL, "Portuguese_Brazil");
+  nomes_produtos();
   float total;
   int i;
   i = 0;
@@ -1854,7 +1856,9 @@ float soma_pipoca(int escolha_pipoca){
   switch (escolha_pipoca){
   case 1:
     while (opcao_pipoca < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[2];
+      cout << "\n[" << qtd_pipoca[0] << "]->";
+      cout << "Quantidade: ";
       cin >> opcao_pipoca;
       //system("cls");
       if (opcao_pipoca < 0){
@@ -1867,8 +1871,10 @@ float soma_pipoca(int escolha_pipoca){
     break;
   case 2:
     while (opcao_pipoca < 0){
-      cout << "\nQuantidade: ";
-      cin >> opcao_pipoca;
+      cout << nomes_prod[3];
+      cout << "\n[" << qtd_pipoca[1] << "]-> ";
+      cout << "Quantidade: ";
+       cin >> opcao_pipoca;
       if (opcao_pipoca < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
       }
@@ -1879,7 +1885,9 @@ float soma_pipoca(int escolha_pipoca){
     break;
   case 3:
     while (opcao_pipoca < 0){
-      cout << "\nQuantidade: ";
+      cout << nomes_prod[4];
+      cout << "\n[" << qtd_pipoca[2] << "]-> ";
+      cout << "Quantidade: ";
       cin >> opcao_pipoca;
       if (opcao_pipoca < 0){
         cout << "\nQuantidade inválida, tente novamente!" << endl;
