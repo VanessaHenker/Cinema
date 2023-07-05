@@ -397,8 +397,7 @@ void sessao_1(){
   i = 0;
   j = 0;
   cout << endl;
-  escolha_horario(escolha_hora, opcao);
-  if (guarda_sessao > 0){
+ if (guarda_sessao > 0){
     for (i = 0; i < 10; i++){
       for (j = 0; j < 5; j++){
         if (cadeiras1[i][j] == "[//]"){
@@ -486,6 +485,8 @@ void sessao_1(){
         cadeiras1[escolha1][escolha2] = "[//]";
       }
       //system("cls");
+      escolha_horario(escolha_hora, opcao);
+      cout << endl;
       for (i = 0; i < 10; i++){
         for (j = 0; j < 5; j++){
           if (cadeiras1[i][j] == "[//]" || cadeiras1[i][j] == "[--]"){
@@ -602,7 +603,7 @@ void sessao_2(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          system("cls");
+          //system("cls");
           if (cadeiras2[escolha1][escolha2] == "[--]"){
             cout << "\nEstá ocupado!" << endl;
           }
@@ -644,7 +645,9 @@ void sessao_2(){
       if (cadeiras2[escolha1][escolha2] != "[--]" && cadeiras2[escolha1][escolha2] != "[ ]"){
         cadeiras2[escolha1][escolha2] = "[//]";
       }
-      system("cls");
+      //system("cls");
+      escolha_horario(escolha_hora, opcao);
+      cout << endl;
       for (i = 0; i < 12; i++){
         for (j = 0; j < 6; j++){
           if (cadeiras2[i][j] == "[//]" || cadeiras2[i][j] == "[--]"){
@@ -813,8 +816,10 @@ void sessao_3(){
       if (cadeiras3[escolha1][escolha2] != "[--]" && cadeiras3[escolha1][escolha2] != "[ ]"){
         cadeiras3[escolha1][escolha2] = "[//]";
       }
-
+      
       //system("cls");
+      escolha_horario(escolha_hora, opcao);
+      cout << endl;
       for (i = 0; i < 10; i++){
         for (j = 0; j < 6; j++){
           if (cadeiras3[i][j] == "[//]" || cadeiras3[i][j] == "[--]"){
@@ -985,6 +990,8 @@ void sessao_4(){
         cadeiras4[escolha1][escolha2] = "[//]";
       }
       //system("cls");
+      escolha_horario(escolha_hora, opcao);
+      cout << endl;
       for (i = 0; i < 12; i++){
         for (j = 0; j < 6; j++){
           if (cadeiras4[i][j] == "[//]" || cadeiras4[i][j] == "[--]"){
