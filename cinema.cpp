@@ -560,8 +560,8 @@ void sessao_2(){
   cout << endl;
 
   if (guarda_sessao > 0){
-    for (i = 0; i < 10; i++){
-      for (j = 0; j < 5; j++){
+    for (i = 0; i < 12; i++){
+      for (j = 0; j < 6; j++){
         if (cadeiras2[i][j] == "[//]"){
           cadeiras2[i][j] = "[--]";
         }
@@ -688,8 +688,8 @@ void sessao_2(){
 
   //system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
-    for (i = 0; i < 10; i++){
-      for (j = 0; j < 5; j++){
+    for (i = 0; i < 12; i++){
+      for (j = 0; j < 6; j++){
         if (cadeiras2[i][j] == "[//]"){
           guarda_polt++;
         }
@@ -854,7 +854,7 @@ void sessao_3(){
   //system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     for (i = 0; i < 10; i++){
-      for (j = 0; j < 5; j++){
+      for (j = 0; j < 6; j++){
         if (cadeiras3[i][j] == "[//]"){
           guarda_polt++;
         }
@@ -882,10 +882,9 @@ void sessao_4(){
   i = 0;
   j = 0;
   cout << endl;
-
   if (guarda_sessao > 0){
-    for (i = 0; i < 10; i++){
-      for (j = 0; j < 5; j++){
+    for (i = 0; i < 12; i++){
+      for (j = 0; j < 6; j++){
         if (cadeiras4[i][j] == "[//]"){
           cadeiras4[i][j] = "[--]";
         }
@@ -1016,18 +1015,16 @@ void sessao_4(){
   cout << endl;
   //system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
-    for (i = 0; i < 10; i++){
-      for (j = 0; j < 5; j++){
+    for (i = 0; i < 12; i++){
+      for (j = 0; j < 6; j++){
         if (cadeiras4[i][j] == "[//]"){
           guarda_polt++;
         }
       }
     }
-
     polt_selecionada();
-
     if (guarda_polt > 0){
-      compra_ing(guarda_polt);
+    compra_ing(guarda_polt);
     }
     else{
       cout << "\nNenhum assento foi selecionado!" << endl;
@@ -1062,11 +1059,11 @@ void loop_hora(){
 void polt_selecionada(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i, j;
-  i = 0;
-  j = 0;
-
   cout << "\nAssentos selecionados: ";
   // assentos selecionados da sessao 1
+  if(opcao == 1 && escolha_hora == 1 || escolha_hora == 2){
+   i = 0;
+   j = 0;
   for (i = 0; i < 10; i++){
     for (j = 0; j < 5; j++){
       if (cadeiras1[i][j] == "[//]"){
@@ -1074,7 +1071,9 @@ void polt_selecionada(){
       }
     }
   }
+}
   // assentos selecionados da sessao 2
+  if(opcao == 2 && escolha_hora == 1 || escolha_hora == 2 || escolha_hora == 3){
   i = 0;
   j = 0;
   for (i = 0; i < 12; i++){
@@ -1084,7 +1083,9 @@ void polt_selecionada(){
       }
     }
   }
+}
   // assentos selecionados da sessao 3
+  if(opcao == 3 && escolha_hora == 1 || escolha_hora == 2){
   i = 0;
   j = 0;
   for (i = 0; i < 10; i++){
@@ -1094,13 +1095,16 @@ void polt_selecionada(){
       }
     }
   }
+}  
   // assentos selecionados da sessao 4
+  if(opcao == 4 && escolha_hora == 1){
   i = 0;
   j = 0;
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras4[i][j] == "[//]"){
         cout << i << j << ", ";
+        }
       }
     }
   }
