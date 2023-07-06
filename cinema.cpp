@@ -152,14 +152,9 @@ string nomes_prod[50];
 int loop_sessao = 0;
 
 int main(){
+  
   while (loop_menu == 0){
-    total_final = 0;
-    total_bc = 0;
-    total_ingresso = 0;
-    qtd_ingresso[0] = 0;
-    qtd_ingresso[1] = 0;
     valor_variavel();
-    
     //system("cls");
     cout << "----------------------------------------------";
     cout << "\nBEM VINDO AO CINESTAR!";
@@ -1530,7 +1525,13 @@ void soma_qtd_prod(){
 void valor_variavel(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i;
+  total_final = 0;
+  total_bc = 0;
+  total_ingresso = 0;
+  qtd_ingresso[0] = 0;
+  qtd_ingresso[1] = 0;
   i = 0;
+  
   for (i < 0; i < 3; i++){
     qtd_pipoca[i] = 0;
     guarda_pipoca[i] = 0;
@@ -1730,8 +1731,7 @@ void escolher_tipo_bc(){
   loop_tela = 0;
   sele_comida = 't';
   sele_comida = 't';
-  valor_variavel();
-
+  
   cout << "\nOpções comidas: " << endl;
   cout << "[1]-> Pipocas" << endl;
   cout << "[2]-> Fandangos" << endl;
