@@ -562,8 +562,8 @@ void sessao_2(){
   if (guarda_sessao > 0){
     for (i = 0; i < 10; i++){
       for (j = 0; j < 5; j++){
-        if (cadeiras1[i][j] == "[//]"){
-          cadeiras1[i][j] = "[--]";
+        if (cadeiras2[i][j] == "[//]"){
+          cadeiras2[i][j] = "[--]";
         }
       }
     }
@@ -702,15 +702,8 @@ void sessao_2(){
     else{
       cout << "\nNenhum assento foi selecionado!" << endl;
     }
-    if (total_ingresso > 0){
-      for (i = 0; i < 10; i++){
-        for (j = 0; j < 5; j++){
-          if (cadeiras2[i][j] == "[//]"){
-            cadeiras2[i][j] = "[--]";
-          }
-        }
-      }
-    }
+    cout << endl;
+    //system("cls");
   }
 }
 void sessao_3(){
@@ -1098,6 +1091,8 @@ void polt_selecionada(){
     }
   }
   // assentos selecionados da sessao 2
+  i = 0;
+  j = 0;
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras2[i][j] == "[//]"){
@@ -1106,6 +1101,8 @@ void polt_selecionada(){
     }
   }
   // assentos selecionados da sessao 3
+  i = 0;
+  j = 0;
   for (i = 0; i < 10; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras3[i][j] == "[//]"){
@@ -1114,6 +1111,8 @@ void polt_selecionada(){
     }
   }
   // assentos selecionados da sessao 4
+  i = 0;
+  j = 0;
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras4[i][j] == "[//]"){
