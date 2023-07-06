@@ -886,8 +886,8 @@ void sessao_4(){
   if (guarda_sessao > 0){
     for (i = 0; i < 10; i++){
       for (j = 0; j < 5; j++){
-        if (cadeiras1[i][j] == "[//]"){
-          cadeiras1[i][j] = "[--]";
+        if (cadeiras4[i][j] == "[//]"){
+          cadeiras4[i][j] = "[--]";
         }
       }
     }
@@ -1032,15 +1032,8 @@ void sessao_4(){
     else{
       cout << "\nNenhum assento foi selecionado!" << endl;
     }
-    if (total_ingresso > 0){
-      for (i = 0; i < 10; i++){
-        for (j = 0; j < 5; j++){
-          if (cadeiras4[i][j] == "[//]"){
-            cadeiras4[i][j] = "[--]";
-          }
-        }
-      }
-    }
+    cout << endl;
+    //system("cls");
   }
 }
 
