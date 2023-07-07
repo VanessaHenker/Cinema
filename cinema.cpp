@@ -125,7 +125,7 @@ Comida comida23 = {"[4]Chocalate Garoto ao Leite 90g         R$ ", 7.50};
 int guarda_ingresso[2], qtd_ingresso[2], loop_menu;
 int ingresso_poltrona = 0, compra_ingresso = 0, mostra_ing = 0;
 char sele_ingresso;
-float ing_int, ing_meia, total_ingresso = 0, guarda_sessao = 0, opcao_ingresso = 0;
+float ing_int, ing_meia, total_ingresso = 0, opcao_ingresso = 0;
 
 // variaveis de escolha de sessão e filme
 int qtd_filme = 4;
@@ -391,16 +391,15 @@ void sessao_1(){
   i = 0;
   j = 0;
   cout << endl;
- if (guarda_sessao > 0){
-    for (i = 0; i < 10; i++){
-      for (j = 0; j < 5; j++){
-        if (cadeiras1[i][j] == "[//]"){
-          cadeiras1[i][j] = "[--]";
-        }
+ 
+  for (i = 0; i < 10; i++){
+    for (j = 0; j < 5; j++){
+      if (cadeiras1[i][j] == "[//]"){
+        cadeiras1[i][j] = "[--]";
       }
     }
   }
-  guarda_sessao = 0;
+  
   for (i = 0; i < 10; i++){
     for (j = 0; j < 5; j++){
       if (cadeiras1[i][j] == "[--]"){
@@ -566,17 +565,15 @@ void sessao_2(){
   j = 0;
   cout << endl;
 
-  if (guarda_sessao > 0){
-    for (i = 0; i < 12; i++){
-      for (j = 0; j < 6; j++){
-        if (cadeiras2[i][j] == "[//]"){
-          cadeiras2[i][j] = "[--]";
-        }
+  for (i = 0; i < 12; i++){
+    for (j = 0; j < 6; j++){
+      if (cadeiras2[i][j] == "[//]"){
+        cadeiras2[i][j] = "[--]";
       }
     }
   }
-  guarda_sessao = 0;
-  for (i = 0; i < 12; i++){
+  
+ for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras2[i][j] == "[--]"){
         cout << "[--] ";
@@ -734,16 +731,14 @@ void sessao_3(){
   j = 0;
   cout << endl;
   
-  if (guarda_sessao > 0){
-    for (i = 0; i < 10; i++){
-      for (j = 0; j < 5; j++){
-        if (cadeiras3[i][j] == "[//]"){
-          cadeiras3[i][j] = "[--]";
-        }
+  for (i = 0; i < 10; i++){
+    for (j = 0; j < 5; j++){
+      if (cadeiras3[i][j] == "[//]"){
+        cadeiras3[i][j] = "[--]";
       }
     }
   }
-  guarda_sessao = 0;
+  
   for (i = 0; i < 10; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras3[i][j] == "[--]"){
@@ -903,16 +898,15 @@ void sessao_4(){
   i = 0;
   j = 0;
   cout << endl;
-  if (guarda_sessao > 0){
-    for (i = 0; i < 12; i++){
-      for (j = 0; j < 6; j++){
-        if (cadeiras4[i][j] == "[//]"){
-          cadeiras4[i][j] = "[--]";
-        }
+  
+  for (i = 0; i < 12; i++){
+    for (j = 0; j < 6; j++){
+      if (cadeiras4[i][j] == "[//]"){
+        cadeiras4[i][j] = "[--]";
       }
     }
   }
-  guarda_sessao = 0;
+  
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras4[i][j] == "[--]"){
@@ -1264,7 +1258,6 @@ float compra_ing(int guarda_polt){
   }
 
   cout << "\nTOTAL R$: " << total_ingresso;
-  guarda_sessao = total_ingresso;
   return 0;
 }
 
