@@ -542,6 +542,13 @@ void sessao_1(){
     else{
       cout << "\nNenhum assento foi selecionado!" << endl;
     }
+    for (i = 0; i < 10; i++){
+      for (j = 0; j < 5; j++){
+        if(total_ingresso == 0 && cadeiras1[i][j] == "[//]"){
+          cadeiras1[i][j] = "[ ]";
+        }
+      }
+    }
     cout << endl;
     //system("cls");
   }
@@ -701,6 +708,13 @@ void sessao_2(){
     }
     else{
       cout << "\nNenhum assento foi selecionado!" << endl;
+    }
+    for (i = 0; i < 12; i++){
+      for (j = 0; j < 6; j++){
+        if(total_ingresso == 0 && cadeiras2[i][j] == "[//]"){
+          cadeiras2[i][j] = "[ ]";
+        }
+      }
     }
     cout << endl;
     //system("cls");
@@ -867,6 +881,13 @@ void sessao_3(){
     else{
       cout << "\nNenhum assento foi selecionado!" << endl;
     }
+    for (i = 0; i < 10; i++){
+      for (j = 0; j < 6; j++){
+        if(total_ingresso == 0 && cadeiras3[i][j] == "[//]"){
+        cadeiras3[i][j] = "[ ]";
+        }
+      }
+    }
   }
 }
 void sessao_4(){
@@ -892,7 +913,6 @@ void sessao_4(){
     }
   }
   guarda_sessao = 0;
-
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras4[i][j] == "[--]"){
@@ -1029,6 +1049,13 @@ void sessao_4(){
     else{
       cout << "\nNenhum assento foi selecionado!" << endl;
     }
+    for (i = 0; i < 12; i++){
+      for (j = 0; j < 6; j++){
+        if(total_ingresso == 0 && cadeiras4[i][j] == "[//]"){
+          cadeiras4[i][j] = "[ ]";
+        }
+      }
+    }
     cout << endl;
     //system("cls");
   }
@@ -1059,11 +1086,11 @@ void loop_hora(){
 void polt_selecionada(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int i, j;
+  i = 0;
+  j = 0;
   cout << "\nAssentos selecionados: ";
   // assentos selecionados da sessao 1
-  if(opcao == 1 && escolha_hora == 1 || escolha_hora == 2){
-   i = 0;
-   j = 0;
+if(opcao == 1 && escolha_hora == 1 || escolha_hora == 2){
   for (i = 0; i < 10; i++){
     for (j = 0; j < 5; j++){
       if (cadeiras1[i][j] == "[//]"){
@@ -1073,9 +1100,7 @@ void polt_selecionada(){
   }
 }
   // assentos selecionados da sessao 2
-  if(opcao == 2 && escolha_hora == 1 || escolha_hora == 2 || escolha_hora == 3){
-  i = 0;
-  j = 0;
+if(opcao == 2 && escolha_hora == 1 || escolha_hora == 2 || escolha_hora == 3){
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras2[i][j] == "[//]"){
@@ -1085,9 +1110,7 @@ void polt_selecionada(){
   }
 }
   // assentos selecionados da sessao 3
-  if(opcao == 3 && escolha_hora == 1 || escolha_hora == 2){
-  i = 0;
-  j = 0;
+if(opcao == 3 && escolha_hora == 1 || escolha_hora == 2){
   for (i = 0; i < 10; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras3[i][j] == "[//]"){
@@ -1097,9 +1120,7 @@ void polt_selecionada(){
   }
 }  
   // assentos selecionados da sessao 4
-  if(opcao == 4 && escolha_hora == 1){
-  i = 0;
-  j = 0;
+if(opcao == 4 && escolha_hora == 1){
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
       if (cadeiras4[i][j] == "[//]"){
@@ -1120,7 +1141,7 @@ float compra_ing(int guarda_polt){
   total_ingresso = 0;
   sele_ingresso = 't';
   loop_tela = 0;
-  for (i = 0; i < 2; i++){
+ for (i = 0; i < 2; i++){
     guarda_ingresso[i] = 0;
     qtd_ingresso[i] = 0;
   }
@@ -1243,7 +1264,7 @@ float compra_ing(int guarda_polt){
   }
 
   cout << "\nTOTAL R$: " << total_ingresso;
-  guarda_sessao = guarda_sessao + total_ingresso;
+  guarda_sessao = total_ingresso;
   return 0;
 }
 
