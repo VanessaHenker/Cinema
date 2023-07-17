@@ -1256,7 +1256,7 @@ void polt_selecionada(){
   i = 0;
   j = 0;
   cout << "\nAssentos selecionados: ";
-  // assentos selecionados da sessao 1
+// assentos selecionados da sessao 1
 if(opcao == 1 && escolha_hora == 1){
   for (i = 0; i < 10; i++){
     for (j = 0; j < 5; j++){
@@ -1266,7 +1266,16 @@ if(opcao == 1 && escolha_hora == 1){
     }
   }
 }
-  // assentos selecionados da sessao 2
+if(opcao == 1 && escolha_hora == 2){
+  for (i = 0; i < 10; i++){
+    for (j = 0; j < 5; j++){
+      if (cadeiras1_2[i][j] == "[//]"){
+        cout << i << j << ", ";
+      }
+    }
+  }
+}
+// assentos selecionados da sessao 2
 if(opcao == 2 && escolha_hora == 1 || escolha_hora == 2 || escolha_hora == 3){
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
