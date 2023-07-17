@@ -18,7 +18,8 @@ void sessao2_hora1();
 void sessao2_hora2();
 void sessao2_hora3();
 void sessao3_hora1();
-void sessao_4();
+void sessao3_hora2();
+void sessao4_hora1();
 void polt_selecionada();
 void mostrar_sala();
 void loop_hora();
@@ -134,7 +135,7 @@ float ing_int, ing_meia, total_ingresso = 0, opcao_ingresso = 0;
 int qtd_filme = 4;
 char sele_sessao;
 int opcao = 0, escolha_hora = 0;
-string cadeiras1_1[10][5], cadeiras1_2[10][5], cadeiras2_1[12][6], cadeiras2_2[12][6], cadeiras2_3[12][6], cadeiras3_1[10][6], cadeiras3_2[10][6], cadeiras4[12][6];
+string cadeiras1_1[10][5], cadeiras1_2[10][5], cadeiras2_1[12][6], cadeiras2_2[12][6], cadeiras2_3[12][6], cadeiras3_1[10][6], cadeiras3_2[10][6], cadeiras4_1[12][6];
 
 // variáveis de escolha comidas e bebidas;
 int escolha_bebida = 0, escolha_comida = 0, escolha_coca = 0, escolha_uva = 0, escolha_laran, escolha_guara = 0;
@@ -355,7 +356,7 @@ void mostrar_sala(){
   }
   if (opcao == 1 && escolha_hora == 2){
     escolha_horario(escolha_hora, opcao);
-    sessao1_hora1();
+    sessao1_hora2();
   }
   if (opcao == 2 && escolha_hora == 1){
     escolha_horario(escolha_hora, opcao);
@@ -363,11 +364,11 @@ void mostrar_sala(){
   }
   if (opcao == 2 && escolha_hora == 2){
     escolha_horario(escolha_hora, opcao);
-    sessao2_hora1();
+    sessao2_hora2();
   }
   if (opcao == 2 && escolha_hora == 3){
     escolha_horario(escolha_hora, opcao);
-    sessao2_hora1();
+    sessao2_hora3();
   }
   if (opcao == 3 && escolha_hora == 1){
     escolha_horario(escolha_hora, opcao);
@@ -375,11 +376,11 @@ void mostrar_sala(){
   }
   if (opcao == 3 && escolha_hora == 2){
     escolha_horario(escolha_hora, opcao);
-    sessao3_hora1();
+    sessao3_hora2();
   }
   if (opcao == 4 && escolha_hora == 1){
     escolha_horario(escolha_hora, opcao);
-    sessao_4();
+    sessao4_hora1();
   }
 }
 void sessao1_hora1(){
@@ -1559,7 +1560,7 @@ void sessao3_hora2(){
     }
   }
 }
-void sessao_4(){
+void sessao4_hora1(){
   setlocale(LC_ALL, "Portuguese_Brazil");
   int escolha1, escolha2;
   char reserva_polt, guarda_polt;
@@ -1575,15 +1576,15 @@ void sessao_4(){
   
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
-      if (cadeiras4[i][j] == "[//]"){
-        cadeiras4[i][j] = "[--]";
+      if (cadeiras4_1[i][j] == "[//]"){
+        cadeiras4_1[i][j] = "[--]";
       }
     }
   }
   
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
-      if (cadeiras4[i][j] == "[--]"){
+      if (cadeiras4_1[i][j] == "[--]"){
         cout << "[--] ";
       }
       else{
@@ -1611,16 +1612,16 @@ void sessao_4(){
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
           //system("cls");
-          if (cadeiras4[escolha1][escolha2] == "[--]"){
+          if (cadeiras4_1[escolha1][escolha2] == "[--]"){
             cout << "\nEstá ocupado!" << endl;
           }
           for (i = 0; i < 12; i++){
             for (j = 0; j < 6; j++){
-              if (cadeiras4[i][j] == "[//]" || cadeiras4[i][j] == "[--]"){
-                if (cadeiras4[i][j] == "[//]"){
+              if (cadeiras4_1[i][j] == "[//]" || cadeiras4_1[i][j] == "[--]"){
+                if (cadeiras4_1[i][j] == "[//]"){
                   cout << "[//] ";
                 }
-                if (cadeiras4[i][j] == "[--]"){
+                if (cadeiras4_1[i][j] == "[--]"){
                   cout << "[--] ";
                 }
               }
@@ -1644,26 +1645,26 @@ void sessao_4(){
             cout << endl;
           }
         } while (escolha1 > 11 || escolha2 > 5);
-      } while (cadeiras4[escolha1][escolha2] == "[--]");
-      if (cadeiras4[escolha1][escolha2] == "[//]"){
-        cadeiras4[escolha1][escolha2] = "[ ]";
+      } while (cadeiras4_1[escolha1][escolha2] == "[--]");
+      if (cadeiras4_1[escolha1][escolha2] == "[//]"){
+        cadeiras4_1[escolha1][escolha2] = "[ ]";
       }
       else{
-        cadeiras4[escolha1][escolha2] = "[//]";
+        cadeiras4_1[escolha1][escolha2] = "[//]";
       }
-      if (cadeiras4[escolha1][escolha2] != "[--]" && cadeiras4[escolha1][escolha2] != "[ ]"){
-        cadeiras4[escolha1][escolha2] = "[//]";
+      if (cadeiras4_1[escolha1][escolha2] != "[--]" && cadeiras4_1[escolha1][escolha2] != "[ ]"){
+        cadeiras4_1[escolha1][escolha2] = "[//]";
       }
       //system("cls");
       escolha_horario(escolha_hora, opcao);
       cout << endl;
       for (i = 0; i < 12; i++){
         for (j = 0; j < 6; j++){
-          if (cadeiras4[i][j] == "[//]" || cadeiras4[i][j] == "[--]"){
-            if (cadeiras4[i][j] == "[//]"){
+          if (cadeiras4_1[i][j] == "[//]" || cadeiras4_1[i][j] == "[--]"){
+            if (cadeiras4_1[i][j] == "[//]"){
               cout << "[//] ";
             }
-            if (cadeiras4[i][j] == "[--]"){
+            if (cadeiras4_1[i][j] == "[--]"){
               cout << "[--] ";
             }
           }
@@ -1686,7 +1687,7 @@ void sessao_4(){
       cout << "\nAssentos selecionados: ";
       for (i = 0; i < 12; i++){
         for (j = 0; j < 6; j++){
-          if (cadeiras4[i][j] == "[//]"){
+          if (cadeiras4_1[i][j] == "[//]"){
             cout << i << j << ", ";
           }
         }
@@ -1705,7 +1706,7 @@ void sessao_4(){
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     for (i = 0; i < 12; i++){
       for (j = 0; j < 6; j++){
-        if (cadeiras4[i][j] == "[//]"){
+        if (cadeiras4_1[i][j] == "[//]"){
           guarda_polt++;
         }
       }
@@ -1719,8 +1720,8 @@ void sessao_4(){
     }
     for (i = 0; i < 12; i++){
       for (j = 0; j < 6; j++){
-        if(total_ingresso == 0 && cadeiras4[i][j] == "[//]"){
-          cadeiras4[i][j] = "[ ]";
+        if(total_ingresso == 0 && cadeiras4_1[i][j] == "[//]"){
+          cadeiras4_1[i][j] = "[ ]";
         }
       }
     }
@@ -1827,7 +1828,7 @@ if(opcao == 3 && escolha_hora == 2){
 if(opcao == 4 && escolha_hora == 1){
   for (i = 0; i < 12; i++){
     for (j = 0; j < 6; j++){
-      if (cadeiras4[i][j] == "[//]"){
+      if (cadeiras4_1[i][j] == "[//]"){
         cout << i << j << ", ";
         }
       }
