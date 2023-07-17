@@ -1805,10 +1805,19 @@ if(opcao == 2 && escolha_hora == 3){
   }
 }  
   // assentos selecionados da sessao 3
-if(opcao == 3 && escolha_hora == 1 || escolha_hora == 2){
+if(opcao == 3 && escolha_hora == 1){
   for (i = 0; i < 10; i++){
     for (j = 0; j < 6; j++){
-      if (cadeiras3[i][j] == "[//]"){
+      if (cadeiras3_1[i][j] == "[//]"){
+        cout << i << j << ", ";
+      }
+    }
+  }
+}  
+if(opcao == 3 && escolha_hora == 2){
+  for (i = 0; i < 10; i++){
+    for (j = 0; j < 6; j++){
+      if (cadeiras3_2[i][j] == "[//]"){
         cout << i << j << ", ";
       }
     }
