@@ -194,8 +194,8 @@ void sessao_filme(){
   cout << "----------------------------------------------" << endl;
   cout << "Sessão 1:" << endl;
   cout << "Filme: " << sessao1.filme.titulo << endl;
-  cout << "Horários: " << sessao1.horario << endl;
   cout << "Data: " << sessao1.data << endl;
+  cout << "Horários: " << sessao1.horario << endl;
   cout << "Sala: " << sessao1.sala << endl;
   cout << "Gênero: " << sessao1.filme.genero << endl;
   cout << "Classificação: " << filme1.classi << endl;
@@ -205,8 +205,8 @@ void sessao_filme(){
   cout << "----------------------------------------------" << endl;
   cout << "Sessão 2:" << endl;
   cout << "Filme: " << sessao2.filme.titulo << endl;
-  cout << "Horários: " << sessao1.horario << endl;
   cout << "Data: " << sessao2.data << endl;
+  cout << "Horários: " << sessao1.horario << endl;
   cout << "Sala: " << sessao2.sala << endl;
   cout << "Gênero: " << sessao2.filme.genero << endl;
   cout << "Classificação: " << filme3.classi << endl;
@@ -216,8 +216,8 @@ void sessao_filme(){
   cout << "----------------------------------------------" << endl;
   cout << "Sessão 3:" << endl;
   cout << "Filme: " << sessao3.filme.titulo << endl;
-  cout << "Horários: " << sessao3.horario << endl;
   cout << "Data: " << sessao3.data << endl;
+  cout << "Horários: " << sessao3.horario << endl;
   cout << "Sala: " << sessao3.sala << endl;
   cout << "Gênero: " << sessao3.filme.genero << endl;
   cout << "Classificação: " << filme2.classi << endl;
@@ -227,8 +227,8 @@ void sessao_filme(){
   cout << "----------------------------------------------" << endl;
   cout << "Sessão 4" << endl;
   cout << "Filme: " << sessao4.filme.titulo << endl;
-  cout << "Horários: " << sessao4.horario << endl;
   cout << "Data: " << sessao4.data << endl;
+  cout << "Horários: " << sessao4.horario << endl;
   cout << "Sala: " << sessao4.sala << endl;
   cout << "Gênero: " << sessao4.filme.genero << endl;
   cout << "Classificação: " << filme1.classi << endl;
@@ -1753,10 +1753,10 @@ void loop_hora(){
     sessao_escolha();
     mostrar_sala();
     escolher_tipo_bc();
-    system("cls");
-    if (total_final > 0){
+   if (total_final > 0){
       finalizar_compra();
     }
+    system("cls");
     main();
   }
 }
