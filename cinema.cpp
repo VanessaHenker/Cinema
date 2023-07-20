@@ -53,8 +53,8 @@ struct Filme{
 
 struct Sessao{
   string horario;
-  string data;
   string sala;
+  string data;
   Filme filme;
 };
 
@@ -308,6 +308,7 @@ void escolha_horario(int escolha_hora, int opcao){
     if (escolha_hora == 2 && opcao == 1){
       cout << "Horário: " << "17:20" << endl;
     }
+    cout << "Data: " << sessao1.data << endl;
     cout << "Sala: " << sessao1.sala << endl;
     cout << "Gênero: " << sessao1.filme.genero << endl;
     cout << "Classificação: " << filme1.classi << endl;
@@ -325,6 +326,7 @@ void escolha_horario(int escolha_hora, int opcao){
     if (escolha_hora == 3 && opcao == 2){
       cout << "Horário: " << "21:00" << endl;
     }
+    cout << "Data: " << sessao2.data << endl;
     cout << "Sala: " << sessao2.sala << endl;
     cout << "Gênero: " << sessao2.filme.genero << endl;
     cout << "Classificação: " << filme3.classi << endl;
@@ -339,6 +341,7 @@ void escolha_horario(int escolha_hora, int opcao){
     if (escolha_hora == 2 && opcao == 3){
       cout << "Horário: " << "20:30" << endl;
     }
+     cout << "Data: " << sessao3.data << endl;
     cout << "Sala: " << sessao3.sala << endl;
     cout << "Gênero: " << sessao3.filme.genero << endl;
     cout << "Classificação: " << filme2.classi << endl;
@@ -348,6 +351,7 @@ void escolha_horario(int escolha_hora, int opcao){
     cout << "\nSessão " << opcao << ":" << " SELECIONADA" << "!" << endl;
     cout << "Filme: " << sessao4.filme.titulo << endl;
     cout << "Horário: " << "20:15" << endl;
+     cout << "Data: " << sessao4.data << endl;
     cout << "Sala: " << sessao4.sala << endl;
     cout << "Gênero: " << sessao4.filme.genero << endl;
     cout << "Classificação: " << filme1.classi << endl;
