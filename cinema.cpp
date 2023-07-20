@@ -53,6 +53,7 @@ struct Filme{
 
 struct Sessao{
   string horario;
+  string data;
   string sala;
   Filme filme;
 };
@@ -71,10 +72,10 @@ Filme filme1 = {"O Senhor dos Anéis", "Fantásia", "12 anos", 180};
 Filme filme2 = {"Interestelar", "Ficção Científica", "12 anos", 169};
 Filme filme3 = {"Invocação do mal", "Terror", "14 anos", 111};
 
-Sessao sessao1 = {"15:00 - 17:20", "Sala 1", filme1};
-Sessao sessao2 = {"16:00 - 18:30 - 21:00", "Sala 2", filme3};
-Sessao sessao3 = {"15:30 - 20:00", "Sala 3", filme2};
-Sessao sessao4 = {"20:15", "Sala 4", filme1};
+Sessao sessao1 = {"15:00 - 17:20", "Sala 1", "20/07/2023", filme1};
+Sessao sessao2 = {"16:00 - 18:30 - 21:00", "Sala 2","21/07/2023", filme3};
+Sessao sessao3 = {"15:30 - 20:00", "Sala 3","21/07/2023",filme2};
+Sessao sessao4 = {"20:15", "Sala 4","22/07/2023",filme1};
 
 Bebida bebida1 = {"[1]Coca-cola       237ml R$", 4};
 Bebida bebida2 = {"[2]Coca-cola       350ml R$", 6};
@@ -159,7 +160,7 @@ int main(){
   
   while (loop_menu == 0){
     valor_variavel();
-    //system("cls");
+    system("cls");
     cout << "----------------------------------------------";
     cout << "\nBEM VINDO AO CINESTAR!";
     cout << "\n----------------------------------------------";
@@ -173,7 +174,7 @@ int main(){
       cin >> sele_sessao;
       if (sele_sessao == 'S' || sele_sessao == 's'){
         sessao_escolha();
-        //system("cls");
+        system("cls");
         mostrar_sala();
       }
     }
@@ -194,6 +195,7 @@ void sessao_filme(){
   cout << "Sessão 1:" << endl;
   cout << "Filme: " << sessao1.filme.titulo << endl;
   cout << "Horários: " << sessao1.horario << endl;
+  cout << "Data: " << sessao1.data << endl;
   cout << "Sala: " << sessao1.sala << endl;
   cout << "Gênero: " << sessao1.filme.genero << endl;
   cout << "Classificação: " << filme1.classi << endl;
@@ -203,7 +205,8 @@ void sessao_filme(){
   cout << "----------------------------------------------" << endl;
   cout << "Sessão 2:" << endl;
   cout << "Filme: " << sessao2.filme.titulo << endl;
-  cout << "Horários: " << sessao2.horario << endl;
+  cout << "Horários: " << sessao1.horario << endl;
+  cout << "Data: " << sessao2.data << endl;
   cout << "Sala: " << sessao2.sala << endl;
   cout << "Gênero: " << sessao2.filme.genero << endl;
   cout << "Classificação: " << filme3.classi << endl;
@@ -214,6 +217,7 @@ void sessao_filme(){
   cout << "Sessão 3:" << endl;
   cout << "Filme: " << sessao3.filme.titulo << endl;
   cout << "Horários: " << sessao3.horario << endl;
+  cout << "Data: " << sessao3.data << endl;
   cout << "Sala: " << sessao3.sala << endl;
   cout << "Gênero: " << sessao3.filme.genero << endl;
   cout << "Classificação: " << filme2.classi << endl;
@@ -224,6 +228,7 @@ void sessao_filme(){
   cout << "Sessão 4" << endl;
   cout << "Filme: " << sessao4.filme.titulo << endl;
   cout << "Horários: " << sessao4.horario << endl;
+  cout << "Data: " << sessao4.data << endl;
   cout << "Sala: " << sessao4.sala << endl;
   cout << "Gênero: " << sessao4.filme.genero << endl;
   cout << "Classificação: " << filme1.classi << endl;
@@ -249,7 +254,7 @@ void sessao_escolha(){
         }
       }
       escolha_horario(escolha_hora, opcao);
-      //system("cls");
+      system("cls");
       break;
     case 2:
       while (escolha_hora > 3 || escolha_hora <= 0){
@@ -260,7 +265,7 @@ void sessao_escolha(){
         cin >> escolha_hora;
       }
       escolha_horario(escolha_hora, opcao);
-      //system("cls");
+      system("cls");
       break;
     case 3:
       while (escolha_hora > 2 || escolha_hora <= 0){
@@ -270,7 +275,7 @@ void sessao_escolha(){
         cin >> escolha_hora;
       }
       escolha_horario(escolha_hora, opcao);
-      //system("cls");
+      system("cls");
       break;
     case 4:
       while (escolha_hora > 2 || escolha_hora <= 0){
@@ -282,7 +287,7 @@ void sessao_escolha(){
         }
       }
       escolha_horario(escolha_hora, opcao);
-      //system("cls");
+      system("cls");
       break;
     default:
       cout << "\nSessão não existe, Tente novamente!" << endl;
@@ -435,7 +440,7 @@ void sessao1_hora1(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          //system("cls");
+          system("cls");
           cout << endl;
           for (i = 0; i < 10; i++){
             for (j = 0; j < 5; j++){
@@ -481,7 +486,7 @@ void sessao1_hora1(){
       if (cadeiras1_1[escolha1][escolha2] != "[--]" && cadeiras1_1[escolha1][escolha2] != "[ ]"){
         cadeiras1_1[escolha1][escolha2] = "[//]";
       }
-      //system("cls");
+      system("cls");
       escolha_horario(escolha_hora, opcao);
       cout << endl;
       for (i = 0; i < 10; i++){
@@ -529,7 +534,7 @@ void sessao1_hora1(){
     }
   }
   cout << endl;
-  //system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     for (i = 0; i < 10; i++){
       for (j = 0; j < 5; j++){
@@ -553,7 +558,7 @@ void sessao1_hora1(){
       }
     }
     cout << endl;
-    //system("cls");
+    system("cls");
   }
 }
 void sessao1_hora2(){
@@ -608,7 +613,7 @@ void sessao1_hora2(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          //system("cls");
+          system("cls");
           cout << endl;
           for (i = 0; i < 10; i++){
             for (j = 0; j < 5; j++){
@@ -654,7 +659,7 @@ void sessao1_hora2(){
       if (cadeiras1_2[escolha1][escolha2] != "[--]" && cadeiras1_2[escolha1][escolha2] != "[ ]"){
         cadeiras1_2[escolha1][escolha2] = "[//]";
       }
-      //system("cls");
+      system("cls");
       escolha_horario(escolha_hora, opcao);
       cout << endl;
       for (i = 0; i < 10; i++){
@@ -702,7 +707,7 @@ void sessao1_hora2(){
     }
   }
   cout << endl;
-  //system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     for (i = 0; i < 10; i++){
       for (j = 0; j < 5; j++){
@@ -726,7 +731,7 @@ void sessao1_hora2(){
       }
     }
     cout << endl;
-    //system("cls");
+    system("cls");
   }
 }
 void sessao2_hora1(){
@@ -778,7 +783,7 @@ void sessao2_hora1(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          //system("cls");
+          system("cls");
           if (cadeiras2_1[escolha1][escolha2] == "[--]"){
             cout << "\nEstá ocupado!" << endl;
           }
@@ -820,7 +825,7 @@ void sessao2_hora1(){
       if (cadeiras2_1[escolha1][escolha2] != "[--]" && cadeiras2_1[escolha1][escolha2] != "[ ]"){
         cadeiras2_1[escolha1][escolha2] = "[//]";
       }
-      //system("cls");
+      system("cls");
       escolha_horario(escolha_hora, opcao);
       cout << endl;
       for (i = 0; i < 12; i++){
@@ -867,7 +872,7 @@ void sessao2_hora1(){
   }
   cout << endl;
 
-  //system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     for (i = 0; i < 12; i++){
       for (j = 0; j < 6; j++){
@@ -891,7 +896,7 @@ void sessao2_hora1(){
       }
     }
     cout << endl;
-    //system("cls");
+    system("cls");
   }
 }
 void sessao2_hora2(){
@@ -943,7 +948,7 @@ void sessao2_hora2(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          //system("cls");
+          system("cls");
           if (cadeiras2_2[escolha1][escolha2] == "[--]"){
             cout << "\nEstá ocupado!" << endl;
           }
@@ -985,7 +990,7 @@ void sessao2_hora2(){
       if (cadeiras2_2[escolha1][escolha2] != "[--]" && cadeiras2_2[escolha1][escolha2] != "[ ]"){
         cadeiras2_2[escolha1][escolha2] = "[//]";
       }
-      //system("cls");
+      system("cls");
       escolha_horario(escolha_hora, opcao);
       cout << endl;
       for (i = 0; i < 12; i++){
@@ -1032,7 +1037,7 @@ void sessao2_hora2(){
   }
   cout << endl;
 
-  //system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     for (i = 0; i < 12; i++){
       for (j = 0; j < 6; j++){
@@ -1056,7 +1061,7 @@ void sessao2_hora2(){
       }
     }
     cout << endl;
-    //system("cls");
+    system("cls");
   }
 }
 void sessao2_hora3(){
@@ -1108,7 +1113,7 @@ void sessao2_hora3(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          //system("cls");
+          system("cls");
           if (cadeiras2_3[escolha1][escolha2] == "[--]"){
             cout << "\nEstá ocupado!" << endl;
           }
@@ -1150,7 +1155,7 @@ void sessao2_hora3(){
       if (cadeiras2_3[escolha1][escolha2] != "[--]" && cadeiras2_3[escolha1][escolha2] != "[ ]"){
         cadeiras2_3[escolha1][escolha2] = "[//]";
       }
-      //system("cls");
+      system("cls");
       escolha_horario(escolha_hora, opcao);
       cout << endl;
       for (i = 0; i < 12; i++){
@@ -1197,7 +1202,7 @@ void sessao2_hora3(){
   }
   cout << endl;
 
-  //system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     for (i = 0; i < 12; i++){
       for (j = 0; j < 6; j++){
@@ -1275,7 +1280,7 @@ void sessao3_hora1(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          //system("cls");
+          system("cls");
           cout << endl;
           for (i = 0; i < 10; i++){
             for (j = 0; j < 6; j++){
@@ -1320,7 +1325,7 @@ void sessao3_hora1(){
         cadeiras3_1[escolha1][escolha2] = "[//]";
       }
       
-      //system("cls");
+      system("cls");
       escolha_horario(escolha_hora, opcao);
       cout << endl;
       for (i = 0; i < 10; i++){
@@ -1367,7 +1372,7 @@ void sessao3_hora1(){
     }
   }
   cout << endl;
-  //system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     for (i = 0; i < 10; i++){
       for (j = 0; j < 6; j++){
@@ -1443,7 +1448,7 @@ void sessao3_hora2(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          //system("cls");
+          system("cls");
           cout << endl;
           for (i = 0; i < 10; i++){
             for (j = 0; j < 6; j++){
@@ -1488,7 +1493,7 @@ void sessao3_hora2(){
         cadeiras3_2[escolha1][escolha2] = "[//]";
       }
       
-      //system("cls");
+      system("cls");
       escolha_horario(escolha_hora, opcao);
       cout << endl;
       for (i = 0; i < 10; i++){
@@ -1535,7 +1540,7 @@ void sessao3_hora2(){
     }
   }
   cout << endl;
-  //system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     for (i = 0; i < 10; i++){
       for (j = 0; j < 6; j++){
@@ -1611,7 +1616,7 @@ void sessao4_hora1(){
         do{
           cout << "\nSelecionar assentos: ";
           cin >> escolha1 >> escolha2;
-          //system("cls");
+          system("cls");
           if (cadeiras4_1[escolha1][escolha2] == "[--]"){
             cout << "\nEstá ocupado!" << endl;
           }
@@ -1655,7 +1660,7 @@ void sessao4_hora1(){
       if (cadeiras4_1[escolha1][escolha2] != "[--]" && cadeiras4_1[escolha1][escolha2] != "[ ]"){
         cadeiras4_1[escolha1][escolha2] = "[//]";
       }
-      //system("cls");
+      system("cls");
       escolha_horario(escolha_hora, opcao);
       cout << endl;
       for (i = 0; i < 12; i++){
@@ -1702,7 +1707,7 @@ void sessao4_hora1(){
     }
   }
   cout << endl;
-  //system("cls");
+  system("cls");
   if (reserva_polt == 'n' || reserva_polt == 'N'){
     for (i = 0; i < 12; i++){
       for (j = 0; j < 6; j++){
@@ -1726,7 +1731,7 @@ void sessao4_hora1(){
       }
     }
     cout << endl;
-    //system("cls");
+    system("cls");
   }
 }
 
@@ -1744,7 +1749,7 @@ void loop_hora(){
     sessao_escolha();
     mostrar_sala();
     escolher_tipo_bc();
-    //system("cls");
+    system("cls");
     if (total_final > 0){
       finalizar_compra();
     }
@@ -1859,11 +1864,11 @@ float compra_ing(int guarda_polt){
     cout << "\nSe deseja selecionar algum ingresso";
     cout << "\nDigite 'S' para SIM ou 'N' para NÂO: ";
     cin >> sele_ingresso;
-    //system("cls");
+    system("cls");
   }
   if (sele_ingresso == 's' || sele_ingresso == 'S'){
     while (loop_tela == 0){
-      //system("cls");
+      system("cls");
       do{
         polt_selecionada();
         cout << endl;
@@ -1874,7 +1879,7 @@ float compra_ing(int guarda_polt){
         cin >> compra_ingresso;
         cout << endl;
         while (compra_ingresso > 2 || compra_ingresso <= 0){
-          //system("cls");
+          system("cls");
           cout << endl;
           cout << "\n[1]Ingresso inteiro R$" << ing_int;
           cout << "\n[2]Ingresso meio R$" << ing_meia;
@@ -1887,7 +1892,7 @@ float compra_ing(int guarda_polt){
           cout << "\n[" << mostra_ing << "]Qtd ";
           cout << "\nQuantidade de ingresso(inteiro):  ";
           cin >> opcao_ingresso;
-          //system("cls");
+          system("cls");
           while (opcao_ingresso < 0){
             if (opcao_ingresso < 0){
               cout << "\nQuantidade inválida!";
@@ -1911,7 +1916,7 @@ float compra_ing(int guarda_polt){
           cout << "\n[" << mostra_ing << "]Qtd ";
           cout << "\nQuantidade de ingresso(meia):  ";
           cin >> opcao_ingresso;
-          //system("cls");
+          system("cls");
           while (opcao_ingresso < 0){
             if (opcao_ingresso < 0){
               cout << "\nQuantida inválida!";
@@ -1981,7 +1986,7 @@ void finalizar_compra(){
   dinheiro2 = 0;
   total2 = total_final;
   dinheiro2 = dinheiro;
-  //system("cls");
+  system("cls");
   if (total_final > 0){
     cout << "\nTotal da compra R$: " << total_final;
     dinheiro = -1;
@@ -2008,7 +2013,7 @@ void finalizar_compra(){
         dinheiro = dinheiro + dinheiro2;
       }
     }
-    //system("cls");
+    system("cls");
     nota_fiscal();
   }
 }
@@ -2087,7 +2092,7 @@ void nota_fiscal(){
 
     cout << "\nDigite 0 para voltar ao menu icial: ";
     cin >> loop_menu;
-    //system("cls");
+    system("cls");
   
 }
 
@@ -2464,11 +2469,11 @@ void escolher_tipo_bc(){
     cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
     cin >> sele_comida;
   }
-  //system("cls");
+  system("cls");
   if (sele_comida == 'S' || sele_comida == 's'){
     while (loop_tela == 0){
       guarda_comida = 0;
-     //system("cls");
+     system("cls");
       escolha_comida = 7;
       while (escolha_comida > 6 || escolha_comida < 0){
         cout << "\nOpçoes comidas: " << endl;
@@ -2485,7 +2490,7 @@ void escolher_tipo_bc(){
           cout << "\nValor inválido, Tente novamente!" << endl;
         }
       }
-      //system("cls");
+      system("cls");
       soma_comida = escolha_tipo_comida(escolha_comida);
       guarda_comida = guarda_comida + soma_comida;
       loop_tela = 2;
@@ -2523,7 +2528,7 @@ void escolher_tipo_bc(){
         guarda_bebida = 0;
         escolha_bebida = 5;
         while (escolha_bebida > 4 || escolha_bebida < 0){
-          //system("cls");
+          system("cls");
           cout << "\nOpções bebidas:" << endl;
           cout << "[0]-> Prosseguir" << endl;
           cout << "[1]-> Coca-cola" << endl;
