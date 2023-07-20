@@ -2453,6 +2453,9 @@ void escolher_tipo_bc(){
   sele_comida = 't';
   sele_comida = 't';
   
+  if(sele_sessao = 'n' || sele_sessao == 'N'){
+    system("cls");
+  }
   cout << "\nOpções comidas: " << endl;
   cout << "[1]-> Pipocas" << endl;
   cout << "[2]-> Fandangos" << endl;
@@ -2467,8 +2470,8 @@ void escolher_tipo_bc(){
   cout << "[3]-> Fanta laranja" << endl;
   cout << "[4]-> Fanta guarana" << endl;
   cout << endl;
-
-  while (sele_comida != 'n' && sele_comida != 'N' && sele_comida != 's' && sele_comida != 'S'){
+  
+while (sele_comida != 'n' && sele_comida != 'N' && sele_comida != 's' && sele_comida != 'S'){
     cout << "\nDeseja entrar na opções de comidas";
     cout << "\nDigite 'S' para SIM ou 'N' para 'NÂO': ";
     cin >> sele_comida;
