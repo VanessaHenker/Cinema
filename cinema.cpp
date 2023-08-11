@@ -278,7 +278,7 @@ void sessao_escolha(){
       system("cls");
       break;
     case 4:
-      while (escolha_hora > 2 || escolha_hora <= 0){
+      while (escolha_hora > 1 || escolha_hora <= 0){
         cout << "\nEscolha o horário:" << endl;
         cout << "[1]-> 20:15" << endl;
         cin >> escolha_hora;
